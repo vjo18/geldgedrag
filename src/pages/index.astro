@@ -7,6 +7,7 @@ import Card from "@/components/Card.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
+import { getBasePath } from "@/utils/getBasePath";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
@@ -94,7 +95,10 @@ const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
             Begin bij het eerste essay
           </h2>
         </div>
-        <LinkButton href="/posts" class="font-heading text-sm text-accent">
+        <LinkButton
+          href={getBasePath("/posts")}
+          class="font-heading text-sm text-accent"
+        >
           Alle artikels
         </LinkButton>
       </div>

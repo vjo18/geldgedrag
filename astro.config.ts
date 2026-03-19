@@ -11,9 +11,15 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === "true";
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const githubPagesBase =
+  isGitHubPagesBuild && repositoryName ? `/${repositoryName}` : "/";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  base: githubPagesBase,
   integrations: [
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),

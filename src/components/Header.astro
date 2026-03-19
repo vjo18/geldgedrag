@@ -6,6 +6,7 @@ import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
+import { getBasePath } from "@/utils/getBasePath";
 
 const { pathname } = Astro.url;
 const currentPath =
@@ -33,7 +34,7 @@ const isActive = (path: string) => {
   >
     <div class="flex items-center justify-between gap-4">
       <a
-        href="/"
+        href={getBasePath("/")}
         class="font-heading text-xl font-semibold tracking-tight sm:text-2xl"
       >
         {SITE.title}
@@ -60,18 +61,24 @@ const isActive = (path: string) => {
         ]}
       >
         <li>
-          <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
+          <a
+            href={getBasePath("/posts")}
+            class:list={{ "active-nav": isActive("/posts") }}
+          >
             Artikels
           </a>
         </li>
         <li>
-          <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
+          <a
+            href={getBasePath("/about")}
+            class:list={{ "active-nav": isActive("/about") }}
+          >
             Over
           </a>
         </li>
         <li class="flex items-center gap-2 pt-1 sm:pt-0">
           <LinkButton
-            href="/search"
+            href={getBasePath("/search")}
             class:list={[
               "focus-outline flex p-2 hover:text-accent",
               { "text-accent": isActive("/search") },
