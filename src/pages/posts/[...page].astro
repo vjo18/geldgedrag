@@ -18,9 +18,15 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout
+  title={`Artikels | ${SITE.title}`}
+  description="Alle essays en artikels over geld, gedrag en financiële psychologie."
+>
   <Header />
-  <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
+  <Main
+    pageTitle="Artikels"
+    pageDesc="Een groeiende reeks essays over geld, tijdsvoorkeur, financiële educatie en menselijk gedrag."
+  >
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>

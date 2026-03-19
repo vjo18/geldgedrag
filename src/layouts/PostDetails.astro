@@ -67,7 +67,7 @@ const layoutProps = {
   scrollSmooth: true,
 };
 
-/* ========== Prev/Next Posts ========== */
+/* ========== Prev/Volgend artikels ========== */
 
 const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
   id,
@@ -128,7 +128,7 @@ const nextPost =
 
     <hr class="my-6 border-dashed" />
 
-    <!-- Previous/Next Post Buttons -->
+    <!-- Previous/Volgend artikel Buttons -->
     <div data-pagefind-ignore class="grid grid-cols-1 gap-6 sm:grid-cols-2">
       {
         prevPost && (
@@ -138,7 +138,7 @@ const nextPost =
           >
             <IconChevronLeft class="inline-block flex-none rtl:rotate-180" />
             <div>
-              <span>Previous Post</span>
+              <span>Vorig artikel</span>
               <div class="text-sm text-accent/85">{prevPost.title}</div>
             </div>
           </a>
@@ -151,7 +151,7 @@ const nextPost =
             class="flex w-full justify-end gap-1 text-end hover:opacity-75 sm:col-start-2"
           >
             <div>
-              <span>Next Post</span>
+              <span>Volgend artikel</span>
               <div class="text-sm text-accent/85">{nextPost.title}</div>
             </div>
             <IconChevronRight class="inline-block flex-none rtl:rotate-180" />

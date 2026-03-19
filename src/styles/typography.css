@@ -1,119 +1,82 @@
 @plugin "@tailwindcss/typography";
 
 @layer base {
-  /* ===== Override default Tailwind Typography styles ===== */
   .app-prose {
-    @apply prose;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    th {
-      @apply mb-3 text-foreground;
-    }
-
-    h3 {
-      @apply italic;
-    }
-
-    p,
-    strong,
-    ol,
-    ul,
-    figcaption,
-    table,
-    code {
-      @apply text-foreground;
-    }
-
-    a {
-      @apply wrap-break-word text-foreground decoration-dashed underline-offset-4 hover:text-accent focus-visible:no-underline;
-    }
-
-    ul {
-      @apply overflow-x-clip;
-    }
-
-    li {
-      @apply marker:text-accent;
-    }
-
-    hr {
-      @apply border-border;
-    }
-
-    img {
-      @apply mx-auto border border-border;
-    }
-
-    figcaption {
-      @apply opacity-75;
-    }
-
-    table {
-      th,
-      td {
-        @apply border border-border p-2;
-      }
-
-      th {
-        @apply py-1.5;
-      }
-
-      code {
-        @apply break-all sm:break-normal;
-      }
-    }
-
-    code {
-      @apply rounded bg-muted/75 p-1 wrap-break-word text-foreground before:content-none after:content-none;
-    }
-
-    .astro-code code {
-      @apply flex-[1_0_100%] bg-inherit p-0;
-    }
-
-    blockquote {
-      @apply border-s-accent/80 wrap-break-word opacity-80;
-    }
-
-    details {
-      @apply inline-block cursor-pointer text-foreground select-none [&_p]:hidden [&_ul]:my-0!;
-    }
-
-    summary {
-      @apply focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent focus-visible:outline-dashed;
-    }
-
-    pre {
-      @apply focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-dashed;
-    }
+    @apply prose prose-lg max-w-none text-foreground;
+    --tw-prose-body: var(--color-foreground);
+    --tw-prose-headings: var(--color-foreground);
+    --tw-prose-links: var(--color-accent);
+    --tw-prose-bold: var(--color-foreground);
+    --tw-prose-bullets: var(--color-accent);
+    --tw-prose-hr: var(--color-border);
+    --tw-prose-quotes: var(--color-foreground);
+    --tw-prose-quote-borders: var(--color-accent-soft);
+    --tw-prose-captions: color-mix(in srgb, var(--color-foreground) 65%, white);
   }
 
-  /* ===== Code Blocks & Syntax Highlighting ===== */
+  .app-prose h1,
+  .app-prose h2,
+  .app-prose h3,
+  .app-prose h4,
+  .app-prose th {
+    @apply mb-4 font-heading text-foreground;
+  }
+
+  .app-prose h1 {
+    @apply text-4xl leading-tight sm:text-5xl;
+  }
+
+  .app-prose h2 {
+    @apply mt-14 text-2xl leading-snug sm:text-3xl;
+  }
+
+  .app-prose h3 {
+    @apply mt-10 text-xl not-italic sm:text-2xl;
+  }
+
+  .app-prose p,
+  .app-prose ul,
+  .app-prose ol,
+  .app-prose blockquote,
+  .app-prose figcaption,
+  .app-prose table,
+  .app-prose code {
+    @apply text-foreground;
+  }
+
+  .app-prose a {
+    @apply text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-foreground focus-visible:no-underline;
+  }
+
+  .app-prose li {
+    @apply my-2 marker:text-accent;
+  }
+
+  .app-prose hr {
+    @apply border-border;
+  }
+
+  .app-prose blockquote {
+    @apply border-s-4 border-accent-soft bg-muted/45 px-6 py-2 font-medium italic;
+  }
+
+  .app-prose img {
+    @apply mx-auto rounded-2xl border border-border;
+  }
+
+  .app-prose code {
+    @apply rounded bg-muted/80 px-1.5 py-1 text-sm before:content-none after:content-none;
+  }
+
+  .app-prose .astro-code code {
+    @apply bg-inherit p-0;
+  }
+
   .astro-code {
-    @apply flex border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
+    @apply flex rounded-2xl border border-border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
   }
 
   html[data-theme="dark"] .astro-code {
     @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
-  }
-
-  /* Styles for Shiki transformers */
-  /* https://shiki.style/packages/transformers */
-  .astro-code {
-    .line.diff.add {
-      @apply relative inline-block w-full bg-green-400/20 before:absolute before:-left-3 before:text-green-500 before:content-['+'];
-    }
-    .line.diff.remove {
-      @apply relative inline-block w-full bg-red-500/20 before:absolute before:-left-3 before:text-red-500 before:content-['-'];
-    }
-    .line.highlighted {
-      @apply inline-block w-full bg-slate-400/20;
-    }
-    .highlighted-word {
-      @apply rounded-sm border border-border px-0.5 py-px;
-    }
   }
 }

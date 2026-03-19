@@ -8,32 +8,38 @@ type ArrayTitle = { pageTitle: [string, string]; titleTransition: string };
 type Props = (StringTitle | ArrayTitle) & { pageDesc?: string };
 
 const { props } = Astro;
-
 const backUrl = SITE.showBackButton ? Astro.url.pathname : "/";
 ---
 
 <Breadcrumb />
-<main data-backUrl={backUrl} id="main-content" class="app-layout pb-4">
-  {
-    "titleTransition" in props ? (
-      <h1 class="text-2xl font-semibold sm:text-3xl">
-        {props.pageTitle[0]}
-        <span transition:name={props.titleTransition}>
-          {props.pageTitle[1]}
-        </span>
-      </h1>
-    ) : (
-      <h1 class="text-2xl font-semibold sm:text-3xl">{props.pageTitle}</h1>
-    )
-  }
-  <p class="mt-2 mb-6 italic">{props.pageDesc}</p>
-  <slot />
+<main data-backUrl={backUrl} id="main-content" class="app-layout pb-8">
+  <section class="surface mt-6 px-6 py-8 sm:px-8 sm:py-10">
+    {
+      "titleTransition" in props ? (
+        <h1 class="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+          {props.pageTitle[0]}
+          <span transition:name={props.titleTransition}>
+            {props.pageTitle[1]}
+          </span>
+        </h1>
+      ) : (
+        <h1 class="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+          {props.pageTitle}
+        </h1>
+      )
+    }
+    <p class="mt-4 max-w-2xl text-lg leading-8 text-foreground/78">
+      {props.pageDesc}
+    </p>
+    <slot />
+  </section>
 </main>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const mainContent: HTMLElement | null =
-      document.querySelector("#main-content");
+    const mainContent = document.querySelector(
+      "#main-content"
+    ) as HTMLElement | null;
     const backUrl = mainContent?.dataset?.backurl;
     if (backUrl) {
       sessionStorage.setItem("backUrl", backUrl);

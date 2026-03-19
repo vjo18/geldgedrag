@@ -1,37 +1,39 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "Over"
+description: "Waarom deze website psychologie, economie en filosofie samenbrengt rond geld en gedrag."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Als klinisch psycholoog heb ik altijd gefascineerd gekeken naar de vraag: waarom maken mensen bepaalde keuzes? Waarom weten we soms perfect wat goed voor ons is, en doen we toch iets anders?
 
-![Astro Paper](public/astropaper-og.jpg)
+Tijdens mijn opleiding leerde ik vooral kijken naar het individu: naar gedachten, emoties, gedrag en persoonlijke geschiedenis.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+Maar zoals onder andere Paul Verhaeghe beschrijft, kunnen we in de praktijk ook zien hoe de samenleving waarin we leven zich weerspiegelt in de problemen waarmee mensen worstelen. Elke tijd heeft zijn eigen symptomen.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+In een maatschappij die sterk draait rond economische efficiëntie en competitie, zie je dat ook terug in hoe mensen naar zichzelf kijken: druk om te presteren, gevoelens van tekortschieten, onzekerheid over de toekomst.
 
-## Features
+Veel mensen werken hard, proberen te sparen en toch voelt financiële vooruitgang vaak moeilijker dan verwacht. Dat leidt gemakkelijk tot zelfkritiek:
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+> “Ik doe iets verkeerd.”  
+> “Ik ben niet slim genoeg met geld.”  
+> “Ik zou verder moeten staan.”
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+Maar wat als we een deel van het verhaal missen?
 
-and so much more.
+Wat als onze relatie met geld niet alleen individueel is, maar ook sterk beïnvloed wordt door de economische context waarin we leven?
 
-## Show your support
+Het is pas recent dat ik een link begon te zien met iets wat we als vanzelfsprekend nemen en waar we zelden echt bij stilstaan: de impact van het monetair systeem op onze levenskeuzes.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+Daarom start ik met het schrijven van een reeks artikels waarin ik deze thema’s verder wil verkennen.
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+Mijn bedoeling is niet om financieel advies of snelle oplossingen te geven. Mijn bedoeling is vooral om een aantal van deze onderliggende dynamieken zichtbaar te maken.
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+Wanneer we begrijpen hoe geld, tijd en gedrag met elkaar verbonden zijn, ontstaat er vaak meer ruimte voor bewuste keuzes. Dat betekent niet dat de context plots verdwijnt. Maar inzicht kan helpen om:
 
-Kyay zuu! 🙏🏼
+- patronen te herkennen
+- verwachtingen realistischer te maken
+- en onze eigen keuzes beter te begrijpen
+
+Voor mij voelt dit als een natuurlijk kruispunt van drie interessevelden: psychologie, economie en filosofie.
+
+Samen vormen ze een lens om na te denken over financieel welzijn of financiële psychologie.
