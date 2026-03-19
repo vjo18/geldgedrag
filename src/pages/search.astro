@@ -15,7 +15,7 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
 >
   <Header />
   <Main pageTitle="Zoeken" pageDesc="Zoek op thema, begrip of artikel.">
-    <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
+    <div id="pagefind-search" data-backurl={backUrl}></div>
   </Main>
   <Footer />
 </Layout>

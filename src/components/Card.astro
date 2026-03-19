@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { slugifyStr } from "@/utils/slugify";
 import { getPath } from "@/utils/getPath";
 import Datetime from "./Datetime.astro";
 
@@ -19,7 +18,6 @@ const { title, description, ...props } = data;
     <a href={getPath(id, filePath)} class="group block">
       <Heading
         class="font-heading text-2xl font-semibold tracking-tight text-foreground transition-colors group-hover:text-accent"
-        style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
       >
         {title}
       </Heading>
