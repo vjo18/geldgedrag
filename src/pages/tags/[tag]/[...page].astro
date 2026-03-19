@@ -29,10 +29,10 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 const { page, tagName } = Astro.props;
 ---
 
-<Layout title={`Tag: ${tagName} | ${SITE.title}`}>
+<Layout title={`Thema: ${tagName} | ${SITE.title}`}>
   <Header />
   <Main
-    pageTitle={`Tag: ${tagName}`}
+    pageTitle={`Thema: ${tagName}`}
     pageDesc={`Alle artikels met het thema "${tagName}".`}
   >
     <ul>
