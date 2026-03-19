@@ -1,10 +1,12 @@
 import type { Props } from "astro";
 import IconMail from "@/assets/icons/IconMail.svg";
+import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconWhatsapp from "@/assets/icons/IconWhatsapp.svg";
 import IconFacebook from "@/assets/icons/IconFacebook.svg";
 import IconTelegram from "@/assets/icons/IconTelegram.svg";
 import IconPinterest from "@/assets/icons/IconPinterest.svg";
+import { SITE } from "@/config";
 
 interface Social {
   name: string;
@@ -13,7 +15,20 @@ interface Social {
   icon: (_props: Props) => Element;
 }
 
-export const SOCIALS: Social[] = [];
+export const SOCIALS: Social[] = [
+  {
+    name: "Mail",
+    href: "mailto:hello@geldengedrag.be",
+    linkTitle: `Stuur een e-mail naar ${SITE.title}`,
+    icon: IconMail,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/",
+    linkTitle: `${SITE.title} op LinkedIn`,
+    icon: IconLinkedin,
+  },
+] as const;
 
 export const SHARE_LINKS: Social[] = [
   {

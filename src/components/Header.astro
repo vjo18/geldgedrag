@@ -1,6 +1,10 @@
 ---
 import IconX from "@/assets/icons/IconX.svg";
+import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconSearch from "@/assets/icons/IconSearch.svg";
+import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
+import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
@@ -27,14 +31,14 @@ const isActive = (path: string) => {
   <div
     class="surface flex flex-col justify-between px-5 py-4 sm:flex-row sm:items-center sm:px-6"
   >
-    <a
-      href="/"
-      class="font-heading text-xl font-semibold tracking-tight sm:text-2xl"
-    >
-      {SITE.title}
-    </a>
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href="/"
+        class="font-heading text-xl font-semibold tracking-tight sm:text-2xl"
+      >
+        {SITE.title}
+      </a>
 
-    <nav id="nav-menu" class="mt-4 sm:mt-0">
       <button
         id="menu-btn"
         class="focus-outline ms-auto flex p-2 sm:hidden"
@@ -45,6 +49,9 @@ const isActive = (path: string) => {
         <IconX id="close-icon" class="hidden" />
         <IconMenuDeep id="menu-icon" />
       </button>
+    </div>
+
+    <nav id="nav-menu" class="mt-4 sm:mt-0">
       <ul
         id="menu-items"
         class:list={[
@@ -64,6 +71,34 @@ const isActive = (path: string) => {
           <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
             Over
           </a>
+        </li>
+        <li class="flex items-center gap-2 pt-1 sm:pt-0">
+          <LinkButton
+            href="/search"
+            class:list={[
+              "focus-outline flex p-2 hover:text-accent",
+              { "text-accent": isActive("/search") },
+            ]}
+            title="Zoeken"
+            aria-label="Zoeken"
+          >
+            <IconSearch />
+            <span class="sr-only">Zoeken</span>
+          </LinkButton>
+          {
+            SITE.lightAndDarkMode && (
+              <button
+                id="theme-btn"
+                class="focus-outline relative flex size-10 items-center justify-center p-2 hover:text-accent"
+                title="Wissel tussen light en dark mode"
+                aria-label="light"
+                aria-live="polite"
+              >
+                <IconMoon class="absolute scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <IconSunHigh class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+              </button>
+            )
+          }
         </li>
       </ul>
     </nav>

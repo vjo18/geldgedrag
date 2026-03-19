@@ -5,7 +5,7 @@ export const SITE = {
   desc: "Een rustig essayplatform over geld, gedrag, psychologie, economie en filosofie.",
   title: "Geld & gedrag",
   ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: false,
+  lightAndDarkMode: true,
   postPerIndex: 3,
   postPerPage: 6,
   scheduledPostMargin: 15 * 60 * 1000,
