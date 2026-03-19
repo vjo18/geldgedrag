@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://geldengedrag.be/",
+  website: "https://geldgedrag.be/",
   author: "Geld & gedrag",
   profile: "",
   desc: "Een rustig essayplatform over geld, gedrag, psychologie, economie en filosofie.",

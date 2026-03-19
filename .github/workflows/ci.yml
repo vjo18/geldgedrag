@@ -1,5 +1,8 @@
 name: CI
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
 
@@ -17,6 +20,8 @@ jobs:
     name: Code standards & build
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     strategy:
       matrix:
@@ -24,7 +29,7 @@ jobs:
 
     steps:
       - name: "☁️ Checkout repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: "📦 Install pnpm"
         uses: pnpm/action-setup@v4
@@ -32,7 +37,7 @@ jobs:
           version: 10.11.1
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
