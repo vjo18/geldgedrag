@@ -44,6 +44,10 @@
     @apply text-foreground;
   }
 
+  .article-copy {
+    @apply text-lg leading-8 text-foreground;
+  }
+
   .app-prose a {
     @apply text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-foreground focus-visible:no-underline;
   }
