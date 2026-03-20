@@ -1,5 +1,6 @@
 ---
-import IconBrandMark from "@/assets/icons/IconBrandMark.svg";
+import logoDark from "@/assets/logo/logo-dark.svg";
+import logoLight from "@/assets/logo/logo-light.svg";
 import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
@@ -40,9 +41,20 @@ const isActive = (path: string) => {
       >
         <span class="flex items-center gap-3">
           <span
-            class="flex size-11 items-center justify-center rounded-full border border-border bg-muted/55 text-accent shadow-[0_8px_24px_rgba(83,112,217,0.12)]"
+            class="relative block h-11 w-[2.55rem] shrink-0 sm:h-12 sm:w-[2.8rem]"
           >
-            <IconBrandMark class="size-8" />
+            <img
+              src={logoLight.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full object-contain dark:hidden"
+            />
+            <img
+              src={logoDark.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 hidden h-full w-full object-contain dark:block"
+            />
           </span>
           <span>{SITE.title}</span>
         </span>

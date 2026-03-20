@@ -1,5 +1,9 @@
 ---
 import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import faviconIco from "@/assets/logo/favicon.ico";
+import favicon16 from "@/assets/logo/favicon-16x16.png";
+import favicon32 from "@/assets/logo/favicon-32x32.png";
+import appleTouchIcon from "@/assets/logo/favicon-180x180.png";
 import { SITE } from "@/config";
 import { getBasePath } from "@/utils/getBasePath";
 import "@/styles/global.css";
@@ -58,7 +62,10 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={getBasePath("/favicon.svg")} />
+    <link rel="icon" href={faviconIco} sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src} />
+    <link rel="icon" type="image/png" sizes="16x16" href={favicon16.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
