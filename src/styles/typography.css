@@ -3,7 +3,7 @@
 @layer base {
   .app-prose {
     @apply prose prose-lg max-w-none text-foreground;
-    --tw-prose-body: var(--color-foreground);
+    --tw-prose-body: color-mix(in srgb, var(--color-foreground) 88%, white);
     --tw-prose-headings: var(--color-foreground);
     --tw-prose-links: var(--color-accent);
     --tw-prose-bold: var(--color-foreground);
@@ -27,7 +27,7 @@
   }
 
   .app-prose h2 {
-    @apply mt-14 text-2xl leading-snug sm:text-3xl;
+    @apply mt-16 border-t border-border/70 pt-8 text-2xl leading-snug sm:text-3xl;
   }
 
   .app-prose h3 {
@@ -44,6 +44,11 @@
     @apply text-foreground;
   }
 
+  .app-prose p,
+  .app-prose li {
+    @apply leading-8;
+  }
+
   .app-prose a {
     @apply text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-foreground focus-visible:no-underline;
   }
@@ -57,11 +62,11 @@
   }
 
   .app-prose blockquote {
-    @apply border-s-4 border-accent-soft bg-muted/45 px-6 py-2 font-medium italic;
+    @apply border-s-4 border-accent-soft bg-muted/45 px-6 py-3 font-medium italic;
   }
 
   .app-prose img {
-    @apply mx-auto rounded-2xl border border-border;
+    @apply mx-auto rounded-[1.75rem] border border-border;
   }
 
   .app-prose code {
@@ -73,7 +78,7 @@
   }
 
   .astro-code {
-    @apply flex rounded-2xl border border-border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
+    @apply flex rounded-[1.75rem] border border-border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);
   }
 
   html[data-theme="dark"] .astro-code {

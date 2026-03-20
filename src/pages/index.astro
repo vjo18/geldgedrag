@@ -15,96 +15,154 @@ const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
 
 <Layout
   title={`${SITE.title} | Psychologie, filosofie en financiële educatie`}
-  description="Een rustig essayplatform over hoe geld onze keuzes, tijd en gedrag beïnvloedt."
+  description="Een modern essayplatform over hoe geld onze keuzes, tijd en gedrag beïnvloedt."
 >
   <Header />
-  <main id="main-content" class="app-layout pb-12">
-    <section class="surface mt-6 px-6 py-10 sm:mt-8 sm:px-10 sm:py-14">
-      <p
-        class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-      >
-        Essayplatform over geld en menselijk gedrag
-      </p>
-      <h1
-        class="mt-5 max-w-3xl font-heading text-4xl font-semibold tracking-tight sm:text-6xl"
-      >
-        Geld & gedrag
-      </h1>
+  <main id="main-content" class="app-layout pb-14">
+    <section
+      class="surface mt-6 overflow-hidden px-6 py-8 sm:mt-8 sm:px-10 sm:py-10 lg:px-12"
+    >
       <div
-        class="mt-8 max-w-3xl space-y-5 text-lg leading-9 text-foreground/88"
+        class="grid gap-10 lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.8fr)] lg:items-end"
       >
-        <p>
-          Veel gesprekken over geld gaan over praktische vragen: hoe sparen, hoe
-          investeren en hoeveel rendement halen. Dat zijn belangrijke
-          onderwerpen. Maar daaronder ligt een diepere laag.
-        </p>
-        <p>
-          We denken vaak dat geld vooral een financieel onderwerp is. Iets voor
-          economen, banken of mensen die zich met investeren bezighouden. Maar
-          geld heeft een veel bredere invloed op ons leven. Het raakt aan hoe we
-          werken, hoe we consumeren, hoe we plannen maken voor de toekomst en
-          zelfs hoe we omgaan met onze gezondheid en relaties.
-        </p>
-        <p>
-          Geld beïnvloedt namelijk niet alleen onze financiële situatie. Het
-          beïnvloedt ook hoe we met tijd en keuzes omgaan.
-        </p>
+        <div>
+          <p class="eyebrow">Moderne essays over geld en menselijk gedrag</p>
+          <h1
+            class="mt-5 max-w-4xl font-heading text-4xl font-semibold tracking-tight sm:text-6xl lg:text-7xl"
+          >
+            Een rustige, redactionele thuisbasis voor artikels die dieper gaan.
+          </h1>
+          <p
+            class="mt-6 max-w-3xl text-lg leading-9 text-foreground/82 sm:text-xl"
+          >
+            Geld &amp; gedrag vertaalt financiële thema’s naar heldere essays
+            over keuzes, tijdsvoorkeur, welzijn en betekenis. Minder dashboard,
+            meer leeservaring.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <LinkButton
+              href={getBasePath("/posts")}
+              class="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-3 font-heading text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
+            >
+              Bekijk alle artikels
+            </LinkButton>
+            <LinkButton
+              href={getBasePath("/about")}
+              class="inline-flex items-center justify-center rounded-full border border-border bg-background/70 px-6 py-3 font-heading text-sm font-semibold"
+            >
+              Over het platform
+            </LinkButton>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <article class="soft-panel p-5">
+            <p class="eyebrow">Focus</p>
+            <h2 class="mt-3 font-heading text-xl font-semibold">
+              Financiële educatie
+            </h2>
+            <p class="mt-3 leading-7 text-foreground/76">
+              Toegankelijke artikels over inflatie, koopkracht, buffers en
+              vermogen.
+            </p>
+          </article>
+          <article class="soft-panel p-5">
+            <p class="eyebrow">Lens</p>
+            <h2 class="mt-3 font-heading text-xl font-semibold">Psychologie</h2>
+            <p class="mt-3 leading-7 text-foreground/76">
+              Begrijp waarom emoties en context ons koop- en spaargedrag sturen.
+            </p>
+          </article>
+          <article class="soft-panel p-5">
+            <p class="eyebrow">Diepgang</p>
+            <h2 class="mt-3 font-heading text-xl font-semibold">Filosofie</h2>
+            <p class="mt-3 leading-7 text-foreground/76">
+              Reflecties over wat een goed leven is, en welke rol geld daarin
+              mag spelen.
+            </p>
+          </article>
+        </div>
       </div>
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-3">
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">
-            Financiële educatie
-          </h2>
-          <p class="mt-3 leading-7 text-foreground/78">
-            Heldere uitleg over geld, koopkracht, inflatie en vermogen.
+      <div
+        class="mt-10 grid gap-4 border-t border-border/70 pt-6 text-sm text-foreground/72 sm:grid-cols-3 sm:gap-6"
+      >
+        <div>
+          <p class="font-heading text-2xl font-semibold text-foreground">
+            Minimalistisch
+          </p>
+          <p class="mt-2 leading-7">
+            Ruimte, ritme en rustige contrasten voor langere leestijd.
           </p>
         </div>
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">Psychologie</h2>
-          <p class="mt-3 leading-7 text-foreground/78">
-            Ontdek waarom emoties en impulsen je financiële keuzes sturen, en
-            hoe je dat patroon doorbreekt.
+        <div>
+          <p class="font-heading text-2xl font-semibold text-foreground">
+            Redactioneel
+          </p>
+          <p class="mt-2 leading-7">
+            Een homepage die voelt als de cover van een digitaal tijdschrift.
           </p>
         </div>
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">Filosofie</h2>
-          <p class="mt-3 leading-7 text-foreground/78">
-            Reflecteer over wat geld betekent voor een goed leven, en hoe het
-            een middel blijft in plaats van een doel.
+        <div>
+          <p class="font-heading text-2xl font-semibold text-foreground">
+            Merkvast
+          </p>
+          <p class="mt-2 leading-7">
+            Het bestaande kleurenpalet en de fonts blijven herkenbaar aanwezig.
           </p>
         </div>
       </div>
-
-      <p class="mt-10 max-w-3xl leading-8 text-foreground/80">
-        Het doel is om deze thema’s toegankelijk te maken, zonder te vervallen
-        in simplistische verklaringen of financieel advies. Het gaat vooral om
-        begrijpen hoe de context werkt waarin we onze keuzes maken.
-      </p>
     </section>
 
-    <section class="surface mt-10 px-6 py-8 sm:px-8">
-      <div class="flex items-end justify-between gap-4">
-        <div>
-          <p
-            class="font-heading text-sm font-semibold tracking-[0.2em] text-accent uppercase"
-          >
-            Laatste artikels
-          </p>
-          <h2 class="mt-3 font-heading text-3xl font-semibold tracking-tight">
-            Begin bij het eerste essay
-          </h2>
-        </div>
-        <LinkButton
-          href={getBasePath("/posts")}
-          class="font-heading text-sm text-accent"
+    <section class="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_20rem]">
+      <div class="surface px-6 py-8 sm:px-8">
+        <div
+          class="flex items-end justify-between gap-4 border-b border-border/70 pb-5"
         >
-          Alle artikels
-        </LinkButton>
+          <div>
+            <p class="eyebrow">Laatste artikels</p>
+            <h2 class="mt-3 font-heading text-3xl font-semibold tracking-tight">
+              Essays om rustig te lezen en te herlezen
+            </h2>
+          </div>
+          <LinkButton
+            href={getBasePath("/posts")}
+            class="font-heading text-sm text-accent"
+          >
+            Archief openen
+          </LinkButton>
+        </div>
+        <ul class="mt-4 divide-y divide-border/70">
+          {recentPosts.map(data => <Card variant="h3" {...data} />)}
+        </ul>
       </div>
-      <ul class="mt-6">
-        {recentPosts.map(data => <Card variant="h3" {...data} />)}
-      </ul>
+
+      <aside class="surface px-6 py-8 sm:px-8">
+        <p class="eyebrow">Leeservaring</p>
+        <h2 class="mt-3 font-heading text-2xl font-semibold tracking-tight">
+          Nieuwe look &amp; feel
+        </h2>
+        <p class="mt-4 leading-8 text-foreground/78">
+          De homepage combineert magazine-achtige hiërarchie met zachte panelen,
+          meer witruimte en duidelijkere CTA’s.
+        </p>
+        <div class="mt-6 space-y-4">
+          <div class="soft-panel p-4">
+            <p class="font-heading text-sm font-semibold">Homepage preview</p>
+            <p class="mt-2 text-sm leading-6 text-foreground/72">
+              Intro met editorial hero, focusblokken en recent-artikels sectie.
+            </p>
+          </div>
+          <div class="soft-panel p-4">
+            <p class="font-heading text-sm font-semibold">Artikel preview</p>
+            <p class="mt-2 text-sm leading-6 text-foreground/72">
+              Titelblok, leesmetadata, rijke typografie en navigatie naar
+              vorige/volgende essay.
+            </p>
+          </div>
+        </div>
+      </aside>
     </section>
   </main>
   <Footer />
