@@ -33,10 +33,8 @@ const tags = getUniqueTags(allPosts);
   >
     {
       tags.length > 0 && (
-        <section class="mt-8 border-t border-border pt-6">
-          <p class="font-heading text-sm font-semibold tracking-[0.2em] text-accent uppercase">
-            Filter op thema
-          </p>
+        <section class="surface-soft mt-8 px-5 py-5 sm:px-6">
+          <p class="section-kicker">Filter op thema</p>
           <ul class="mt-4 flex flex-wrap gap-4">
             {tags.map(({ tag, tagName }) => (
               <Tag {tag} {tagName} size="sm" />
@@ -46,7 +44,7 @@ const tags = getUniqueTags(allPosts);
       )
     }
 
-    <ul class="mt-8">
+    <ul class="mt-8 grid gap-4 lg:grid-cols-2">
       {page.data.map(data => <Card {...data} />)}
     </ul>
   </Main>

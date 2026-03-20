@@ -18,7 +18,7 @@ const tags = getUniqueTags(posts);
     pageTitle="Thema's"
     pageDesc="Alle thema's die gebruikt worden in de artikels."
   >
-    <ul class="flex flex-wrap gap-6">
+    <ul class="mt-8 flex flex-wrap gap-3">
       {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} />)}
     </ul>
   </Main>

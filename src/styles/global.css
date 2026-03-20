@@ -12,6 +12,8 @@ html[data-theme="light"] {
   --accent-soft: #31b4da;
   --muted: #e7e2da;
   --border: #d7d0c6;
+  --surface: #fbf8f3;
+  --surface-strong: #f0ebe3;
 }
 
 html[data-theme="dark"] {
@@ -21,6 +23,8 @@ html[data-theme="dark"] {
   --accent-soft: #5dcbe9;
   --muted: #222222;
   --border: #343434;
+  --surface: #171717;
+  --surface-strong: #1f1f1f;
 }
 
 @theme inline {
@@ -33,6 +37,8 @@ html[data-theme="dark"] {
   --color-accent-soft: var(--accent-soft);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
 }
 
 @layer base {
@@ -44,21 +50,13 @@ html[data-theme="dark"] {
 
   html {
     @apply overflow-y-scroll scroll-smooth;
+    background-color: var(--color-background);
   }
 
   body {
     @apply flex min-h-svh flex-col bg-background font-body text-foreground antialiased selection:bg-accent selection:text-white;
-    background-image:
-      radial-gradient(
-        circle at top left,
-        rgb(83 112 217 / 0.08),
-        transparent 28%
-      ),
-      radial-gradient(
-        circle at top right,
-        rgb(49 180 218 / 0.08),
-        transparent 24%
-      );
+    background-color: var(--color-background);
+    background-image: none;
   }
 
   h1,
@@ -85,11 +83,19 @@ html[data-theme="dark"] {
 }
 
 @utility max-w-app {
-  @apply max-w-4xl;
+  @apply max-w-6xl;
 }
 
 @utility app-layout {
   @apply mx-auto w-full max-w-app px-5 sm:px-6;
+}
+
+@utility section-kicker {
+  @apply font-heading text-xs font-semibold tracking-[0.28em] text-accent/90 uppercase;
+}
+
+@utility section-shell {
+  @apply rounded-[2rem] border border-border/80 bg-surface shadow-[0_18px_50px_rgba(21,21,21,0.06)];
 }
 
 .active-nav {
@@ -97,7 +103,11 @@ html[data-theme="dark"] {
 }
 
 .surface {
-  @apply rounded-3xl border border-border bg-background/90 shadow-[0_10px_30px_rgba(21,21,21,0.04)];
+  @apply section-shell;
+}
+
+.surface-soft {
+  @apply rounded-[1.5rem] border border-border/70 bg-surface-strong/60;
 }
 
 :target {

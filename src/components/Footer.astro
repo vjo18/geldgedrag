@@ -15,22 +15,21 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
   class:list={["app-layout pb-8", { "mt-auto pt-12": !noMarginTop }, className]}
   {...attrs}
 >
-  <div
-    class="surface flex flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6"
-  >
-    <div>
-      <p
-        class="font-heading text-sm font-semibold tracking-[0.18em] text-accent uppercase"
-      >
-        Geld & gedrag
-      </p>
-      <p class="mt-2 max-w-xl text-sm leading-7 text-foreground/80">
-        Een rustig platform over financiële educatie, psychologie en filosofie.
-      </p>
-    </div>
-    <div class="flex flex-col items-start gap-3 sm:items-end">
-      <Socials />
-      <p class="text-sm text-foreground/70">© {currentYear} Geld & gedrag.</p>
+  <div class="surface px-5 py-8 sm:px-8 sm:py-10">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+      <div>
+        <p class="section-kicker">Geld & gedrag</p>
+        <p
+          class="mt-4 max-w-2xl font-heading text-2xl font-semibold tracking-tight sm:text-3xl"
+        >
+          Een rustig platform over financiële educatie, psychologie en
+          filosofie.
+        </p>
+      </div>
+      <div class="flex flex-col items-start gap-4 lg:items-end">
+        <Socials />
+        <p class="text-sm text-foreground/70">© {currentYear} Geld & gedrag.</p>
+      </div>
     </div>
   </div>
 </footer>

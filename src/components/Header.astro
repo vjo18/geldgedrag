@@ -23,7 +23,7 @@ const isActive = (path: string) => {
 <a
   id="skip-to-content"
   href="#main-content"
-  class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
+  class="absolute start-16 -top-full z-50 bg-surface px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
 >
   Ga naar inhoud
 </a>
@@ -42,7 +42,7 @@ const isActive = (path: string) => {
 
       <button
         id="menu-btn"
-        class="focus-outline ms-auto flex p-2 sm:hidden"
+        class="surface-soft ms-auto flex rounded-full p-2.5 sm:hidden"
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="menu-items"
@@ -56,31 +56,33 @@ const isActive = (path: string) => {
       <ul
         id="menu-items"
         class:list={[
-          "mt-3 flex flex-col gap-2 font-heading text-sm font-medium sm:mt-0 sm:flex-row sm:items-center sm:gap-6 sm:text-base",
+          "surface-soft mt-3 flex flex-col gap-2 p-2 font-heading text-sm font-medium sm:mt-0 sm:flex-row sm:items-center sm:gap-2 sm:bg-transparent sm:p-0 sm:text-base sm:shadow-none",
           "hidden sm:flex",
         ]}
       >
-        <li>
-          <a
-            href={getBasePath("/posts")}
-            class:list={{ "active-nav": isActive("/posts") }}
-          >
-            Artikels
-          </a>
-        </li>
-        <li>
-          <a
-            href={getBasePath("/about")}
-            class:list={{ "active-nav": isActive("/about") }}
-          >
-            Over
-          </a>
-        </li>
+        {
+          [
+            [getBasePath("/posts"), "Artikels", isActive("/posts")],
+            [getBasePath("/about"), "Over", isActive("/about")],
+          ].map(([href, label, active]) => (
+            <li>
+              <a
+                href={href as string}
+                class:list={[
+                  "block rounded-full px-4 py-2 transition-colors hover:text-accent",
+                  { "bg-background text-accent shadow-sm": active },
+                ]}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
         <li class="flex items-center gap-2 pt-1 sm:pt-0">
           <LinkButton
             href={getBasePath("/search")}
             class:list={[
-              "focus-outline flex p-2 hover:text-accent",
+              "surface-soft flex rounded-full p-2.5 hover:text-accent",
               { "text-accent": isActive("/search") },
             ]}
             title="Zoeken"
@@ -93,7 +95,7 @@ const isActive = (path: string) => {
             SITE.lightAndDarkMode && (
               <button
                 id="theme-btn"
-                class="focus-outline relative flex size-10 items-center justify-center p-2 hover:text-accent"
+                class="surface-soft relative flex size-10 items-center justify-center rounded-full p-2 hover:text-accent"
                 title="Wissel tussen light en dark mode"
                 aria-label="light"
                 aria-live="polite"
