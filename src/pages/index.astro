@@ -20,15 +20,10 @@ const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
   <Header />
   <main id="main-content" class="app-layout pb-12">
     <section class="surface mt-6 px-6 py-10 sm:mt-8 sm:px-10 sm:py-14">
-      <p
-        class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-      >
-        Essayplatform over geld en menselijk gedrag
-      </p>
       <h1
-        class="mt-5 max-w-3xl font-heading text-4xl font-semibold tracking-tight sm:text-6xl"
+        class="max-w-4xl font-heading text-4xl font-semibold tracking-tight text-accent sm:text-6xl"
       >
-        Geld & gedrag
+        Begrijp geld. Begrijp jezelf. Begrijp de wereld.
       </h1>
       <div
         class="mt-8 max-w-3xl space-y-5 text-lg leading-9 text-foreground/88"
@@ -51,25 +46,37 @@ const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
         </p>
       </div>
 
-      <div class="mt-10 grid gap-4 sm:grid-cols-3">
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">
+      <div
+        class="mt-12 grid gap-8 border-y border-border/80 py-8 sm:grid-cols-3 sm:gap-10"
+      >
+        <div class="space-y-3">
+          <p
+            class="font-heading text-xs font-semibold tracking-[0.24em] text-accent uppercase"
+          >
             Financiële educatie
-          </h2>
-          <p class="mt-3 leading-7 text-foreground/78">
+          </p>
+          <p class="leading-7 text-foreground/78">
             Heldere uitleg over geld, koopkracht, inflatie en vermogen.
           </p>
         </div>
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">Psychologie</h2>
-          <p class="mt-3 leading-7 text-foreground/78">
+        <div class="space-y-3">
+          <p
+            class="font-heading text-xs font-semibold tracking-[0.24em] text-accent uppercase"
+          >
+            Psychologie
+          </p>
+          <p class="leading-7 text-foreground/78">
             Ontdek waarom emoties en impulsen je financiële keuzes sturen, en
             hoe je dat patroon doorbreekt.
           </p>
         </div>
-        <div class="rounded-2xl border border-border bg-muted/45 p-5">
-          <h2 class="font-heading text-lg font-semibold">Filosofie</h2>
-          <p class="mt-3 leading-7 text-foreground/78">
+        <div class="space-y-3">
+          <p
+            class="font-heading text-xs font-semibold tracking-[0.24em] text-accent uppercase"
+          >
+            Filosofie
+          </p>
+          <p class="leading-7 text-foreground/78">
             Reflecteer over wat geld betekent voor een goed leven, en hoe het
             een middel blijft in plaats van een doel.
           </p>
