@@ -18,13 +18,13 @@ interface Social {
 export const SOCIALS: Social[] = [
   {
     name: "Mail",
-    href: "mailto:hello@geldengedrag.be",
+    href: "mailto:joachim@geldgedrag.be",
     linkTitle: `Stuur een e-mail naar ${SITE.title}`,
     icon: IconMail,
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/joachim-vercouter/",
     linkTitle: `${SITE.title} op LinkedIn`,
     icon: IconLinkedin,
   },
