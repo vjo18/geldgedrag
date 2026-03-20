@@ -47,21 +47,7 @@ html[data-theme="dark"] {
   }
 
   body {
-    @apply flex min-h-svh flex-col font-body text-foreground antialiased selection:bg-accent selection:text-white;
-    background-color: var(--background);
-    background-image:
-      radial-gradient(
-        circle at top left,
-        rgb(83 112 217 / 0.08),
-        transparent 28%
-      ),
-      radial-gradient(
-        circle at top right,
-        rgb(49 180 218 / 0.08),
-        transparent 24%
-      );
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+    @apply flex min-h-svh flex-col bg-background font-body text-foreground antialiased selection:bg-accent selection:text-white;
   }
 
   h1,
