@@ -30,8 +30,6 @@ Dat is vreemd.
 
 Want weinig dingen hebben zoveel invloed op hoe ons leven eruitziet.
 
----
-
 ## Geld lijkt praktisch. Tot je beter kijkt
 
 Op het eerste gezicht is geld simpel.
@@ -54,8 +52,6 @@ Het is een systeem dat gedrag stuurt.
 
 (Daar gaan we later dieper op in wanneer we kijken naar hoe het monetair systeem economische beslissingen beïnvloedt.)
 
----
-
 ## De grootste impact van geld is onzichtbaar
 
 Je ziet geld niet werken wanneer alles goed gaat.
@@ -76,8 +72,6 @@ Voor hoe je leeft.
 
 (Daarom is geld uiteindelijk minder een rekenprobleem — en meer een gedragsprobleem.)
 
----
-
 ## Twee mensen, hetzelfde inkomen — totaal ander leven
 
 Geef twee mensen hetzelfde salaris
@@ -97,8 +91,6 @@ Ons geldverhaal begint zelden bij cijfers.
 Het begint bij wat we hebben gezien, geleerd en gevoeld.
 
 (Daar duiken we later dieper in wanneer we kijken naar hoe opvoeding en identiteit ons geldgedrag vormen.)
-
----
 
 ## Geld verandert hoe we naar de toekomst kijken
 
@@ -122,8 +114,6 @@ Dat heeft impact op alles:
 
 (Dit concept — tijdsvoorkeur — is één van de belangrijkste ideeën in alles wat met geld te maken heeft.)
 
----
-
 ## Het systeem stuurt ons — zonder dat we het beseffen
 
 We denken graag dat we controle hebben over onze financiële keuzes.
@@ -143,8 +133,6 @@ Het geldsysteem is geen achtergrond.
 Het is de context waarin al onze keuzes plaatsvinden.
 
 (Om dat te begrijpen, moeten we eerst begrijpen wat geld eigenlijk is — en waarom het bestaat.)
-
----
 
 ## Waarom financiële educatie vandaag belangrijker is dan ooit
 
@@ -170,8 +158,6 @@ Dat creëert een paradox:
 We leven in een financieel complexere wereld
 — met minder financiële educatie dan ooit nodig is.
 
----
-
 ## Ongelijkheid begint vaak bij begrip
 
 We denken dat ongelijkheid begint bij geld.
@@ -190,8 +176,6 @@ Maar omdat het kader ontbreekt.
 
 Financiële kennis is geen garantie op rijkdom.
 Maar het is wel een bescherming tegen kwetsbaarheid.
-
----
 
 ## Geld is geen technisch probleem
 
@@ -213,8 +197,6 @@ Maar omdat we mens zijn.
 
 (Daarom is de psychologie van geld minstens zo belangrijk als de kennis ervan.)
 
----
-
 ## Misschien kijken we naar geld op de verkeerde manier
 
 We behandelen geld alsof het een tool is.
@@ -231,8 +213,6 @@ Over de ruimte om keuzes te maken.
 Over de mogelijkheid om je leven vorm te geven.
 
 (Wat financiële vrijheid echt betekent, is iets wat we vaak verkeerd begrijpen.)
-
----
 
 ## Het echte probleem
 
@@ -253,8 +233,6 @@ Maar zelden:
 En zolang dat ontbreekt, blijven we reageren
 in plaats van begrijpen.
 
----
-
 ## Waar deze blog over gaat
 
 Deze blog is geen handleiding.
@@ -271,8 +249,6 @@ Want wie geld begrijpt, begrijpt zelden alleen geld.
 Die begrijpt:
 waarom mensen doen wat ze doen
 — en waarom dat vaak logisch is, zelfs wanneer het fout lijkt.
-
----
 
 ## Misschien begint het hier
 
