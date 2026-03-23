@@ -17,13 +17,8 @@ const { frontmatter } = Astro.props;
   <Header />
   <main id="main-content" class="app-layout pb-12">
     <section id="about" class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
-      <p
-        class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-      >
-        Over deze website
-      </p>
-      <div class="app-prose mt-5 prose-img:border-0">
-        <h1 class="font-heading text-3xl tracking-tight sm:text-5xl">
+      <div class="app-prose prose-img:border-0">
+        <h1 class="font-heading text-4xl font-semibold tracking-tight text-accent">
           {frontmatter.title}
         </h1>
         <slot />
