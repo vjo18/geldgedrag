@@ -113,18 +113,26 @@ Dat is hoe we keuzes maken tussen vandaag en morgen.
 
 Kies je voor een kleine beloning nu,
 of een grotere later?
-Dat lijkt iets persoonlijks. Een kwestie van discipline.
-Maar de omgeving speelt mee. En dus ook geld.
+Dat lijkt iets persoonlijks.
+
+Een kwestie van discipline.
+Maar de omgeving speelt mee.
+
+En dus ook geld.
 
 Wanneer geld stabiel voelt, wordt de toekomst tastbaar.
-Dan wordt plannen logisch. En wachten zinvol.
+Dan wordt plannen logisch.
+
+En wachten zinvol.
 
 Maar wanneer geld onzeker wordt, gebeurt er iets anders.
 Je wereld wordt kleiner.
 Je horizon korter.
 De focus verschuift naar wat nu nodig is.
 
-Onderzoek toont dat financiële onzekerheid samenhangt met een sterkere voorkeur voor onmiddellijke beloning. Niet omdat mensen ongedisciplineerd zijn, maar omdat de toekomst minder zeker voelt.
+Onderzoek toont dat financiële onzekerheid samenhangt met een sterkere voorkeur voor onmiddellijke beloning.
+
+Niet omdat mensen ongedisciplineerd zijn, maar omdat de toekomst minder zeker voelt.
 
 Zo verschuift gedrag.
 Niet alleen individueel, maar ook collectief.
@@ -173,7 +181,9 @@ Over wie meer heeft en wie minder.
 Over hoe we dat verschil kunnen verkleinen.
 We denken dat we ongelijkheid kunnen corrigeren met geld.
 
-Maar ongelijkheid ontstaat niet alleen door geld. Ze begint eerder.
+Maar ongelijkheid ontstaat niet alleen door geld.
+
+Ze begint eerder.
 Ze ontstaat door toegang tot kennis, inzicht en het systeem zelf.
 Want niet iedereen beweegt op dezelfde manier binnen dat systeem.
 Niet iedereen ziet dezelfde mogelijkheden.
