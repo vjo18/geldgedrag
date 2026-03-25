@@ -90,12 +90,11 @@ Voor hoe je spaart.
 Voor hoe je plant.
 Voor hoe je leeft.
 
-Geld blijkt minder een rekenprobleem
-en meer een gedragsprobleem.
+Geld blijkt minder een rekenprobleem en meer een gedragsprobleem.
 
 Maar mensen reageren daar niet hetzelfde op.
 
-## Gelijk inkomen, verschillende levens
+## Gelijk inkomen - verschillende levens
 
 Geef twee mensen hetzelfde loon  
 en je krijgt twee totaal verschillende uitkomsten.  
