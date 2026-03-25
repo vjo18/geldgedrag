@@ -9,10 +9,8 @@ tags:
   - psychologie
   - filosofie
   - gedrag
-description: Geld beïnvloedt niet alleen onze bankrekening, maar ook ons gedrag, welzijn en levenskeuzes. Ontdek waarom geld begrijpen essentieel is in de wereld van vandaag.
+description: Geld beïnvloedt niet alleen wat we doen, maar ook hoe we denken en kiezen. Ontdek waarom geld begrijpen essentieel is in een wereld die steeds meer van ons vraagt.
 ---
-
-Waarom geld begrijpen belangrijker is dan we denken
 
 ## Geld is overal en toch begrijpen we het nauwelijks
 
