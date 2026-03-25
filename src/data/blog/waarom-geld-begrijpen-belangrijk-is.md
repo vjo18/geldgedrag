@@ -59,7 +59,7 @@ Want weinig dingen hebben zoveel invloed op hoe ons leven eruitziet.
 
 En toch zien we zelden hoe die invloed precies werkt.
 
-## Geld stuurt ons gedrag
+## Geld is niet neutraal
 
 Op het eerste gezicht is geld simpel.  
 
