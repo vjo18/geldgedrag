@@ -31,11 +31,10 @@ Op school is geld zelden een samenhangend verhaal.
 Geen kader dat uitlegt hoe het systeem werkt.  
 Geen taal om te begrijpen wat het met ons doet.  
 
-En toch worden we geacht keuzes te maken  
-die levenslang doorwerken.  
+En toch worden we geacht keuzes te maken die levenslang doorwerken.  
 
-Jongeren leren hoe ze met geld moeten omgaan —  
-hoe ze betalen, sparen, consumeren —  
+Jongeren leren wel hoe ze met geld moeten omgaan,  
+hoe ze betalen, sparen, consumeren,  
 maar zelden wat geld eigenlijk is,  
 of hoe het systeem werkt waar ze deel van uitmaken.  
 
@@ -204,7 +203,7 @@ We praten over ongelijkheid.
 Over wie meer heeft en wie minder.  
 Over hoe we dat verschil kunnen verkleinen.  
 
-We denken dat we ongelijkheid kunnen corrigeren met geldbeleid.  
+We denken dat we ongelijkheid kunnen corrigeren met de herverdeling van geld.  
 
 Maar ongelijkheid ontstaat niet alleen door geld.  
 
