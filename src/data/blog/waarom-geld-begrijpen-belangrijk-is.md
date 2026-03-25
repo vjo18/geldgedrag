@@ -89,9 +89,7 @@ Voor hoe je spaart.
 Voor hoe je plant.  
 Voor hoe je leeft.  
 
-Geld blijkt minder een rekenprobleem en meer een gedragsprobleem.
-
-Maar mensen reageren daar niet hetzelfde op.
+Maar mensen reageren ook verschillend op prikkels.
 
 ## Gelijk inkomen - verschillende levens
 
@@ -116,7 +114,7 @@ Het is een uitdrukking van wie we zijn geworden in relatie tot geld.
 En dat begint zelden bij cijfers.  
 Maar bij wat we hebben gezien, geleerd en gevoeld.
 
-En dat bepaalt mee hoe zeker de toekomst voor ons voelt.
+En dat werkt door in hoe we keuzes maken, vandaag én morgen.
 
 ## Geld verandert hoe we naar de toekomst kijken
 
