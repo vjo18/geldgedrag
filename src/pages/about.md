@@ -14,9 +14,9 @@ In een maatschappij die sterk draait rond economische efficiëntie en competitie
 
 Veel mensen werken hard, proberen te sparen en toch voelt financiële vooruitgang vaak moeilijker dan verwacht. Dat leidt gemakkelijk tot zelfkritiek:
 
-> “Ik doe iets verkeerd.”  
+> Ik doe iets verkeerd.”  
 > “Ik ben niet slim genoeg met geld.”  
-> “Ik zou verder moeten staan.”
+> “Ik zou verder moeten staan.
 
 Maar wat als we een deel van het verhaal missen?
 
