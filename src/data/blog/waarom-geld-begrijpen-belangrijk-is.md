@@ -97,7 +97,7 @@ Voor hoe je leeft.
 
 Geld blijkt minder een rekenprobleem en meer een gedragsprobleem.
 
-## Twee mensen, verschillend leven
+## Twee mensen, verschillende levens
 
 Geef twee mensen hetzelfde loon  
 en je krijgt twee totaal verschillende uitkomsten.  
@@ -111,6 +111,7 @@ Niet door het bedrag.
 
 Maar door hoe iemand naar geld kijkt.  
 Door wat geld voor iemand betekent.  
+
 Door identiteit.  
 
 Ons geldgedrag is geen reeks losse keuzes.  
@@ -185,11 +186,7 @@ Maar ook in grotere keuzes.
 Wanneer we het gevoel hebben dat we “er klaar voor zijn”.  
 Om samen te wonen.  
 Om te trouwen.  
-Om een gezin te starten.  
-
-Het monetaire systeem bepaalt waarom sparen vroeger werkte en vandaag minder.  
-Waarom activa zoals aandelen en vastgoed sneller stijgen dan lonen.  
-Waarom steeds meer mensen het gevoel hebben achterop te raken.  
+Om een gezin te starten.    
 
 En dus ook waarom sommige keuzes worden uitgesteld.  
 Of versneld.  
@@ -198,13 +195,16 @@ Of helemaal niet gemaakt.
 Het geldsysteem is geen achtergrond.  
 Het is de context waarin al onze keuzes plaatsvinden.
 
+Het bepaalt waarom sparen vroeger werkte en vandaag minder.   
+Waarom steeds meer mensen het gevoel hebben achterop te raken.
+
 ## Ongelijkheid ontstaat niet waar we kijken
 
 We praten over ongelijkheid.  
 Over wie meer heeft en wie minder.  
 Over hoe we dat verschil kunnen verkleinen.  
 
-We denken dat we ongelijkheid kunnen corrigeren met geld.  
+We denken dat we ongelijkheid kunnen corrigeren met geldbeleid.  
 
 Maar ongelijkheid ontstaat niet alleen door geld.  
 
