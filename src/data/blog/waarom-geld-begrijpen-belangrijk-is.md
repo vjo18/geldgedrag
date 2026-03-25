@@ -72,23 +72,22 @@ Maar dat is slechts de oppervlakte.
 Want geld bepaalt niet alleen wat we doen.  
 Het bepaalt ook hoe we denken.  
 
-Het beïnvloedt welke keuzes we durven maken
+Het beïnvloedt welke keuzes we durven maken  
 en dat gebeurt meestal onzichtbaar.
 
-Je merkt het niet wanneer alles goed gaat.
+Je merkt het niet wanneer alles goed gaat.  
 Zoals bij zuurstof.
 
-Maar zodra het onder druk komt te staan,
-verandert alles.
+Maar zodra het onder druk komt te staan, verandert alles.
 
-Niet omdat mensen irrationeel zijn.
+Niet omdat mensen irrationeel zijn.  
 Maar omdat hun aandacht wordt opgeëist.
 
 Dat heeft gevolgen.
 
-Voor hoe je spaart.
-Voor hoe je plant.
-Voor hoe je leeft.
+Voor hoe je spaart.  
+Voor hoe je plant.  
+Voor hoe je leeft.  
 
 Geld blijkt minder een rekenprobleem en meer een gedragsprobleem.
 
