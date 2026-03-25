@@ -1,6 +1,6 @@
 ---
 author: Geld & gedrag
-pubDatetime: 2026-03-19T10:00:00Z
+pubDatetime: 2026-03-25T10:00:00Z
 title: Waarom geld begrijpen belangrijker is dan we denken
 featured: true
 draft: false
@@ -9,7 +9,7 @@ tags:
   - psychologie
   - filosofie
   - gedrag
-description: Definitieve versie van het artikel over waarom geld begrijpen essentieel is, en hoe het monetair systeem gedrag, keuzes en toekomstperspectief beïnvloedt.
+description: Geld beïnvloedt niet alleen onze bankrekening, maar ook ons gedrag, welzijn en levenskeuzes. Ontdek waarom geld begrijpen essentieel is in de wereld van vandaag.
 ---
 
 Waarom geld begrijpen belangrijker is dan we denken
