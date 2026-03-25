@@ -57,7 +57,9 @@ Dat is vreemd.
 
 Want weinig dingen hebben zoveel invloed op hoe ons leven eruitziet.
 
-## Geld is niet neutraal
+En toch zien we zelden hoe die invloed precies werkt.
+
+## Geld stuurt ons gedrag
 
 Op het eerste gezicht is geld simpel.  
 
@@ -70,33 +72,30 @@ Maar dat is slechts de oppervlakte.
 Want geld bepaalt niet alleen wat we doen.  
 Het bepaalt ook hoe we denken.  
 
-Het beïnvloedt welke keuzes we durven maken.  
+Het beïnvloedt welke keuzes we durven maken
+en dat gebeurt meestal onzichtbaar.
 
-Geld is dus geen neutraal instrument.  
-Het maakt deel uit van een monetair systeem dat beslissingen en gedrag beïnvloedt.
+Je merkt het niet wanneer alles goed gaat.
+Zoals bij zuurstof.
 
-## De grootste impact van geld is onzichtbaar
+Maar zodra het onder druk komt te staan,
+verandert alles.
 
-Je ziet geld niet werken wanneer alles goed gaat.  
-Zoals zuurstof.  
+Niet omdat mensen irrationeel zijn.
+Maar omdat hun aandacht wordt opgeëist.
 
-Maar zodra het onder druk komt te staan, verandert alles.  
+Dat heeft gevolgen.
 
-Niet alleen je uitgaven.  
-Maar je denken.  
+Voor hoe je spaart.
+Voor hoe je plant.
+Voor hoe je leeft.
 
-Niet omdat mensen irrationeel zijn.  
-Maar omdat hun aandacht wordt opgeëist.  
+Geld blijkt minder een rekenprobleem
+en meer een gedragsprobleem.
 
-Dat heeft gevolgen.  
+Maar mensen reageren daar niet hetzelfde op.
 
-Voor hoe je spaart.  
-Voor hoe je plant.  
-Voor hoe je leeft.  
-
-Geld blijkt minder een rekenprobleem en meer een gedragsprobleem.
-
-## Twee mensen, verschillende levens
+## Gelijk inkomen, verschillende levens
 
 Geef twee mensen hetzelfde loon  
 en je krijgt twee totaal verschillende uitkomsten.  
@@ -118,6 +117,8 @@ Het is een uitdrukking van wie we zijn geworden in relatie tot geld.
 
 En dat begint zelden bij cijfers.  
 Maar bij wat we hebben gezien, geleerd en gevoeld.
+
+En dat bepaalt mee hoe zeker de toekomst voor ons voelt.
 
 ## Geld verandert hoe we naar de toekomst kijken
 
@@ -161,7 +162,8 @@ Dat heeft impact op alles:
 - gezondheid  
 - relaties  
 
-Dit concept — tijdsvoorkeur — is één van de belangrijkste ideeën in alles wat met geld te maken heeft.
+Geld is dus geen neutraal instrument.  
+Het maakt deel uit van het monetair systeem waarin we leven.
 
 ## Het systeem stuurt ons gedrag
 
