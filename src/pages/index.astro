@@ -10,7 +10,9 @@ import { SITE } from "@/config";
 import { getBasePath } from "@/utils/getBasePath";
 
 const posts = await getCollection("blog", ({ data }) => !data.draft);
-const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
+const startHerePosts = getSortedPosts(posts)
+  .filter(({ data }) => data.featured)
+  .slice(0, SITE.postPerIndex);
 ---
 
 <Layout
@@ -94,7 +96,7 @@ const recentPosts = getSortedPosts(posts).slice(0, SITE.postPerIndex);
         </LinkButton>
       </div>
       <ul class="mt-6">
-        {recentPosts.map(data => <Card variant="h3" {...data} />)}
+        {startHerePosts.map(data => <Card variant="h3" {...data} />)}
       </ul>
     </section>
   </main>
