@@ -5,8 +5,8 @@ title: De 3 functies van geld
 featured: false
 draft: false
 tags:
-  - Wat is geld?
-description: Geld lijkt complex, maar rust op drie functies: ruilmiddel, rekeneenheid en opslag van waarde. Als één functie hapert, voel je dat in gedrag en maatschappij.
+  - "Wat is geld?"
+description: "Geld lijkt complex, maar rust op drie functies: ruilmiddel, rekeneenheid en opslag van waarde. Als één functie hapert, voel je dat in gedrag en maatschappij."
 ---
 
 Geld voelt vaak complex.  
