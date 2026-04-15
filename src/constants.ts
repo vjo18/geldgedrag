@@ -50,6 +50,12 @@ export const SHARE_LINKS: Social[] = [
     icon: IconBrandX,
   },
   {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/sharing/share-offsite/?url=",
+    linkTitle: `Deel dit artikel op LinkedIn`,
+    icon: IconLinkedin,
+  },
+  {
     name: "Telegram",
     href: "https://t.me/share/url?url=",
     linkTitle: `Deel dit artikel via Telegram`,
