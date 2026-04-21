@@ -56,7 +56,7 @@ Je wil iets eenvoudigs.
 Iets dat werkt.  
 Iets waar iedereen op kan vertrouwen.
 
-Doorheen de geschiedenis zien we dat mensen telkens bij dezelfde eigenschappen uitkomen.  
+Doorheen [de geschiedenis van geld](/posts/een-korte-geschiedenis-van-geld/) zien we dat mensen telkens bij dezelfde eigenschappen uitkomen.  
 
 Niet omdat iemand dat oplegt.  
 Maar omdat het anders gewoon niet werkt.
@@ -245,3 +245,4 @@ Maar door een systeem dat minder goed werkt.
 
 Begrijpen wat “goed geld” is,  
 is eigenlijk begrijpen waarom mensen doen wat ze doen.
+

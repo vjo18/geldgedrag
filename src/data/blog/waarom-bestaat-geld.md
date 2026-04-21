@@ -63,7 +63,7 @@ Zonder oplossing blijft iedereen vastzitten in zijn eigen kleine cirkel.
 
 Geld is niet bedacht in een vergaderzaal.  
 
-Het is ontstaan.  
+Het is [ontstaan in een lange evolutie](/posts/een-korte-geschiedenis-van-geld/).  
 
 Langzaam.  
 Onzichtbaar.  
@@ -155,3 +155,4 @@ heeft ook geld bijwerkingen.
 
 En die begrijpen we vaak veel minder goed  
 dan het probleem dat het oplost.
+
