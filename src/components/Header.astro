@@ -94,6 +94,14 @@ const isActive = (path: string) => {
             Over
           </a>
         </li>
+        <li>
+          <a
+            href={getBasePath("/geldsysteem")}
+            class:list={{ "active-nav": isActive("/geldsysteem") }}
+          >
+            Geldsysteem
+          </a>
+        </li>
         <li class="flex items-center gap-2 pt-1 sm:pt-0">
           <LinkButton
             href={getBasePath("/search")}
