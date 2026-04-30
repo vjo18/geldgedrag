@@ -7,107 +7,118 @@ import { SITE } from "@/config";
 
 <Layout
   title={`${SITE.title} | Geldsysteem`}
-  description="Een visuele uitleg van het schuldgedreven geldsysteem, het Cantillon-effect en de zichzelf versterkende cyclus."
+  description="Visuele kaart van geldontwaarding: Cantillon-effect, schuldgedreven cyclus en maatschappelijke gevolgen."
 >
   <Header />
+  <main id="main-content" class="app-layout pb-16">
+    <section class="surface mt-6 px-5 py-10 sm:px-10">
+      <div class="mx-auto max-w-5xl">
+        <p class="text-center font-heading text-[11px] font-semibold tracking-[0.22em] text-accent uppercase">Geldgedrag.be — educatieve infographic</p>
+        <h1 class="mt-4 text-center font-heading text-4xl font-semibold leading-tight sm:text-5xl">
+          Hoe geldontwaarding
+          <span class="block text-accent">onze samenleving ondermijnt</span>
+        </h1>
+        <p class="article-copy mx-auto mt-4 max-w-3xl text-center text-foreground/70">
+          Van geld bijdrukken tot gezinsbreuk, volksgezondheid en politieke instabiliteit — de verborgen keten van oorzaak en gevolg.
+        </p>
 
-  <main id="main-content" class="app-layout pb-14">
-    <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-10">
-      <p class="font-heading text-xs tracking-[0.22em] text-accent uppercase">
-        Educatieve visual
-      </p>
-      <h1 class="mt-3 font-heading text-4xl font-semibold tracking-tight">
-        Het schuldgedreven <span class="text-accent">geldsysteem</span>
-      </h1>
-      <p class="article-copy mt-5 max-w-3xl text-foreground/80">
-        Deze pagina toont hoe nieuw geld via schuld ontstaat, waarom dat niet
-        neutraal verspreidt, en hoe het systeem zichzelf versterkt. De visual
-        combineert het Cantillon-effect met de schuldcyclus.
-      </p>
-    </section>
+        <div class="mx-auto mt-5 h-[2px] w-14 bg-accent/70"></div>
 
-    <section class="surface mt-8 px-6 py-8 sm:px-10">
-      <h2 class="font-heading text-2xl font-semibold">Kerncyclus</h2>
-      <div class="mt-6 grid gap-4 sm:grid-cols-5">
-        <div class="rounded-2xl border border-border bg-card p-4">1. Kredietexpansie</div>
-        <div class="rounded-2xl border border-border bg-card p-4">2. Nieuwe bestedingen</div>
-        <div class="rounded-2xl border border-border bg-card p-4">3. Prijsstijgingen & druk</div>
-        <div class="rounded-2xl border border-border bg-card p-4">4. Schuldstress</div>
-        <div class="rounded-2xl border border-accent/40 bg-accent/5 p-4">5. Herfinanciering met nieuw geld</div>
-      </div>
-      <p class="article-copy mt-5 text-foreground/80">
-        Om de bestaande schulden draaglijk te houden, wordt de cyclus vaak
-        opnieuw gevoed met extra liquiditeit. Daardoor herhaalt het patroon zich
-        structureel.
-      </p>
-    </section>
-
-    <section class="surface mt-8 px-6 py-8 sm:px-10">
-      <h2 class="font-heading text-2xl font-semibold">Cantillon-effect: ongelijke verspreiding</h2>
-      <p class="article-copy mt-4 text-foreground/80">
-        Nieuw geld bereikt niet iedereen tegelijk. Vroege ontvangers kunnen zich
-        eerder positioneren; late ontvangers krijgen vooral hogere prijzen.
-      </p>
-
-      <div class="mt-6 grid gap-4 sm:grid-cols-4">
-        <div class="rounded-2xl border border-border bg-card p-4">
-          <p class="font-heading text-xs tracking-[0.2em] text-foreground/60 uppercase">Eerste ontvanger</p>
-          <p class="mt-2 font-medium">Overheid & centrale bank</p>
-        </div>
-        <div class="rounded-2xl border border-border bg-card p-4">
-          <p class="font-heading text-xs tracking-[0.2em] text-foreground/60 uppercase">Tweede ontvanger</p>
-          <p class="mt-2 font-medium">Banken & financiële sector</p>
-        </div>
-        <div class="rounded-2xl border border-accent/40 bg-accent/5 p-4">
-          <p class="font-heading text-xs tracking-[0.2em] text-accent uppercase">Derde ontvanger</p>
-          <p class="mt-2 font-medium">Bedrijven & aannemers</p>
-        </div>
-        <div class="rounded-2xl border border-border bg-card p-4">
-          <p class="font-heading text-xs tracking-[0.2em] text-foreground/60 uppercase">Laatste ontvanger</p>
-          <p class="mt-2 font-medium">Loonwerkers & spaarders</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="surface mt-8 px-6 py-8 sm:px-10">
-      <h2 class="font-heading text-2xl font-semibold">Drie kanalen vanuit de derde ontvanger</h2>
-      <p class="article-copy mt-4 max-w-3xl text-foreground/80">
-        Vanuit de <strong>derde ontvanger</strong> ontstaan twee reële uitlopers
-        (kanaal 1 en 2) door verstoorde prijssignalen en stijgende inputkosten.
-        Vanuit de <strong>tweede ontvanger</strong> loopt kanaal 3: stijgende
-        activaprijzen.
-      </p>
-
-      <div class="mt-6 grid gap-4 sm:grid-cols-3">
-        <article class="rounded-2xl border border-[#e98a8a] bg-card p-5">
-          <p class="font-heading text-xs tracking-[0.22em] text-[#cc5d5d] uppercase">Kanaal 1</p>
-          <h3 class="mt-2 font-heading text-lg">Verstoring van prijssignalen</h3>
-          <ul class="article-copy mt-3 list-disc space-y-1 ps-5 text-sm text-foreground/80">
-            <li>Kapitaal gaat naar bevoordeelde sectoren i.p.v. productieve noden.</li>
-            <li>Bedrijven plannen op vertekende marktsignalen.</li>
-          </ul>
+        <article class="mx-auto mt-10 max-w-2xl rounded-2xl bg-black px-6 py-8 text-center text-white">
+          <h2 class="font-heading text-2xl font-semibold">De gelddrukker</h2>
+          <p class="article-copy mt-3 text-sm text-white/80">Overheid vergroot de geldhoeveelheid om begrotingstekorten te financieren — zonder belastingen te verhogen.</p>
         </article>
 
-        <article class="rounded-2xl border border-[#e1b173] bg-card p-5">
-          <p class="font-heading text-xs tracking-[0.22em] text-[#b37a35] uppercase">Kanaal 2</p>
-          <h3 class="mt-2 font-heading text-lg">Stijgende inputkosten</h3>
-          <ul class="article-copy mt-3 list-disc space-y-1 ps-5 text-sm text-foreground/80">
-            <li>Duurder krediet, energie, logistiek en lonen onder druk.</li>
-            <li>Doorrekening naar consumenten: prijsinflatie en krimpkwaliteit.</li>
-          </ul>
+        <p class="my-4 text-center text-foreground/40">↓</p>
+
+        <article class="mx-auto max-w-2xl rounded-2xl border border-accent/40 bg-accent/5 px-6 py-6 text-center">
+          <h3 class="font-heading text-lg font-semibold text-accent">Muntontwaarding (valutadebasering)</h3>
+          <p class="article-copy mt-2 text-sm text-foreground/75">Meer geld in omloop zonder meer goederen → koopkracht daalt voor iedereen.</p>
         </article>
 
-        <article class="rounded-2xl border border-[#72aac7] bg-card p-5">
-          <p class="font-heading text-xs tracking-[0.22em] text-[#2d7fa6] uppercase">Kanaal 3</p>
-          <h3 class="mt-2 font-heading text-lg">Activaprijsinflatie</h3>
-          <ul class="article-copy mt-3 list-disc space-y-1 ps-5 text-sm text-foreground/80">
-            <li>Vroeg geld zoekt rendement in vastgoed en financiële activa.</li>
-            <li>Vermogensongelijkheid groeit, starters raken verder achterop.</li>
-          </ul>
+        <p class="my-4 text-center text-foreground/40">↓</p>
+
+        <article class="rounded-3xl border border-border bg-card p-6 sm:p-8">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="rounded-full bg-black px-4 py-1 font-heading text-xs tracking-[0.18em] text-white uppercase">Cantillon-effect</span>
+            <h3 class="font-heading text-2xl font-semibold">Nieuw geld bereikt niet iedereen tegelijk</h3>
+          </div>
+          <p class="article-copy mt-2 text-foreground/70">Wie het nieuwe geld eerst ontvangt, profiteert. Wie het als laatste krijgt, verliest koopkracht.</p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-4">
+            <div class="rounded-2xl border border-border bg-background p-4">
+              <p class="text-xl">①</p><p class="mt-1 font-semibold">Overheid & centrale bank</p><p class="article-copy mt-2 text-sm text-foreground/70">Nieuwe geld wordt gecreëerd voor uitgaven en reddingsoperaties.</p><p class="mt-2 text-xs font-semibold tracking-[0.16em] uppercase">Eerste ontvanger</p>
+            </div>
+            <div class="rounded-2xl border border-[#8fa8ff] bg-[#8fa8ff]/10 p-4">
+              <p class="text-xl text-[#5f78d7]">②</p><p class="mt-1 font-semibold">Banken & financiële sector</p><p class="article-copy mt-2 text-sm text-foreground/70">Krediet vloeit via hypotheek- en activamarkten naar vroege spelers.</p><p class="mt-2 text-xs font-semibold tracking-[0.16em] text-[#5f78d7] uppercase">Tweede ontvanger</p>
+            </div>
+            <div class="rounded-2xl border border-[#e2ae6f] bg-[#e2ae6f]/10 p-4">
+              <p class="text-xl text-[#bd7f37]">③</p><p class="mt-1 font-semibold">Grote bedrijven & aannemers</p><p class="article-copy mt-2 text-sm text-foreground/70">Bedrijven reageren op verstoorde prijsinformatie en duurder wordende input.</p><p class="mt-2 text-xs font-semibold tracking-[0.16em] text-[#bd7f37] uppercase">Derde ontvanger</p>
+            </div>
+            <div class="rounded-2xl border border-[#e4a4a4] bg-[#e4a4a4]/10 p-4">
+              <p class="text-xl text-[#c96969]">④</p><p class="mt-1 font-semibold">Gewone burgers & loonwerkers</p><p class="article-copy mt-2 text-sm text-foreground/70">Lonen volgen trager dan prijzen. Koopkrachtverlies komt als laatste aan.</p><p class="mt-2 text-xs font-semibold tracking-[0.16em] text-[#c96969] uppercase">Laatste ontvanger</p>
+            </div>
+          </div>
         </article>
+
+        <div class="my-5 text-center text-foreground/40">↓</div>
+
+        <section>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <article class="rounded-2xl border border-[#de8686] bg-card p-4">
+              <p class="font-heading text-xs tracking-[0.22em] text-[#cb5f5f] uppercase">Kanaal 1</p>
+              <h4 class="mt-1 font-heading text-lg font-semibold">Verstoring van prijssignalen</h4>
+              <ul class="article-copy mt-3 space-y-2 text-sm text-foreground/75"><li>Verkeerde investeringen naar door krediet bevoordeelde sectoren.</li><li>Kapitaalverspilling en lagere productiviteit op lange termijn.</li></ul>
+            </article>
+            <article class="rounded-2xl border border-[#d9ad70] bg-card p-4">
+              <p class="font-heading text-xs tracking-[0.22em] text-[#b27a36] uppercase">Kanaal 2</p>
+              <h4 class="mt-1 font-heading text-lg font-semibold">Hogere inputkosten</h4>
+              <ul class="article-copy mt-3 space-y-2 text-sm text-foreground/75"><li>Bedrijven krijgen tegelijk verstoring én stijgende kosten.</li><li>Doorrekening: prijsstijgingen, shrinkflatie en jobdruk.</li></ul>
+            </article>
+            <article class="rounded-2xl border border-[#79aac2] bg-card p-4">
+              <p class="font-heading text-xs tracking-[0.22em] text-[#2b7da2] uppercase">Kanaal 3</p>
+              <h4 class="mt-1 font-heading text-lg font-semibold">Activaprijsinflatie</h4>
+              <ul class="article-copy mt-3 space-y-2 text-sm text-foreground/75"><li>Deze uitloper komt vanuit de tweede ontvanger (financiële sector).</li><li>Stijgende huizen- en activaprijzen vergroten ongelijkheid.</li></ul>
+            </article>
+          </div>
+        </section>
+
+        <div class="my-5 text-center text-foreground/40">↓</div>
+
+        <article class="mx-auto max-w-3xl rounded-2xl border border-cyan-400/40 bg-cyan-100/30 px-6 py-5 text-center dark:bg-cyan-500/10">
+          <h4 class="font-heading text-xl font-semibold">Verminderde koopkracht voor de gewone burger</h4>
+          <p class="article-copy mt-2 text-sm text-foreground/75">Het dagelijks leven wordt duurder — ondanks hetzelfde inkomen.</p>
+        </article>
+
+        <div class="my-5 text-center text-foreground/40">↓</div>
+
+        <section>
+          <h2 class="text-center font-heading text-4xl font-semibold">De maatschappelijke gevolgen: <span class="text-accent">financieel, psychologisch & sociaal</span></h2>
+          <p class="article-copy mt-2 text-center text-foreground/70">Zes domeinen waarin geldontwaarding het dagelijks leven beïnvloedt.</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#b07d2f]">Financieel</h3><p class="mt-2 font-semibold">Economische kwetsbaarheid</p></article>
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#7a68b6]">Psychologisch</h3><p class="mt-2 font-semibold">Mentale gezondheidscrisis</p></article>
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#2a8fa2]">Gezondheid</h3><p class="mt-2 font-semibold">Volksgezondheidscrisis</p></article>
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#a59039]">Gezin & demografie</h3><p class="mt-2 font-semibold">Hoge woon- en gezinsdruk</p></article>
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#aa5c8d]">Sociaal</h3><p class="mt-2 font-semibold">Maatschappelijke fragmentatie</p></article>
+            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#c86a6a]">Politiek</h3><p class="mt-2 font-semibold">Politieke instabiliteit</p></article>
+          </div>
+        </section>
+
+        <section class="mt-10 rounded-3xl bg-black px-6 py-8 text-white">
+          <h2 class="text-center font-heading text-3xl font-semibold">De <span class="text-cyan-400">zichzelf versterkende spiraal</span></h2>
+          <p class="article-copy mt-2 text-center text-white/75">De overheid lost de bijwerkingen op met hetzelfde middel dat ze veroorzaakte.</p>
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm">
+            <span class="rounded-lg border border-blue-400/50 bg-blue-500/20 px-3 py-2">Nog meer geld drukken</span>
+            <span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Cantillon-herverdeling</span>
+            <span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Grotere overheid</span>
+            <span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Meer crises</span>
+            <span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Meer schulden</span>
+            <span>→</span><span class="rounded-lg border border-blue-400/50 bg-blue-500/20 px-3 py-2">Nog meer drukken</span>
+          </div>
+        </section>
       </div>
     </section>
   </main>
-
   <Footer />
 </Layout>
