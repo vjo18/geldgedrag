@@ -5,77 +5,60 @@ import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
 ---
 
-<Layout title={`${SITE.title} | Geldsysteem`} description="Volledige infographic over geldontwaarding, Cantillon-effect en maatschappelijke gevolgen.">
+<Layout title={`${SITE.title} | Geldsysteem`} description="Volledige infographic over geldontwaarding en maatschappelijke impact.">
   <Header />
   <main id="main-content" class="app-layout pb-16">
-    <section class="surface mt-6 px-5 py-10 sm:px-10">
-      <div class="mx-auto max-w-5xl space-y-6">
-        <p class="text-center font-heading text-[11px] font-semibold tracking-[0.22em] text-accent uppercase">Geldgedrag.be — educatieve infographic</p>
-        <h1 class="text-center font-heading text-4xl font-semibold sm:text-5xl">Hoe geldontwaarding <span class="block text-accent">onze samenleving ondermijnt</span></h1>
-        <p class="article-copy mx-auto max-w-3xl text-center text-foreground/70">Van geld bijdrukken tot gezinsbreuk, volksgezondheid en politieke instabiliteit — de verborgen keten van oorzaak en gevolg.</p>
+    <section class="surface mt-6">
+      <div class="page">
+        <header class="header">
+          <span class="label">geldgedrag.be — educatieve infographic</span>
+          <h1>Hoe geldontwaarding<br /><em>onze samenleving ondermijnt</em></h1>
+          <p>Van geld bijdrukken tot gezinsbreuk, volksgezondheid en politieke instabiliteit — de verborgen keten van oorzaak en gevolg.</p>
+          <div class="header-rule"></div>
+        </header>
 
-        <article class="mx-auto mt-8 max-w-2xl rounded-2xl bg-black px-6 py-8 text-center text-white"><h2 class="font-heading text-2xl font-semibold">De gelddrukker</h2><p class="article-copy mt-2 text-white/75">Overheid vergroot de geldhoeveelheid om begrotingstekorten te financieren — zonder belastingen te verhogen.</p></article>
-        <p class="text-center text-foreground/40">↓</p>
-        <article class="mx-auto max-w-2xl rounded-2xl border border-accent/40 bg-accent/5 px-6 py-6 text-center"><h3 class="font-heading text-lg font-semibold text-accent">Muntontwaarding (valutadebasering)</h3><p class="article-copy mt-2 text-sm text-foreground/75">Meer geld in omloop zonder meer goederen → koopkracht daalt voor iedereen.</p></article>
-        <p class="text-center text-foreground/40">↓</p>
+        <div class="node-wrap"><div class="flow-box dark"><div class="fb-icon">🖨️</div><div class="fb-title">De gelddrukker</div><div class="fb-sub">Overheid vergroot de geldhoeveelheid om begrotingstekorten te financieren — zonder belastingen te verhogen</div></div><div class="v-arrow"><div class="shaft short"></div><div class="head"></div></div></div>
+        <div class="node-wrap"><div class="flow-box outlined"><div class="fb-title">💸 Muntontwaarding (valutadebasering)</div><div class="fb-sub">Meer geld in omloop zonder meer goederen → koopkracht daalt voor iedereen</div></div><div class="v-arrow"><div class="shaft short"></div><div class="head"></div></div></div>
 
-        <article class="rounded-3xl border border-border bg-card p-6 sm:p-8">
-          <div class="flex flex-wrap items-center gap-3"><span class="rounded-full bg-black px-4 py-1 font-heading text-xs tracking-[0.18em] text-white uppercase">Cantillon-effect</span><h3 class="font-heading text-2xl font-semibold">Nieuw geld bereikt niet iedereen gelijk</h3></div>
-          <p class="article-copy mt-2 text-foreground/70">Wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</p>
-          <div class="mt-5 grid gap-4 sm:grid-cols-4">
-            <div class="rounded-2xl border border-border bg-background p-4"><p class="text-xl">①</p><p class="font-semibold">Overheid & centrale bank</p><p class="article-copy mt-2 text-sm text-foreground/70">Nieuw geld wordt gecreëerd via obligatie-aankopen en directe staatsfinanciering. Prijzen zijn nog niet gestegen.</p><p class="mt-2 text-xs font-semibold uppercase">Eerste ontvanger</p></div>
-            <div class="rounded-2xl border border-[#8fa8ff] bg-[#8fa8ff]/10 p-4"><p class="text-xl text-[#5f78d7]">②</p><p class="font-semibold">Banken & financiële sector</p><p class="article-copy mt-2 text-sm text-foreground/70">Geld stroomt via de bankbalansen naar aandelen-, vastgoed- en obligatiemarkten. Activa stijgen eerst.</p><p class="mt-2 text-xs font-semibold uppercase text-[#5f78d7]">Tweede ontvanger</p></div>
-            <div class="rounded-2xl border border-[#e2ae6f] bg-[#e2ae6f]/10 p-4"><p class="text-xl text-[#bd7f37]">③</p><p class="font-semibold">Grote bedrijven & aannemers</p><p class="article-copy mt-2 text-sm text-foreground/70">Overheidscontracten, subsidies en goedkoop krediet bereiken bedrijven dicht bij de overheid. Prijzen beginnen te stijgen.</p><p class="mt-2 text-xs font-semibold uppercase text-[#bd7f37]">Derde ontvanger</p></div>
-            <div class="rounded-2xl border border-[#e4a4a4] bg-[#e4a4a4]/10 p-4"><p class="text-xl text-[#c96969]">④</p><p class="font-semibold">Gewone burgers & loonwerkers</p><p class="article-copy mt-2 text-sm text-foreground/70">Lonen stijgen als laatste — maar prijzen zijn al omhoog. Koopkracht is al verdampt voor het geld is aangekomen.</p><p class="mt-2 text-xs font-semibold uppercase text-[#c96969]">Laatste ontvanger</p></div>
-          </div>
-          <div class="mt-4 rounded-xl border border-border bg-background p-4 text-sm text-foreground/75"><strong>De kernongelijkheid:</strong> inflatie is geen neutrale belasting. Ze herverdeelt rijkdom van mensen die laat nieuw geld ontvangen naar mensen die het eerder ontvangen.</div>
-        </article>
+        <div class="cantillon-wrap"><div class="cantillon-box"><div class="cantillon-head"><div class="c-badge">Cantillon-effect</div><div class="cantillon-head-text"><h3>Nieuw geld bereikt niet iedereen tegelijk</h3><p>Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</p></div></div>
+          <div class="c-waterfall">
+            <div class="c-step c-step-1"><div class="c-num">1</div><div class="c-title">Overheid & centrale bank</div><div class="c-desc">Nieuw geld wordt gecreëerd via obligatie-aankopen of directe staatsfinanciering. Prijzen zijn nog niet gestegen.</div><div class="c-tag">Eerste ontvanger</div></div>
+            <div class="c-step c-step-2"><div class="c-num">2</div><div class="c-title">Banken & financiële sector</div><div class="c-desc">Geld stroomt via de bankbalansen naar aandelen-, vastgoed- en obligatiemarkten. Activa stijgen in prijs.</div><div class="c-tag">Tweede ontvanger</div></div>
+            <div class="c-step c-step-3"><div class="c-num">3</div><div class="c-title">Grote bedrijven & aannemers</div><div class="c-desc">Overheidscontracten, subsidies en goedkoop krediet bereiken bedrijven dicht bij de overheid. Prijzen beginnen te stijgen.</div><div class="c-tag">Derde ontvanger</div></div>
+            <div class="c-step c-step-4"><div class="c-num">4</div><div class="c-title">Gewone burgers & loontrekkers</div><div class="c-desc">Lonen stijgen als laatste — maar prijzen zijn al omhoog. De koopkracht is al verdampt vóór het geld is aangekomen.</div><div class="c-tag">Laatste ontvanger</div></div>
+          </div><hr class="c-divider" /><div class="c-insight"><div class="c-insight-icon">💡</div><p><strong>De kernongelijkheid:</strong> inflatie is geen neutrale belasting. Ze herverdeelt rijkdom van mensen die <em>later</em> het nieuwe geld ontvangen naar mensen die het <em>eerder</em> ontvangen.</p></div></div></div>
 
-        <div class="text-center text-foreground/40">↓</div>
-        <section class="grid gap-4 sm:grid-cols-3">
-          <article class="rounded-2xl border border-[#de8686] bg-card p-4"><p class="font-heading text-xs tracking-[0.22em] text-[#cb5f5f] uppercase">Verstoring van prijssignalen</p><ul class="article-copy mt-2 space-y-1 text-sm text-foreground/75"><li>Verkeerde investeringen</li><li>Kapitaalverspilling</li><li>Overheid bestrijdt symptomen i.p.v. oorzaken</li></ul></article>
-          <article class="rounded-2xl border border-[#d9ad70] bg-card p-4"><p class="font-heading text-xs tracking-[0.22em] text-[#b27a36] uppercase">Hogere bedrijfskosten → consumentenprijzen</p><ul class="article-copy mt-2 space-y-1 text-sm text-foreground/75"><li>Prijsstijgingen</li><li>Shrinkflatie</li><li>Werkloosheid</li></ul></article>
-          <article class="rounded-2xl border border-[#79aac2] bg-card p-4"><p class="font-heading text-xs tracking-[0.22em] text-[#2b7da2] uppercase">Activaprijsinflatie</p><ul class="article-copy mt-2 space-y-1 text-sm text-foreground/75"><li>Vermogensongelijkheid</li><li>Stijgende huurprijzen</li><li>Meer schulden</li></ul></article>
-        </section>
+        <svg class="svg-spread" viewBox="0 0 820 44" fill="none"><line x1="410" y1="0" x2="136" y2="36"/><line x1="410" y1="0" x2="410" y2="36"/><line x1="410" y1="0" x2="684" y2="36"/><polygon points="130,30 136,40 142,30"/><polygon points="404,30 410,40 416,30"/><polygon points="678,30 684,40 690,30"/></svg>
 
-        <p class="text-center text-foreground/40">↓</p>
-        <article class="mx-auto max-w-3xl rounded-2xl border border-cyan-400/40 bg-cyan-100/30 px-6 py-5 text-center dark:bg-cyan-500/10"><h4 class="font-heading text-xl font-semibold">Verminderde koopkracht voor de gewone burger</h4><p class="article-copy mt-2 text-sm text-foreground/75">Het dagelijks leven wordt duurder — ondanks hetzelfde inkomen.</p></article>
+        <div class="three-cols">
+          <div class="col-block"><div class="col-head red"><div class="ch-title">Verstoring van prijssignalen</div></div><div class="mini-card red"><div class="mc-title">Verkeerde investeringen</div><div class="mc-desc">Kapitaal stroomt naar sectoren dicht bij de overheid — niet naar de productiefste plekken in de economie.</div></div><div class="mini-card red"><div class="mc-title">Kapitaalverspilling</div><div class="mc-desc">Overheid besteedt aan symptomen i.p.v. oorzaken — inefficiëntie neemt structureel toe.</div></div></div>
+          <div class="col-block"><div class="col-head amber"><div class="ch-title">Hogere bedrijfskosten → consumentenprijzen</div></div><div class="mini-card amber"><div class="mc-title">Prijsstijgingen</div><div class="mc-desc">Bedrijven rekenen hogere inputkosten door aan de consument.</div></div><div class="mini-card amber"><div class="mc-title">Shrinkflatie</div><div class="mc-desc">Zelfde prijs, kleinere verpakking — verborgen kwaliteitsverlies.</div></div><div class="mini-card amber"><div class="mc-title">Werkloosheid</div><div class="mc-desc">Bedrijven snijden in personeel om marges te redden.</div></div></div>
+          <div class="col-block"><div class="col-head teal"><div class="ch-title">Activaprijsinflatie</div></div><div class="mini-card teal"><div class="mc-title">Vermogensongelijkheid</div><div class="mc-desc">Wie activa bezit wint — wie niets bezit verliest.</div></div><div class="mini-card teal"><div class="mc-title">Stijgende huurprijzen</div><div class="mc-desc">Vastgoed duurder → hogere huren → meer dakloosheid.</div></div><div class="mini-card teal"><div class="mc-title">Meer schulden</div><div class="mc-desc">Banken pushen grotere hypotheken — het systeem wordt kwetsbaarder.</div></div></div>
+        </div>
 
-        <p class="text-center text-foreground/40">↓</p>
-        <section>
-          <h2 class="text-center font-heading text-4xl font-semibold">De maatschappelijke gevolgen: <span class="text-accent">financieel, psychologisch & sociaal</span></h2>
-          <div class="mt-6 grid gap-4 sm:grid-cols-3">
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#b07d2f]">Financieel</h3><p class="mt-2 font-semibold">Economische kwetsbaarheid</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Sparen loont niet meer</li><li>Schuldenspiraal door noodgedwongen lenen</li></ul></article>
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#7a68b6]">Psychologisch</h3><p class="mt-2 font-semibold">Mentale gezondheidscrisis</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Chronische stress</li><li>Hopeloosheid en depressie</li></ul></article>
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#2a8fa2]">Gezondheid</h3><p class="mt-2 font-semibold">Volksgezondheidscrisis</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Goedkopere ongezonde voeding</li><li>Overbelast zorgsysteem</li></ul></article>
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#a59039]">Gezin & demografie</h3><p class="mt-2 font-semibold">Hoge druk</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Twee inkomens nodig voor wonen</li><li>Dalende geboortecijfers</li></ul></article>
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#aa5c8d]">Sociaal</h3><p class="mt-2 font-semibold">Maatschappelijke fragmentatie</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Stijgende ongelijkheid</li><li>Erosie van vertrouwen</li></ul></article>
-            <article class="rounded-2xl border border-border bg-card p-4"><h3 class="font-heading text-xs tracking-[0.2em] uppercase text-[#c86a6a]">Politiek</h3><p class="mt-2 font-semibold">Politieke instabiliteit</p><ul class="article-copy mt-2 list-disc ps-4 text-sm text-foreground/75"><li>Groter overheidsapparaat</li><li>Meer polarisatie</li></ul></article>
-          </div>
-        </section>
+        <div class="node-wrap mt"><div class="flow-box soft"><div class="fb-title">📉 Verminderde koopkracht voor de gewone burger</div><div class="fb-sub">Het dagelijks leven wordt duurder — ondanks hetzelfde inkomen</div></div></div>
 
-        <section>
-          <h2 class="text-center font-heading text-4xl font-semibold">Wie betaalt de rekening?</h2>
-          <p class="article-copy text-center text-foreground/70">De impact verschilt per inkomensgroep — verklaard door het Cantillon-effect.</p>
-          <div class="mt-5 grid gap-4 sm:grid-cols-4">
-            <article class="rounded-2xl border border-border bg-card p-4 text-center"><p class="font-semibold">Laag inkomen</p><p class="mt-1 inline-block rounded-full bg-red-100 px-2 py-0.5 text-xs text-red-700">Verliest altijd</p></article>
-            <article class="rounded-2xl border border-border bg-card p-4 text-center"><p class="font-semibold">Middenklasse</p><p class="mt-1 inline-block rounded-full bg-amber-100 px-2 py-0.5 text-xs text-amber-700">Nieuwe armen</p></article>
-            <article class="rounded-2xl border border-border bg-card p-4 text-center"><p class="font-semibold">Vermogenden</p><p class="mt-1 inline-block rounded-full bg-blue-100 px-2 py-0.5 text-xs text-blue-700">Langzaam uitgehold</p></article>
-            <article class="rounded-2xl border border-border bg-card p-4 text-center"><p class="font-semibold">Politiek verbonden</p><p class="mt-1 inline-block rounded-full bg-cyan-100 px-2 py-0.5 text-xs text-cyan-700">Profiteert</p></article>
-          </div>
-        </section>
-
-        <section class="rounded-3xl bg-black px-6 py-8 text-white">
-          <h2 class="text-center font-heading text-3xl font-semibold">De <span class="text-cyan-400">zichzelf versterkende spiraal</span></h2>
-          <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm"><span class="rounded-lg border border-blue-400/50 bg-blue-500/20 px-3 py-2">Meer geld drukken</span><span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Cantillon-herverdeling</span><span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Grotere overheid</span><span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Meer crises</span><span>→</span><span class="rounded-lg border border-white/20 bg-white/10 px-3 py-2">Meer schulden</span><span>→</span><span class="rounded-lg border border-blue-400/50 bg-blue-500/20 px-3 py-2">Nóg meer drukken</span></div>
-        </section>
-
-        <section class="grid gap-4 sm:grid-cols-2">
-          <article class="rounded-2xl border border-[#e8b7b7] bg-[#fff6f6] p-6 dark:bg-[#3d2828]/25"><p class="font-heading text-xs tracking-[0.2em] uppercase text-[#cc5d5d]">Het kernprobleem</p><h3 class="mt-2 font-heading text-2xl font-semibold">Geld zonder vaste waarde</h3><p class="article-copy mt-2 text-foreground/75">Wanneer de geldhoeveelheid blijft uitbreiden, worden kosten verborgen via inflatie. Het Cantillon-effect betaalt burgers die het nieuwe geld laat ontvangen.</p></article>
-          <article class="rounded-2xl border border-[#b8d6dd] bg-[#f4fbfd] p-6 dark:bg-[#20343a]/25"><p class="font-heading text-xs tracking-[0.2em] uppercase text-[#2b7da2]">Wat helpt?</p><h3 class="mt-2 font-heading text-2xl font-semibold">Bewustzijn & gezond geldgedrag</h3><p class="article-copy mt-2 text-foreground/75">Begrijpen hoe het systeem werkt is de eerste stap: bewust sparen, investeren in waarde en financiële educatie als bescherming van koopkracht.</p></article>
-        </section>
       </div>
     </section>
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .page{max-width:1060px;margin:0 auto;padding:40px 24px 60px;background:transparent}
+  .label{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;font-family:var(--font-heading)}
+  .header{text-align:center;margin-bottom:40px}.header .label{color:var(--color-accent)}
+  .header h1{font-size:clamp(26px,4vw,42px);line-height:1.18}.header h1 em{font-style:italic;color:var(--color-accent)}
+  .header p{font-family:var(--font-heading);max-width:580px;margin:16px auto 0;color:rgb(var(--muted-foreground))}
+  .header-rule{width:48px;height:2px;background:var(--color-accent);margin:20px auto 0}
+  .node-wrap{display:flex;flex-direction:column;align-items:center}.v-arrow .shaft{width:1.5px;height:20px;background:rgb(var(--border))}.v-arrow .head{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid rgb(var(--border))}
+  .flow-box{border-radius:16px;padding:18px 36px;text-align:center;max-width:460px;width:100%}.flow-box.dark{background:#141414;color:#fff}.flow-box.outlined{border:1px solid var(--color-accent);background:color-mix(in srgb,var(--color-accent) 6%,white)}.flow-box.soft{border:1px solid #5ebad2;background:color-mix(in srgb,#5ebad2 10%,white)}
+  .cantillon-box{background:rgb(var(--card));border:1px solid rgb(var(--border));border-radius:20px;padding:26px}.cantillon-head{display:flex;gap:14px;align-items:center;margin-bottom:20px}.c-badge{background:#151515;color:#fff;border-radius:10px;padding:8px 14px;font-size:11px;text-transform:uppercase;font-weight:700;letter-spacing:1.5px}
+  .c-waterfall{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.c-step{text-align:center}.c-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;border:1px solid rgb(var(--border))}
+  .c-divider{border:0;border-top:1px solid rgb(var(--border));margin:20px 0}.c-insight{background:rgba(83,112,217,.06);border:1px solid rgba(83,112,217,.2);border-radius:12px;padding:12px 16px;display:flex;gap:10px}
+  .svg-spread{display:block;width:100%;max-width:820px;height:44px;margin:0 auto}.svg-spread line{stroke:rgb(var(--border));stroke-width:1.5}.svg-spread polygon{fill:rgb(var(--border))}
+  .three-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.col-head{border-radius:12px;padding:13px 15px;border:1px solid}.red{border-color:#c0392b}.amber{border-color:#a06010}.teal{border-color:#1a6b72}
+  .ch-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.mini-card{background:rgb(var(--card));border:1px solid rgb(var(--border));border-radius:10px;padding:12px 14px}.col-block{display:flex;flex-direction:column;gap:10px}
+  .mt{margin-top:18px}
+  @media(max-width:820px){.three-cols,.c-waterfall{grid-template-columns:1fr}}
+</style>
