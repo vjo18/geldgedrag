@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+---
+
+<Layout title={`${SITE.title} | Geldsysteem`} description="De eeuwige schuldcyclus.">
+  <Header />
+  <main id="main-content" class="app-layout pb-16">
+    <section class="surface mt-6 gg">
+      <header class="hero"><p class="eyebrow">Geld · Schuld · Cyclus</p><h1>De <em>oneindige</em> schuldcyclus</h1><p>De economie draait op lenen... Zo sluit de cirkel zich opnieuw.</p></header>
+      <article><h2>01 — De motor</h2><h3>Krediet als brandstof voor de economie</h3><p>Geld lenen is niet per definitie slecht. Als het productief wordt ingezet, creëert het echte welvaart: jobs, bedrijven, innovatie, woningen.</p><ul><li>Lenen</li><li>Investeren</li><li>Groei</li><li>Inkomen</li></ul></article>
+      <article><h2>02 — Keerzijde 1: De schuldspiraal</h2><h3>Nieuw geld komt als schuld</h3><p>Wanneer banken leningen geven, schrijven ze geld bij uit het niets, als een schuld. Om die groeiende verplichtingen betaalbaar te houden, is vaak nieuw krediet nodig.</p><ol><li>Nieuw geld</li><li>Schuld</li><li>Rente</li><li>Meer lenen</li></ol></article>
+      <article><h2>03 — Keerzijde 2: Ongelijkheid</h2><h3>Nieuw geld bereikt niet iedereen tegelijk</h3><p>Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</p><div class="grid4"><div><b>1</b><p>Overheid & centrale bank</p></div><div><b>2</b><p>Banken & financiële markten</p></div><div><b>3</b><p>Bedrijven & bezitters</p></div><div><b>4</b><p>Gewone burgers & spaarders</p></div></div><p><strong>Kern:</strong> Geldcreatie en inflatie werken niet neutraal.</p></article>
+      <article><h2>04 — Inflatie</h2><h3>Inflatie: de onzichtbare belasting</h3><p>Inflatie betekent dat je met hetzelfde geld minder kan kopen. Inflatie is een structureel gevolg van hoe ons geldsysteem werkt.</p><div class="grid5"><div>Vandaag €10.000</div><div>Na 5 jaar €9.057</div><div>Na 10 jaar €8.203</div><div>Na 20 jaar €6.730</div><div>Na 30 jaar €5.521</div></div><div class="grid3"><div><h4>Prijsinflatie</h4></div><div><h4>Activainflatie</h4></div><div><h4>Looninflatie</h4></div></div></article>
+      <article><h2>05 — De verdeling</h2><h3>Wie betaalt de prijs?</h3><div class="grid4"><div><h4>Laag inkomen</h4><p>Geen spaargeld, prijzen stijgen sneller dan loon.</p></div><div><h4>Middenklasse</h4><p>Huis minder bereikbaar, sparen voelt nutteloos.</p></div><div><h4>Vermogenden</h4><p>Profiteren van activaprijsinflatie maar ook uitholling.</p></div><div><h4>Dicht bij de geldkraan</h4><p>Ontvangen nieuw geld vroeg.</p></div></div></article>
+      <article><h2>06 — De doorwerking</h2><h3>Maatschappelijke gevolgen</h3><div class="grid3"><div>Financieel</div><div>Psychologisch</div><div>Gezondheid</div><div>Gezin</div><div>Sociaal</div><div>Politiek</div></div></article>
+      <article><h2>07 — Het dilemma</h2><h3>Twee zwarte beesten</h3><div class="grid2"><div><h4>Te weinig krediet</h4><p>Deflatie, werkloosheid en stilstand volgen.</p></div><div><h4>Te veel krediet</h4><p>Inflatie, activaprijzen en ongelijkheid nemen toe.</p></div></div></article>
+      <article><h2>08 — De kern</h2><h3>De oneindige, zichzelf versterkende cyclus</h3><ol><li>Meer lenen</li><li>Meer geld in systeem</li><li>Activa & prijzen stijgen</li><li>Druk op burgers groeit</li><li>Politiek ingrijpen</li></ol></article>
+      <article><h2>09 — Wat kan ik doen?</h2><h3>Drie lagen van financiële weerbaarheid</h3><div class="grid3"><div><h4>Financieel</h4><p>Bescherm en laat groeien.</p></div><div><h4>Psychologisch</h4><p>Gedrag bepaalt je resultaat.</p></div><div><h4>Filosofisch</h4><p>Wat is geld eigenlijk?</p></div></div><p>Je hoeft het systeem niet te veranderen om er slimmer in te bewegen.</p></article>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+.gg{padding:2rem;display:grid;gap:1.5rem}.hero{text-align:center;padding:3rem 1rem;border-bottom:1px solid rgb(var(--border))}.hero h1{font-size:clamp(2rem,6vw,4rem)}.hero em{color:var(--color-accent)}
+article{border:1px solid rgb(var(--border));border-radius:1rem;padding:1.25rem;background:rgb(var(--card))}h2{font-size:.8rem;letter-spacing:.2em;color:var(--color-accent);text-transform:uppercase}h3{font-size:1.6rem;margin:.4rem 0 1rem}
+.grid2,.grid3,.grid4,.grid5{display:grid;gap:.5rem;margin-top:.8rem}.grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(4,1fr)}.grid5{grid-template-columns:repeat(5,1fr)}
+.grid2>*,.grid3>*,.grid4>*,.grid5>*{border:1px solid rgb(var(--border));padding:.8rem;border-radius:.6rem;background:rgb(var(--background))}
+@media(max-width:900px){.grid5,.grid4,.grid3{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.gg{padding:1rem}.grid2,.grid3,.grid4,.grid5{grid-template-columns:1fr}}
+</style>
