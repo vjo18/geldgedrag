@@ -1,0 +1,110 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+---
+
+<Layout
+  title={`${SITE.title} | Geldsysteem`}
+  description="Een schematische weergave van de schuldcyclus, inflatie en maatschappelijke doorwerking binnen ons geldsysteem."
+>
+  <Header />
+  <main id="main-content" class="money-system">
+    <section class="hero">
+      <p class="eyebrow">Geld · Schuld · Cyclus</p>
+      <h1>De <em>oneindige</em> schuldcyclus</h1>
+      <p class="lead">De economie draait op lenen. Zonder krediet valt de economische motor stil. Maar met te veel krediet stijgen prijzen, ongelijkheid en druk op gewone mensen. Zo vraagt elk probleem om nog meer schuld en sluit de cirkel zich opnieuw.</p>
+    </section>
+
+    <section>
+      <p class="label">Kernschema</p>
+      <h2>De schuldcyclus in 8 stappen</h2>
+      <div class="cycle-grid">
+        <article><h3>1. Kredietexpansie</h3><p>Banken verstrekken meer leningen en creëren nieuw geld.</p></article>
+        <article><h3>2. Investeringen</h3><p>Geld gaat naar vastgoed, bedrijven en financiële markten.</p></article>
+        <article><h3>3. Economische groei</h3><p>Bestedingen stijgen, activa stijgen, optimisme groeit.</p></article>
+        <article><h3>4. Prijsdruk</h3><p>Goederen, diensten en vooral activa worden duurder.</p></article>
+        <article><h3>5. Koopkrachtdruk</h3><p>Lonen volgen trager dan prijzen, gezinnen verliezen marge.</p></article>
+        <article><h3>6. Politieke reactie</h3><p>Steunmaatregelen, subsidies en transfers moeten pijn verzachten.</p></article>
+        <article><h3>7. Nieuwe schuld</h3><p>Overheid en private sector financieren ingrepen opnieuw met schuld.</p></article>
+        <article><h3>8. Herstart cyclus</h3><p>De hogere schuld vereist opnieuw groei en dus nieuw krediet.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Cantillon-effect</p>
+      <h2>Wie krijgt het nieuwe geld eerst?</h2>
+      <div class="columns four">
+        <article><h3>1. Overheid & centrale bank</h3><p>Nieuw geld komt hier eerst binnen, voordat prijzen volledig aangepast zijn.</p></article>
+        <article><h3>2. Banken & markten</h3><p>Liquiditeit stroomt naar obligaties, aandelen en vastgoed.</p></article>
+        <article><h3>3. Bedrijven & bezitters</h3><p>Wie activa bezit profiteert eerder van prijsstijgingen.</p></article>
+        <article><h3>4. Burgers & spaarders</h3><p>Laatste schakel betaalt hogere prijzen met tragere loonaanpassing.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Inflatie</p>
+      <h2>De onzichtbare belasting op tijd en koopkracht</h2>
+      <div class="columns three">
+        <article><h3>Prijsinflatie</h3><p>Boodschappen, energie, huur en basisdiensten worden duurder.</p></article>
+        <article><h3>Activainflatie</h3><p>Huizen en aandelen stijgen vaak sneller dan lonen.</p></article>
+        <article><h3>Looninflatie</h3><p>Loon volgt meestal vertraagd, waardoor koopkracht afbrokkelt.</p></article>
+      </div>
+      <p class="note">Bij 2% inflatie daalt de koopkracht van €10.000 naar ongeveer €5.521 in 30 jaar. Bij hogere inflatie versnelt dit effect fors.</p>
+    </section>
+
+    <section>
+      <p class="label">Doorwerking</p>
+      <h2>Maatschappelijke gevolgen</h2>
+      <div class="columns three">
+        <article><h3>Financieel</h3><p>Sparen loont minder en schulden nemen toe.</p></article>
+        <article><h3>Psychologisch</h3><p>Meer stress, onzekerheid en korte-termijn gedrag.</p></article>
+        <article><h3>Sociaal & politiek</h3><p>Meer ongelijkheid, polarisatie en druk op beleid.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">De lus</p>
+      <h2>Zelfversterkende cyclus</h2>
+      <ol class="rail">
+        <li>Meer lenen</li>
+        <li>Meer geld in systeem</li>
+        <li>Prijzen en activa stijgen</li>
+        <li>Druk op gezinnen groeit</li>
+        <li>Politieke ingrepen met nieuwe schuld</li>
+      </ol>
+      <p class="note">Stap 5 voedt opnieuw stap 1. Zonder sterke productiviteitsgroei wordt elke ronde zwaarder.</p>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .money-system { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  .hero { margin-top: 1rem; padding: 3rem 1.5rem; border: 1px solid hsl(var(--border)); border-radius: 1rem; background: linear-gradient(180deg, hsl(var(--card)), hsl(var(--background))); }
+  .eyebrow, .label { font-family: var(--font-heading); letter-spacing: .16em; text-transform: uppercase; font-size: .75rem; color: hsl(var(--accent)); }
+  h1 { margin-top: .75rem; font-family: var(--font-heading); font-size: clamp(2rem, 6vw, 4.2rem); line-height: 1.05; }
+  h1 em { color: hsl(var(--accent)); font-style: italic; }
+  h2 { margin: .65rem 0 1rem; font-family: var(--font-heading); font-size: clamp(1.6rem, 4vw, 2.6rem); }
+  h3 { font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: .45rem; }
+  .lead { margin-top: 1rem; max-width: 72ch; color: hsl(var(--foreground) / .82); line-height: 1.7; }
+  section { margin-top: 1.2rem; padding: 2rem 1.5rem; border: 1px solid hsl(var(--border)); border-radius: 1rem; background: hsl(var(--card)); }
+  .cycle-grid, .columns { display: grid; gap: .75rem; }
+  .cycle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .columns.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .columns.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  article { border: 1px solid hsl(var(--border)); border-radius: .75rem; padding: 1rem; background: hsl(var(--background)); }
+  article p { color: hsl(var(--foreground) / .78); line-height: 1.6; font-size: .95rem; }
+  .rail { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .6rem; list-style: none; counter-reset: step; padding: 0; margin: 1rem 0 0; }
+  .rail li { counter-increment: step; border: 1px solid hsl(var(--border)); padding: .85rem; border-radius: .7rem; background: hsl(var(--background)); font-weight: 500; }
+  .rail li::before { content: counter(step) ". "; color: hsl(var(--accent)); font-weight: 700; }
+  .note { margin-top: 1rem; padding: .85rem 1rem; border-left: 3px solid hsl(var(--accent)); background: hsl(var(--accent) / .08); color: hsl(var(--foreground) / .82); }
+
+  @media (max-width: 900px) {
+    .columns.four, .columns.three, .rail, .cycle-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .columns.four, .columns.three, .rail, .cycle-grid { grid-template-columns: 1fr; }
+  }
+</style>
