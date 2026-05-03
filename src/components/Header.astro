@@ -80,6 +80,14 @@ const isActive = (path: string) => {
       >
         <li>
           <a
+            href={getBasePath("/geldsysteem")}
+            class:list={{ "active-nav": isActive("/geldsysteem") }}
+          >
+            Geldsysteem
+          </a>
+        </li>
+        <li>
+          <a
             href={getBasePath("/posts")}
             class:list={{ "active-nav": isActive("/posts") }}
           >
