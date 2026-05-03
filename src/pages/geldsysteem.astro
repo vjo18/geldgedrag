@@ -1,0 +1,1443 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from "@/config";
+---
+
+<Layout
+  title={`${SITE.title} | Geldsysteem`}
+  description="Een visuele uitleg van de schuldcyclus, inflatie, het Cantillon-effect en financiële weerbaarheid binnen ons geldsysteem."
+>
+  <Header />
+
+  <main id="main-content" class="app-layout money-system pb-12">
+<!-- ═══════════════ HERO ═══════════════ -->
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">Geld · Schuld · Cyclus</div>
+    <h1>De <em>oneindige</em><br>schuldcyclus</h1>
+    <p class="hero-sub">
+      De economie draait op lenen. Zonder krediet valt de economische motor stil.
+      Maar met te veel krediet is er inflatie en stijgen prijzen, ongelijkheid en de druk op gewone mensen. Dit doet de vraag ontstaan naar nóg meer nieuw geld en dus ook nieuwe schulden. Zo sluit de cirkel zich opnieuw.
+    </p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 1. MOOIE KANT ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">01 — De motor</div>
+  <h2>Krediet als brandstof voor de economie</h2>
+  <p class="lead">
+    Geld lenen is niet per definitie slecht. Als het productief wordt ingezet,
+    creëert het echte welvaart: jobs, bedrijven, innovatie, woningen.
+  </p>
+
+  <div style="margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+    <div style="background:var(--paper); padding:28px 22px;">
+      <div style="font-size:28px; margin-bottom:12px;">💰</div>
+      <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:8px;">Lenen</div>
+      <div style="font-size:13px; color:var(--muted); line-height:1.5;">Nieuw geld komt beschikbaar voor wie iets wil realiseren</div>
+    </div>
+    <div style="background:var(--paper); padding:28px 22px;">
+      <div style="font-size:28px; margin-bottom:12px;">🏗️</div>
+      <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:8px;">Investeren</div>
+      <div style="font-size:13px; color:var(--muted); line-height:1.5;">Huis, bedrijf, machines: iets echts wordt gebouwd, de productiviteit stijgt</div>
+    </div>
+    <div style="background:var(--paper); padding:28px 22px;">
+      <div style="font-size:28px; margin-bottom:12px;">📈</div>
+      <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:8px;">Groei</div>
+      <div style="font-size:13px; color:var(--muted); line-height:1.5;">De economie draait, bedrijven maken winst en creëren werkgelegenheid</div>
+    </div>
+    <div style="background:var(--paper); padding:28px 22px;">
+      <div style="font-size:28px; margin-bottom:12px;">👷</div>
+      <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:8px;">Inkomen</div>
+      <div style="font-size:13px; color:var(--muted); line-height:1.5;">Mensen worden ingehuurd, verdienen loon en besteden steeds meer</div>
+    </div>
+    
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 2. VERBORGEN KANT ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">02 — Keerzijde 1: De schuldspiraal</div>
+  <h2>Nieuw geld komt als schuld</h2>
+  <p class="lead">
+    Wanneer banken leningen geven, schrijven ze geld bij uit het niets, als een schuld. Geleend geld heeft een rentekost en die moet terugbetaald worden. Om die groeiende verplichtingen betaalbaar te houden, is vaak nieuw krediet nodig. Zo wordt de rekening niet weggewerkt, maar steeds verder vooruitgeschoven in de tijd.
+  </p>
+
+  <div style="margin-top:48px; display:flex; flex-wrap:wrap; gap:2px; align-items:stretch;">
+    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(26,82,118,0.07); border:1px solid rgba(26,82,118,0.2); border-radius:4px; text-align:center;">
+      <div style="font-size:22px; margin-bottom:8px;">💸</div>
+      <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Nieuw geld</div>
+      <div style="font-size:12px; color:var(--muted);">Bank creëert geld bij het verstrekken van een lening</div>
+    </div>
+    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
+      <div style="font-size:22px; margin-bottom:8px;">📄</div>
+      <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Schuld</div>
+      <div style="font-size:12px; color:var(--muted);">Nieuw geld is tegelijk een schuld in de toekomst</div>
+    </div>
+    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
+      <div style="font-size:22px; margin-bottom:8px;">💰</div>
+      <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Rente</div>
+      <div style="font-size:12px; color:var(--muted);">Lenen kost geld: schuld + rente moet terugbetaald worden</div>
+    </div>
+    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(192,57,43,0.1); border:1px solid rgba(192,57,43,0.35); border-radius:4px; text-align:center;">
+      <div style="font-size:22px; margin-bottom:8px;">⛓️</div>
+      <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Meer lenen</div>
+      <div style="font-size:12px; color:var(--muted);">Nieuw geld nodig om schulden betaalbaar te houden</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 3. CANTILLON ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">03 — Keerzijde 2: Ongelijkheid</div>
+  <h2>Nieuw geld bereikt niet iedereen tegelijk</h2>
+  <p class="lead">
+    <i>Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</i><br><br>
+
+Nieuw geld raakt niet iedereen op hetzelfde moment.
+    Wie dicht bij de geldkraan zit, koopt voordat de prijzen gestegen zijn.
+    Wie als laatste komt, betaalt de hogere rekening.
+  </p>
+
+  <div class="waterfall">
+    <div class="wf-step">
+      <div class="wf-num">1</div>
+      <h3>Overheid &amp; centrale bank</h3>
+      <p>Ontvangen of maken nieuw geld (schuld) als eerste. Prijzen zijn dan nog niet gestegen.</p>
+      <div class="wf-arrow">→</div>
+    </div>
+    <div class="wf-step">
+      <div class="wf-num">2</div>
+      <h3>Banken &amp; financiële markten</h3>
+      <p>Nieuw geld stroomt naar obligaties, aandelen en vastgoed. Activaprijzen stijgen.</p>
+      <div class="wf-arrow">→</div>
+    </div>
+    <div class="wf-step">
+      <div class="wf-num">3</div>
+      <h3>Bedrijven &amp; bezitters</h3>
+      <p>Wie activa bezit of goedkoop kan lenen, profiteert. Inputkosten (energie, grondstoffen) stijgen en zetten bedrijven onder druk.</p>
+      <div class="wf-arrow">→</div>
+    </div>
+    <div class="wf-step">
+      <div class="wf-num">4</div>
+      <h3>Gewone burgers &amp; spaarders</h3>
+      <p>Bedrijven houden kosten onder controle. Consumptieprijzen stijgen. Lonen volgen trager.  De koopkracht daalt.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:20px; padding:20px 26px; background:rgba(201,146,42,0.06); border:1px solid rgba(201,146,42,0.2); border-radius:4px; font-size:15px; line-height:1.65; color:var(--muted);">
+    <strong style="color:var(--ink);">Kern:</strong> Geldcreatie en inflatie werken niet neutraal.
+    Ze bevoordelen wie nieuw geld vroeg ontvangt of wie schulden aangaat. Ze benadelen wie leeft van loon, spaargeld of een vast inkomen.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ INFLATIE ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">04 — Inflatie</div>
+  <h2>Inflatie: de onzichtbare belasting</h2>
+  <p class="lead">
+    Iedereen heeft het gehoord. Maar de meeste mensen onderschatten wat het echt doet —
+    niet alleen met prijzen, maar met tijd, gedrag en toekomst.
+  </p>
+
+  <!-- Wat is het -->
+  <div style="margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px 4px 0 0; overflow:hidden;">
+    <div style="background:var(--paper); padding:36px 32px;">
+      <div style="font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Wat is inflatie?</div>
+      <p style="font-size:15px; color:var(--muted); line-height:1.8;">
+        Inflatie betekent dat je met hetzelfde geld minder kan kopen. Officieel wordt het gemeten
+        als de stijging van een "mandje" van goederen en diensten — maar dat mandje is een gemiddelde.
+        <strong style="color:var(--ink);">Jouw persoonlijke inflatie hangt af van wat jij koopt.</strong>
+        Huur, energie en voeding stegen de afgelopen jaren véél harder dan het officiële cijfer.
+      </p>
+    </div>
+    <div style="background:var(--paper); padding:36px 32px;">
+      <div style="font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;">Waar komt het vandaan?</div>
+      <p style="font-size:15px; color:var(--muted); line-height:1.8;">
+        Zoals we hierboven zagen: wanneer banken leningen geven, schrijven ze geld bij uit het niets.
+        Meer geld voor dezelfde hoeveelheid goederen betekent dat die goederen duurder worden.
+        <strong style="color:var(--ink);">Inflatie is dus geen toeval of pech — het is een structureel gevolg van hoe ons geldsysteem werkt.</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Het stille effect: tabel -->
+  <div style="border:1px solid var(--line); border-top:none; overflow:hidden;">
+    <div style="padding:22px 32px; background:rgba(201,146,42,0.05); border-bottom:1px solid var(--line);">
+      <div style="font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold);">Wat doet 2% inflatie over tijd met €10.000 spaargeld?</div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; background:var(--line);">
+      <div style="background:var(--paper); padding:24px 20px; text-align:center;">
+        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:0.05em;">Vandaag</div>
+        <div style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--ink);">€10.000</div>
+        <div style="font-size:12px; color:var(--muted); margin-top:4px;">volledige waarde</div>
+      </div>
+      <div style="background:var(--paper); padding:24px 20px; text-align:center; border-left:1px solid var(--line);">
+        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:0.05em;">Na 5 jaar</div>
+        <div style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--ink);">€9.057</div>
+        <div style="font-size:12px; color:var(--red); margin-top:4px;">−€943 koopkracht</div>
+      </div>
+      <div style="background:var(--paper); padding:24px 20px; text-align:center; border-left:1px solid var(--line);">
+        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:0.05em;">Na 10 jaar</div>
+        <div style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--ink);">€8.203</div>
+        <div style="font-size:12px; color:var(--red); margin-top:4px;">−€1.797 koopkracht</div>
+      </div>
+      <div style="background:var(--paper); padding:24px 20px; text-align:center; border-left:1px solid var(--line);">
+        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:0.05em;">Na 20 jaar</div>
+        <div style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--ink);">€6.730</div>
+        <div style="font-size:12px; color:var(--red); margin-top:4px;">−€3.270 koopkracht</div>
+      </div>
+      <div style="background:rgba(192,57,43,0.05); padding:24px 20px; text-align:center; border-left:1px solid rgba(192,57,43,0.2);">
+        <div style="font-size:11px; color:var(--muted); margin-bottom:8px; letter-spacing:0.05em;">Na 30 jaar</div>
+        <div style="font-family:var(--font-heading); font-size:26px; font-weight:700; color:var(--red);">€5.521</div>
+        <div style="font-size:12px; color:var(--red); margin-top:4px;">bijna de helft weg</div>
+      </div>
+    </div>
+    <div style="padding:16px 32px; background:var(--paper); border-top:1px solid var(--line);">
+      <p style="font-size:12px; color:var(--muted); line-height:1.6;">
+        Bij <em>gemiddeld</em> 2% inflatie — het officiële doelcijfer van de ECB.
+        In periodes van hogere inflatie (zoals 2022–2023, toen inflatie in België opliep naar 9–10%) versnelt dit effect drastisch.
+      </p>
+    </div>
+  </div>
+
+  <!-- Drie gezichten van inflatie -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-top:none; overflow:hidden;">
+    <div style="background:var(--paper); padding:28px 26px;">
+      <div style="font-size:22px; margin-bottom:12px;">🧾</div>
+      <h3 style="font-family:var(--font-heading); font-size:17px; margin-bottom:10px;">Prijsinflatie</h3>
+      <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+        Wat je elke dag ziet: boodschappen, energie, huur, benzine worden duurder.
+        Dit is de zichtbare kant — en zelfs die wordt onderschat omdat het mandje niet jouw leven is.
+      </p>
+    </div>
+    <div style="background:var(--paper); padding:28px 26px;">
+      <div style="font-size:22px; margin-bottom:12px;">🏠</div>
+      <h3 style="font-family:var(--font-heading); font-size:17px; margin-bottom:10px;">Activainflatie</h3>
+      <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+        Wat je minder snel ziet: huizen, aandelen en kunst stijgen nog sneller dan gewone prijzen.
+        Wie ze bezit, wordt rijker. Wie ze niet bezit, raakt verder achterop.
+        Dit is inflatie als verdelingsprobleem.
+      </p>
+    </div>
+    <div style="background:var(--paper); padding:28px 26px;">
+      <div style="font-size:22px; margin-bottom:12px;">💸</div>
+      <h3 style="font-family:var(--font-heading); font-size:17px; margin-bottom:10px;">Looninflatie</h3>
+      <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+        Lonen stijgen ook — maar bijna altijd later en minder. De kloof tussen
+        wat prijzen doen en wat lonen doen, eet stap voor stap je koopkracht op.
+        Dat verlies voel je niet in één klap, maar het is er wel.
+      </p>
+    </div>
+  </div>
+
+  <!-- Link naar het systeem -->
+  <div style="border:1px solid var(--line); border-top:none; border-radius:0 0 4px 4px; overflow:hidden;">
+    <div style="background:var(--ink); padding:32px 32px; display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center;">
+      <div style="font-size:40px; line-height:1; flex-shrink:0;">🔗</div>
+      <div>
+        <p style="font-size:15px; color:rgba(245,240,232,0.7); line-height:1.8; margin-bottom:12px;">
+          Inflatie is geen los probleem. Het is het <em style="color:var(--gold-light);">zichtbare symptoom</em> van wat we in de vorige secties zagen:
+          banken die geld bijschrijven bij elke lening, overheden die tekorten financieren met schuld,
+          en centraal beleid dat de geldhoeveelheid laat groeien sneller dan de echte economie.
+        </p>
+        <p style="font-family:var(--font-heading); font-size:17px; color:var(--paper); line-height:1.4;">
+          Meer geld voor dezelfde welvaart betekent altijd: elke euro wordt iets minder waard.<br>
+          Wie dat het hardst voelt, hangt af van waar je staat in het Cantillon-effect.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 5. WIE BETAALT ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">05 — De verdeling</div>
+  <h2>Wie betaalt de prijs?</h2>
+  <p class="lead">
+    Jouw positie in het systeem bepaalt of geldcreatie je helpt of pijn doet.
+  </p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-emoji">👷</div>
+      <h3>Laag inkomen</h3>
+      <ul>
+        <li>Geen spaargeld of bezittingen</li>
+        <li>Prijzen stijgen sneller dan loon</li>
+        <li>Moet vaker lenen om rond te komen</li>
+        <li>Verliest altijd</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-emoji">👨‍💼</div>
+      <h3>Middenklasse</h3>
+      <ul>
+        <li>Huis steeds minder bereikbaar</li>
+        <li>Sparen voelt nutteloos</li>
+        <li>Twee inkomens nodig voor zekerheid</li>
+        <li>Worden de nieuwe armen</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-emoji">💼</div>
+      <h3>Vermogenden</h3>
+      <ul>
+        <li>Bezitten vastgoed en aandelen</li>
+        <li>Profiteren van activaprijsinflatie</li>
+        <li>Maar minder snel dan de geldgroei</li>
+        <li>Vermogen wordt langzaam uitgehold</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-emoji">🏛️</div>
+      <h3>Dicht bij de geldkraan</h3>
+      <ul>
+        <li>Zijn politiek geconnecteerd</li>
+        <li>Profiteren optimaal van subsidies &amp; beleid</li>
+        <li>Ontvangen nieuw geld vroeg</li>
+        <li>Kunnen zich snel aanpassen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 6. GEVOLGEN ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">06 — De doorwerking</div>
+  <h2>Maatschappelijke gevolgen</h2>
+  <p class="lead">
+    Koopkrachtverlies en stijgende activaprijzen zijn geen abstract probleem.
+    Ze raken het dagelijks leven op elk vlak.
+  </p>
+
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-icon">💰</div>
+      <h3>Financieel</h3>
+      <ul>
+        <li>Sparen loont steeds minder</li>
+        <li>Meer armoede ondanks werk</li>
+        <li>Noodgedwongen schuldenspiraal</li>
+        <li>Pensioen voelt onzeker</li>
+      </ul>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🧠</div>
+      <h3>Psychologisch</h3>
+      <ul>
+        <li>Chronische geldstress, angst en schaamte</li>
+        <li>Hopeloosheid over de toekomst</li>
+        <li>Minder gevoel van controle</li>
+        <li>"Vandaag leven" i.p.v. lange termijn denken</li>
+      </ul>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🏥</div>
+      <h3>Gezondheid</h3>
+      <ul>
+        <li>Goedkopere, minder gezonde voeding</li>
+        <li>Zorg wordt moeilijker betaalbaar</li>
+        <li>Stress werkt door op lichaam</li>
+        <li>Kwaliteit ingeruild voor betaalbaarheid</li>
+      </ul>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">👨‍👩‍👧</div>
+      <h3>Gezin</h3>
+      <ul>
+        <li>Twee inkomens nodig voor woning</li>
+        <li>Minder tijd voor kinderen</li>
+        <li>Huwelijk en gezinsvorming uitgesteld</li>
+        <li>Meer druk op relaties</li>
+      </ul>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🤝</div>
+      <h3>Sociaal</h3>
+      <ul>
+        <li>Kloof tussen bezitters en starters</li>
+        <li>Minder vertrouwen in instituties</li>
+        <li>Gevoel van oneerlijkheid</li>
+        <li>Maatschappelijke fragmentatie</li>
+      </ul>
+    </div>
+    <div class="impact-card">
+      <div class="impact-icon">🗳️</div>
+      <h3>Politiek</h3>
+      <ul>
+        <li>Meer roep om steunmaatregelen</li>
+        <li>Meer herverdeling nodig</li>
+        <li>Polarisatie neemt toe</li>
+        <li>Symptomen bestreden met nieuwe schuld</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════ 4. TWEE BEESTEN ═══════════════ -->
+<section class="reveal">
+  <div class="section-label">07 — Het dilemma</div>
+  <h2>Twee zwarte beesten</h2>
+  <p class="lead">
+    Beleidsmakers laveren voortdurend tussen twee gevaren.
+    Eén gevaar wordt koste wat kost vermeden — zelfs als dat het andere groter maakt.
+  </p>
+
+  <div class="beasts-grid">
+    <div class="beast beast-1">
+      <span class="beast-tag">⚫ Moet vermeden worden</span>
+      <h3>Te weinig krediet</h3>
+      <p>Als lenen stopt, valt de economische motor stil. Deflatie, werkloosheid en stilstand volgen.</p>
+      <div class="beast-flow">
+        <div class="bf-item"><strong>Krediet stopt</strong><span>Bestedingen dalen, economie krimpt</span></div>
+        <div class="bf-item"><strong>Deflatie dreigt</strong><span>Prijzen dalen, schulden worden zwaarder</span></div>
+        <div class="bf-item"><strong>Reactie:</strong><span>Centrale bank verlaagt rente, injecteert nieuw geld in de economie via de banken of rechtstreekse aankoop van obligaties</span></div>
+      </div>
+    </div>
+    <div class="beast beast-2">
+      <span class="beast-tag">⚫ Geaccepteerde nevenschade</span>
+      <h3>Te veel krediet</h3>
+      <p>De oplossing voor deflatie — goedkoop geld — drijft huizen en aandelen omhoog. Maar de ongelijkheid stijgt.</p>
+      <div class="beast-flow">
+        <div class="bf-item"><strong>Goedkoop geld</strong><span>Huizen, aandelen en andere activa stijgen</span></div>
+        <div class="bf-item"><strong>Inflatie en ongelijkheid</strong><span>Bezitters winnen, spaarders verliezen</span></div>
+        <div class="bf-item"><strong>Reactie:</strong><span>Overheid probeert te herverdelen via steunmaatregelen (subsidies, stimuli, transfers) door besparingen, belastingen of nieuwe leningen</span></div> 
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2px; padding:28px 30px; background:var(--ink); color:var(--paper); border-radius:0 0 4px 4px; font-size:15px; line-height:1.7;">
+    <strong style="color:var(--gold-light);">De impliciete beleidskeuze:</strong>
+    Beest 1 moet koste wat kost vermeden worden. De schulden moeten beheersbaar blijven en daarvoor moet de economie blijven groeien.
+    Beest 2 wordt gezien als <em>collateral damage</em>. De lat wordt gelegd op 2% voor consumptieprijsinflatie, waardoor de koopkracht blijft afnemen en dus bijgevolg de ongelijkheid blijft toenemen.
+    Vervolgens probeert de overheid die nevenschade te verzachten — vaak opnieuw met uitgaven die via nieuwe schuld worden gefinancierd.
+    Zo sluit de lus zich.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ═══════════════ 7. DE ZICHZELF VERSTERKENDE CYCLUS ═══════════════ -->
+<div class="loop-section">
+  <section style="max-width:1200px; margin:0 auto; padding:0 24px;">
+    <div class="section-label">08 — De kern</div>
+    <h2 style="color:var(--paper);">De oneindige, zichzelf versterkende cyclus</h2>
+    <p class="lead" style="color:rgba(245,240,232,0.5);">
+      Elke stap in de cyclus maakt de volgende noodzakelijk.
+      De lus sluit zich steeds opnieuw — en elke ronde iets groter dan de vorige.
+    </p>
+
+    <div class="loop-rail">
+      <div class="loop-step">
+        <div class="ls-n">1</div>
+        <div class="ls-title">Meer lenen</div>
+        <div class="ls-sub">Overheid of gezinnen lenen om problemen op te lossen of bij te blijven</div>
+        <div class="ls-arrow">→</div>
+      </div>
+      <div class="loop-step">
+        <div class="ls-n">2</div>
+        <div class="ls-title">Meer geld in systeem</div>
+        <div class="ls-sub">Krediet &amp; liquiditeit nemen toe, geldhoeveelheid groeit</div>
+        <div class="ls-arrow">→</div>
+      </div>
+      <div class="loop-step">
+        <div class="ls-n">3</div>
+        <div class="ls-title">Activa &amp; prijzen stijgen</div>
+        <div class="ls-sub">Vastgoed en aandelen stijgen het eerst; daarna pas gewone prijzen</div>
+        <div class="ls-arrow">→</div>
+      </div>
+      <div class="loop-step">
+        <div class="ls-n">4</div>
+        <div class="ls-title">Druk op burgers groeit</div>
+        <div class="ls-sub">Koopkracht daalt, wonen wordt duurder, ongelijkheid neemt toe</div>
+        <div class="ls-arrow">→</div>
+      </div>
+      <div class="loop-step">
+        <div class="ls-n">5</div>
+        <div class="ls-title">Politiek ingrijpen</div>
+        <div class="ls-sub">Overheid geeft meer uit om pijn te verzachten — vaak gefinancierd met nieuwe schuld</div>
+        <div class="ls-arrow">↩</div>
+      </div>
+    </div>
+
+    <div class="loop-closes">
+      <div class="infinity">∞</div>
+      <div>
+        Stap 5 keert terug naar stap 1. De <strong>cyclus sluit zich</strong> — en elke ronde
+        vraagt iets méér schuld dan de vorige. Zonder onderliggende productiviteitsgroei
+        wordt de last steeds groter voor wie het minst bezit.
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+<!-- ═══════════════ 8. WAT KAN IK DOEN ═══════════════ -->
+<div class="divider"></div>
+
+<section class="reveal resilience-section">
+  <div class="section-label">09 — Wat kan ik doen?</div>
+  <h2>Drie lagen van financiële weerbaarheid</h2>
+  <p class="lead">
+    Je kan het systeem niet veranderen. Maar je kan veranderen hoe je je erin beweegt —
+    op drie niveaus tegelijk: wat je doet, hoe je denkt, en waarnaar je kijkt.
+  </p>
+
+  <div class="resilience-layers">
+    <article class="resilience-layer">
+      <header class="resilience-header">
+        <div class="resilience-icon" aria-hidden="true">💰</div>
+        <div>
+          <p class="resilience-number">01 — Financieel</p>
+          <h3>Bescherm en laat groeien</h3>
+        </div>
+      </header>
+
+      <div class="resilience-body">
+        <ul>
+          <li>Denk in koopkracht, niet in euro's — geld dat stilstaat, verliest waarde</li>
+          <li>Sparen is defensief, investeren is nodig voor groei</li>
+          <li>Spreiding boven zekerheid zoeken</li>
+          <li>Verwacht schommelingen — dat is de prijs van rendement</li>
+        </ul>
+        <ul>
+          <li>Tijd in de markt verslaat timing van de markt</li>
+          <li>Houd een buffer — flexibiliteit is financiële zuurstof</li>
+          <li>Gebruik schuld bewust — het is hefboom én risico</li>
+        </ul>
+      </div>
+
+      <footer class="resilience-foot">
+        Rijk worden gaat over rendement. Rijk blijven gaat over overleven.
+      </footer>
+    </article>
+
+    <article class="resilience-layer">
+      <header class="resilience-header">
+        <div class="resilience-icon" aria-hidden="true">🧠</div>
+        <div>
+          <p class="resilience-number">02 — Psychologisch</p>
+          <h3>Gedrag bepaalt je resultaat</h3>
+        </div>
+      </header>
+
+      <div class="resilience-body">
+        <ul>
+          <li>Je grootste vijand is zelden de markt, maar je eigen gedrag</li>
+          <li>Paniek en euforie vernietigen meer vermogen dan slechte investeringen</li>
+          <li>Consistentie verslaat complexiteit</li>
+          <li>Automatiseer goede beslissingen — neem emotie uit de vergelijking</li>
+        </ul>
+        <ul>
+          <li>Vermijd constante actie — niets doen is ook een strategie</li>
+          <li>Leer comfortabel zijn met onzekerheid</li>
+          <li>Genoeg is beter dan altijd meer</li>
+        </ul>
+      </div>
+
+      <footer class="resilience-foot">
+        Financieel succes is geen IQ-test, maar een gedragstest.
+      </footer>
+    </article>
+
+    <article class="resilience-layer">
+      <header class="resilience-header">
+        <div class="resilience-icon" aria-hidden="true">🧩</div>
+        <div>
+          <p class="resilience-number">03 — Filosofisch</p>
+          <h3>Wat is geld eigenlijk?</h3>
+        </div>
+      </header>
+
+      <div class="resilience-body">
+        <ul>
+          <li>Geld is opgeslagen tijd en keuzevrijheid</li>
+          <li>Rijkdom is wat je niet ziet — buffer, opties, rust</li>
+          <li>Vrijheid boven status</li>
+          <li>Niet alles wat telt, staat op je bankrekening</li>
+        </ul>
+        <ul>
+          <li>Investeer in vaardigheden, gezondheid en relaties — die ontwaarden niet</li>
+          <li>Minder nodig hebben is krachtiger dan meer verdienen</li>
+          <li>Korte termijn denken is een product van de omgeving — verleng je tijdshorizon als tegengewicht</li>
+        </ul>
+      </div>
+
+      <footer class="resilience-foot">
+        Het hoogste rendement van geld is controle over je eigen tijd.
+      </footer>
+    </article>
+  </div>
+
+  <div class="resilience-note">
+    Je hoeft het systeem niet te veranderen om er slimmer in te bewegen.
+    Maar dat vraagt wel bewustzijn — van passief omgaan met geld, naar
+    <strong>actief kiezen hoe je ermee omgaat.</strong>
+  </div>
+</section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+// Scroll reveal
+const els = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+els.forEach(el => obs.observe(el));
+</script>
+
+<style>
+
+.money-system, .money-system * { box-sizing: border-box; }
+
+.money-system {
+  --ink: var(--color-foreground);
+  --paper: var(--color-background);
+  --gold: var(--color-accent);
+  --gold-light: var(--color-accent-soft);
+  --red: #c0392b;
+  --blue: #1a5276;
+  --green: #1e8449;
+  --muted: color-mix(in srgb, var(--color-foreground) 62%, var(--color-background));
+  --line: color-mix(in srgb, var(--color-border) 88%, transparent);
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: clip;
+  margin-top: 1.5rem;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: auto;
+  display: block;
+  text-align: left;
+  padding: 2rem 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(21, 21, 21, 0.04);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .hero { padding: 3rem 2.5rem; }
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  max-width: 48rem;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  margin-top: 1.5rem;
+  max-width: 48rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--color-foreground) 78%, transparent);
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-scroll { display: none; }
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ── SECTION LAYOUT ── */
+section {
+  padding: 4.5rem 0;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+}
+
+.lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 680px;
+  font-weight: 300;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: none;
+}
+
+/* ── THE BIG CYCLE DIAGRAM ── */
+.cycle-section {
+  padding: 4.5rem 1.5rem 5.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.cycle-section .section-label { color: var(--gold-light); }
+.cycle-section h2 { color: var(--paper); }
+.cycle-section .lead { color: rgba(245,240,232,0.55); }
+
+.cycle-wrap {
+  max-width: 1200px;
+  margin: 56px auto 0;
+  position: relative;
+}
+
+/* SVG orbit ring */
+.orbit-svg {
+  display: block;
+  width: min(700px, 90vw);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  animation: rotateSlow 40s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.orbit-svg circle.ring {
+  fill: none;
+  stroke: rgba(201,146,42,0.18);
+  stroke-width: 1;
+  stroke-dasharray: 8 6;
+}
+
+/* Cycle nodes positioned around the ring */
+.nodes-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cycle-nodes {
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  position: relative;
+  margin: 0 auto;
+}
+
+.node {
+  position: absolute;
+  width: 148px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.node:hover { transform: translate(-50%, -50%) scale(1.06); }
+
+.node-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  border: 1.5px solid rgba(201,146,42,0.4);
+  background: rgba(201,146,42,0.1);
+  box-shadow: 0 0 30px rgba(201,146,42,0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.node:hover .node-icon {
+  box-shadow: 0 0 50px rgba(201,146,42,0.4);
+  border-color: var(--gold-light);
+}
+
+.node-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--paper);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.node-sub {
+  font-size: 11px;
+  color: rgba(245,240,232,0.45);
+  line-height: 1.4;
+}
+
+/* Center medallion */
+.center-medallion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,146,42,0.2), rgba(201,146,42,0.04));
+  border: 1px solid rgba(201,146,42,0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 5;
+}
+
+.center-medallion .big-symbol {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.center-medallion p {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--gold-light);
+  margin-top: 6px;
+  line-height: 1.3;
+  padding: 0 12px;
+}
+
+/* node positions (8 nodes on circle, r ≈ 44%) */
+.n1  { top: 4%;   left: 50%; }
+.n2  { top: 18%;  left: 88%; }
+.n3  { top: 56%;  left: 97%; }
+.n4  { top: 88%;  left: 74%; }
+.n5  { top: 96%;  left: 50%; }
+.n6  { top: 88%;  left: 26%; }
+.n7  { top: 56%;  left: 3%;  }
+.n8  { top: 18%;  left: 12%; }
+
+/* ── ARROWS between nodes ── */
+.arrows-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Animated dash on arrow paths */
+.flow-path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 8;
+  animation: dashMove 2s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -56; }
+}
+
+/* ── CANTILLON WATERFALL ── */
+.waterfall {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.wf-step {
+  padding: 32px 24px;
+  border-right: 1px solid var(--line);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.wf-step:last-child { border-right: none; }
+.wf-step:hover { background: rgba(201,146,42,0.04); }
+
+.wf-num {
+  font-family: var(--font-heading);
+  font-size: 52px;
+  font-weight: 900;
+  color: rgba(201,146,42,0.15);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.wf-step h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.wf-step p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.wf-arrow {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--gold);
+  z-index: 1;
+}
+
+/* ── TWO BEASTS ── */
+.beasts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--line);
+  margin-top: 48px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.beast {
+  background: var(--paper);
+  padding: 40px 36px;
+}
+
+.beast-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.beast-1 .beast-tag { background: rgba(192,57,43,0.1); color: var(--red); }
+.beast-2 .beast-tag { background: rgba(201,146,42,0.12); color: var(--gold); }
+
+.beast h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.beast p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.beast-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bf-item {
+  padding: 10px 14px;
+  font-size: 13px;
+  border-left: 2px solid;
+  line-height: 1.4;
+}
+
+.beast-1 .bf-item { border-color: rgba(192,57,43,0.4); background: rgba(192,57,43,0.04); }
+.beast-2 .bf-item { border-color: rgba(201,146,42,0.4); background: rgba(201,146,42,0.04); }
+
+.bf-item strong { display: block; font-size: 14px; margin-bottom: 2px; }
+.bf-item span { color: var(--muted); }
+
+/* ── WHO PAYS ── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 48px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tier {
+  background: var(--paper);
+  padding: 28px 20px 32px;
+}
+
+.tier-emoji {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.tier h3 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tier ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tier li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.45;
+}
+
+.tier li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 10px;
+  top: 3px;
+}
+
+/* ── IMPACT ── */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  background: var(--line);
+  margin-top: 48px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.impact-card {
+  background: var(--paper);
+  padding: 28px 24px;
+}
+
+.impact-icon { font-size: 24px; margin-bottom: 12px; }
+
+.impact-card h3 {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.impact-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.impact-card li {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  padding-left: 14px;
+  position: relative;
+}
+
+.impact-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 11px;
+}
+
+/* ── SELF-REINFORCING LOOP ── */
+.loop-section {
+  padding: 4.5rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 1.5rem;
+}
+
+.loop-section .section-label { color: var(--gold-light); }
+.loop-section h2 { color: var(--paper); }
+.loop-section .lead { color: rgba(245,240,232,0.5); }
+
+.loop-rail {
+  max-width: 1100px;
+  margin: 56px auto 0;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+}
+
+.loop-step {
+  flex: 1;
+  border: 1px solid rgba(201,146,42,0.2);
+  border-right: none;
+  padding: 28px 18px;
+  position: relative;
+  background: rgba(201,146,42,0.04);
+  transition: background 0.3s;
+}
+
+.loop-step:last-child { border-right: 1px solid rgba(201,146,42,0.2); }
+.loop-step:hover { background: rgba(201,146,42,0.1); }
+
+.ls-n {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 900;
+  color: rgba(201,146,42,0.2);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.ls-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  color: var(--paper);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.ls-sub {
+  font-size: 12px;
+  color: rgba(245,240,232,0.4);
+  line-height: 1.45;
+}
+
+.ls-arrow {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(201,146,42,0.25);
+  border: 1px solid rgba(201,146,42,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  z-index: 2;
+  color: var(--gold-light);
+}
+
+.loop-closes {
+  margin-top: 28px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 28px;
+  border: 1px solid rgba(201,146,42,0.3);
+  border-radius: 4px;
+  background: rgba(201,146,42,0.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  color: rgba(245,240,232,0.7);
+  line-height: 1.55;
+}
+
+.loop-closes strong { color: var(--gold-light); }
+.loop-closes .infinity { font-size: 36px; color: var(--gold); flex-shrink: 0; }
+
+/* ── FINALE ── */
+.finale {
+  padding: 5rem 0 2rem;
+  text-align: center;
+  background: var(--paper);
+}
+
+.finale blockquote {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 3.5vw, 38px);
+  line-height: 1.35;
+  max-width: 860px;
+  margin: 0 auto 32px;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.finale blockquote em { color: var(--gold); font-style: normal; }
+
+.finale-note {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+
+/* ── RESILIENCE LAYERS ── */
+.resilience-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.resilience-layer {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--paper);
+}
+
+.resilience-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.resilience-icon {
+  flex: 0 0 auto;
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+
+.resilience-number {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--paper);
+}
+
+.resilience-header h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.resilience-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.resilience-body ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 2rem;
+  list-style: none;
+}
+
+.resilience-body ul + ul {
+  border-left: 1px solid var(--line);
+}
+
+.resilience-body li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.resilience-body li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.resilience-foot {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(201,146,42,0.18);
+  background: rgba(201,146,42,0.06);
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.resilience-foot::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.4em;
+  margin-right: 0.85rem;
+  border-radius: 999px;
+  background: var(--gold);
+  vertical-align: -0.32em;
+}
+
+.resilience-note {
+  margin-top: 2rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid rgba(30,132,73,0.22);
+  border-radius: 1rem;
+  background: rgba(30,132,73,0.07);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.resilience-note strong {
+  color: var(--ink);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .resilience-body { grid-template-columns: 1fr; }
+  .resilience-body ul + ul { border-left: 0; border-top: 1px solid var(--line); }
+  .waterfall, .tiers, .beasts-grid, .impact-grid {
+    grid-template-columns: 1fr;
+  }
+  .wf-arrow { display: none; }
+  .beasts-grid { gap: 1px; }
+  .loop-rail { flex-direction: column; }
+  .loop-step { border-right: 1px solid rgba(201,146,42,0.2); border-bottom: none; }
+  .loop-step:last-child { border-bottom: 1px solid rgba(201,146,42,0.2); }
+  .ls-arrow { display: none; }
+  .cycle-nodes { display: none; }
+  .orbit-svg { opacity: 0.3; }
+}
+
+@media (max-width: 600px) {
+  .tiers { grid-template-columns: 1fr 1fr; }
+  .impact-grid { grid-template-columns: 1fr 1fr; }
+}
+
+
+.money-system .hero,
+.money-system .finale {
+  border-radius: 1.5rem;
+}
+
+html[data-theme="dark"] .money-system {
+  --red: #f08a7f;
+  --blue: #7eb6dc;
+  --green: #67d391;
+}
+
+@media (max-width: 760px) {
+  .money-system { margin-top: 1rem; }
+  .money-system .hero { border-radius: 1.25rem; }
+  .money-system section { padding: 3.5rem 0; }
+  .money-system [style*="grid-template-columns:1fr 1fr"],
+  .money-system [style*="grid-template-columns:repeat(5,1fr)"],
+  .money-system [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+</style>
