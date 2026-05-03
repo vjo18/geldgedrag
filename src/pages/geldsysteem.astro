@@ -5,84 +5,67 @@ import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
 ---
 
-<Layout title={`${SITE.title} | Geldsysteem`} description="Hoe geldontwaarding onze samenleving beïnvloedt.">
+<Layout title={`${SITE.title} | Geldsysteem`} description="De eeuwige schuldcyclus en financiële weerbaarheid.">
   <Header />
   <main id="main-content" class="app-layout pb-16">
-    <section class="surface mt-6 px-4 py-8 sm:px-8 sm:py-10">
-      <div class="gg-page">
-        <header class="gg-header">
-          <span class="gg-label">geldgedrag.be — educatieve infographic</span>
-          <h1>Hoe geldontwaarding<br /><em>onze samenleving ondermijnt</em></h1>
-          <p>Van geld bijdrukken tot gezinsbreuk, volksgezondheid en politieke instabiliteit — de verborgen keten van oorzaak en gevolg.</p>
-          <div class="gg-rule"></div>
-        </header>
-
-        <div class="gg-node"><div class="gg-flow gg-dark"><div class="icon">🖨️</div><h2>De gelddrukker</h2><p>Overheid vergroot de geldhoeveelheid om begrotingstekorten te financieren — zonder belastingen te verhogen</p></div><div class="arr">↓</div></div>
-        <div class="gg-node"><div class="gg-flow gg-outline"><h3>💸 Muntontwaarding (valutadebasering)</h3><p>Meer geld in omloop zonder meer goederen → koopkracht daalt voor iedereen</p></div><div class="arr">↓</div></div>
-
-        <article class="gg-cant">
-          <div class="head"><span class="badge">Cantillon-effect</span><div><h3>Nieuw geld bereikt niet iedereen tegelijk</h3><p>Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</p></div></div>
-          <div class="waterfall">
-            <div class="step"><div class="num">1</div><h4>Overheid &amp; centrale bank</h4><p>Nieuw geld wordt gecreëerd via obligatie-aankopen of directe staatsfinanciering. Prijzen zijn nog niet gestegen.</p><span>Eerste ontvanger</span></div>
-            <div class="step"><div class="num">2</div><h4>Banken &amp; financiële sector</h4><p>Geld stroomt via de bankbalansen naar aandelen-, vastgoed- en obligatiemarkten. Activa stijgen in prijs.</p><span>Tweede ontvanger</span></div>
-            <div class="step"><div class="num">3</div><h4>Grote bedrijven &amp; aannemers</h4><p>Overheidscontracten, subsidies en goedkoop krediet bereiken bedrijven dicht bij de overheid. Prijzen beginnen te stijgen.</p><span>Derde ontvanger</span></div>
-            <div class="step"><div class="num">4</div><h4>Gewone burgers &amp; loontrekkers</h4><p>Lonen stijgen als laatste — maar prijzen zijn al omhoog. De koopkracht is al verdampt vóór het geld is aangekomen.</p><span>Laatste ontvanger</span></div>
-          </div>
-          <div class="insight"><strong>💡 De kernongelijkheid:</strong> inflatie is geen neutrale belasting. Ze herverdeelt rijkdom van mensen die later het nieuwe geld ontvangen naar mensen die het eerder ontvangen.</div>
-        </article>
-
-        <div class="cols">
-          <div class="col"><div class="col-head red">Verstoring van prijssignalen</div><div class="card"><h5>Verkeerde investeringen</h5><p>Kapitaal stroomt naar sectoren dicht bij de overheid — niet naar de productiefste plekken in de economie.</p></div><div class="card"><h5>Kapitaalverspilling</h5><p>Overheid besteedt aan symptomen i.p.v. oorzaken — inefficiëntie neemt structureel toe.</p></div></div>
-          <div class="col"><div class="col-head amber">Hogere bedrijfskosten → consumentenprijzen</div><div class="card"><h5>Prijsstijgingen</h5><p>Bedrijven rekenen hogere inputkosten door aan de consument.</p></div><div class="card"><h5>Shrinkflatie</h5><p>Zelfde prijs, kleinere verpakking — verborgen kwaliteitsverlies.</p></div><div class="card"><h5>Werkloosheid</h5><p>Bedrijven snijden in personeel om marges te redden.</p></div></div>
-          <div class="col"><div class="col-head teal">Activaprijsinflatie</div><div class="card"><h5>Vermogensongelijkheid</h5><p>Wie activa bezit (aandelen, vastgoed) wint — wie niets bezit verliest.</p></div><div class="card"><h5>Stijgende huurprijzen</h5><p>Vastgoed duurder → hogere huren → meer dakloosheid.</p></div><div class="card"><h5>Meer schulden</h5><p>Banken pushen grotere hypotheken — het systeem wordt kwetsbaarder.</p></div></div>
+    <section class="surface mt-6 gg-shell">
+      <div class="hero">
+        <div>
+          <div class="hero-eyebrow">Geld · Schuld · Cyclus</div>
+          <h1>De <em>oneindige</em><br />schuldcyclus</h1>
+          <p class="hero-sub">De economie draait op lenen... Zo sluit de cirkel zich opnieuw.</p>
         </div>
-
-        <div class="gg-node"><div class="gg-flow gg-soft"><h3>📉 Verminderde koopkracht voor de gewone burger</h3><p>Het dagelijks leven wordt duurder — ondanks hetzelfde inkomen</p></div><div class="arr">↓</div></div>
-
-        <div class="sec"><h2>De maatschappelijke gevolgen: <em>financieel, psychologisch &amp; sociaal</em></h2><p>Zes domeinen waarin geldontwaarding het dagelijks leven beïnvloedt</p></div>
-        <div class="impact">
-          <article><h4>💰 Financieel</h4><h5>Economische kwetsbaarheid</h5><ul><li>Sparen loont niet meer</li><li>Armoede ondanks werk ("werkende armen")</li><li>Schuldenspiraal door noodgedwongen lenen</li><li>Pensioen onzeker door blijvende inflatie</li></ul></article>
-          <article><h4>🧠 Psychologisch</h4><h5>Mentale gezondheidskrisis</h5><ul><li>Chronische geldstress en angst</li><li>Hopeloosheid: "de toekomst telt niet"</li><li>Hoger risico op depressie</li><li>Verslavingsproblemen als vluchtgedrag</li></ul></article>
-          <article><h4>🏥 Gezondheid</h4><h5>Volksgezondheidskrisis</h5><ul><li>Goedkopere, ongezondere voeding</li><li>Stijgende obesitas &amp; chronische ziektes</li><li>Overbelast zorgsysteem</li><li>Lagere ingrediëntenkwaliteit in voeding</li></ul></article>
-          <article><h4>👨‍👩‍👧 Gezin &amp; demografie</h4><h5>Het gezin staat onder druk</h5><ul><li>Twee inkomens nodig voor een woning</li><li>Minder tijd voor kinderen</li><li>Dalende geboortecijfers</li><li>Uitstel huwelijk &amp; gezinsvorming</li></ul></article>
-          <article><h4>🤝 Sociaal</h4><h5>Maatschappelijke fragmentatie</h5><ul><li>Stijgende dakloosheid</li><li>Erosie van onderling vertrouwen</li><li>Toenemende ongelijkheid</li><li>"Vandaag leven" i.p.v. lange termijn denken</li></ul></article>
-          <article><h4>🗳️ Politiek</h4><h5>Politieke instabiliteit</h5><ul><li>Groter overheidsapparaat vereist</li><li>Extremisme aan beide kanten</li><li>Media-capture &amp; censuur</li><li>Zondebokpolitiek i.p.v. echte oplossingen</li></ul></article>
-        </div>
-
-        <div class="sec"><h2>Wie betaalt de rekening?</h2><p>De impact verschilt per inkomensgroep — verklaard door het Cantillon-effect</p></div>
-        <div class="tiers">
-          <article><div>👷</div><h4>Laag inkomen</h4><span>Verliest altijd</span><p>Vaste lonen, geen activa, geen buffer. Ontvangt nieuw geld als laatste — prijzen zijn al gestegen.</p></article>
-          <article><div>👨‍💼</div><h4>Middenklasse</h4><span>Nieuwe armen</span><p>Huis te duur, sparen zinloos. Koopkracht verdampt stilletjes terwijl activa buiten bereik stijgen.</p></article>
-          <article><div>💼</div><h4>Vermogenden</h4><span>Langzaam uitgehold</span><p>Activa stijgen, maar minder snel dan de geldgroei. Koopkracht erodeert geleidelijk.</p></article>
-          <article><div>🏛️</div><h4>Politiek verbonden</h4><span>Profiteert</span><p>Ontvangt nieuw geld het eerst via overheidsuitgaven, subsidies en regelgeving in hun voordeel.</p></article>
-        </div>
-
-        <section class="loop"><h2>De <em>zichzelf versterkende spiraal</em></h2><p>De overheid lost de bijwerkingen op met hetzelfde middel dat ze veroorzaakte</p><div class="flow"><span class="hl">🖨️ Meer geld drukken</span><b>→</b><span>Cantillon-herverdeling</span><b>→</b><span>Grotere overheid</span><b>→</b><span>Meer crises</span><b>→</b><span>Meer schulden</span><b>→</b><span class="hl">🖨️ Nóg meer drukken</span></div></section>
-
-        <div class="endcards"><article><small>Het kernprobleem</small><h3>Geld zonder vaste waarde</h3><p>Wanneer de overheid de geldhoeveelheid naar believen kan uitbreiden, worden de kosten verborgen via inflatie. Via het Cantillon-effect betalen burgers die het nieuwe geld het laatste ontvangen — spaarders en loontrekkers — een verborgen prijs voor overheidsuitgaven.</p></article><article><small>Wat helpt?</small><h3>Bewustzijn &amp; gezond geldgedrag</h3><p>Begrijpen hoe het systeem werkt is de eerste stap. Bewust sparen, investeren in waardebehoudende activa, schuldvermijding en financiële educatie beschermen je koopkracht — en vormen het fundament van gezond geldgedrag.</p></article></div>
-
-        <div class="src">Gebaseerd op het educatieve werk van SatsVsFiat.com — "What's The Problem?" door Joe Bryan (@SatsVsFiat)</div>
       </div>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">01 — De motor</div><h2>Krediet als brandstof voor de economie</h2><p class="lead">Geld lenen is niet per definitie slecht.</p></section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">02 — Keerzijde 1: De schuldspiraal</div><h2>Nieuw geld komt als schuld</h2><p class="lead">Wanneer banken leningen geven, schrijven ze geld bij uit het niets, als een schuld.</p></section>
+      <div class="divider"></div>
+      <section class="reveal">
+        <div class="section-label">03 — Keerzijde 2: Ongelijkheid</div>
+        <h2>Nieuw geld bereikt niet iedereen tegelijk</h2>
+        <p class="lead">Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert.</p>
+        <div class="waterfall">
+          <div class="wf-step"><div class="wf-num">1</div><h3>Overheid &amp; centrale bank</h3><p>Ontvangen of maken nieuw geld als eerste.</p></div>
+          <div class="wf-step"><div class="wf-num">2</div><h3>Banken &amp; financiële markten</h3><p>Nieuw geld stroomt naar obligaties, aandelen en vastgoed.</p></div>
+          <div class="wf-step"><div class="wf-num">3</div><h3>Bedrijven &amp; bezitters</h3><p>Wie activa bezit profiteert; inputkosten stijgen.</p></div>
+          <div class="wf-step"><div class="wf-num">4</div><h3>Gewone burgers &amp; spaarders</h3><p>Consumptieprijzen stijgen en koopkracht daalt.</p></div>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">04 — Inflatie</div><h2>Inflatie: de onzichtbare belasting</h2><p class="lead">Inflatie is een structureel gevolg van hoe ons geldsysteem werkt.</p></section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">05 — De verdeling</div><h2>Wie betaalt de prijs?</h2><div class="tiers"><div class="tier"><h3>Laag inkomen</h3></div><div class="tier"><h3>Middenklasse</h3></div><div class="tier"><h3>Vermogenden</h3></div><div class="tier"><h3>Dicht bij de geldkraan</h3></div></div></section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">06 — De doorwerking</div><h2>Maatschappelijke gevolgen</h2><div class="impact-grid"><div class="impact-card"><h3>Financieel</h3></div><div class="impact-card"><h3>Psychologisch</h3></div><div class="impact-card"><h3>Gezondheid</h3></div><div class="impact-card"><h3>Gezin</h3></div><div class="impact-card"><h3>Sociaal</h3></div><div class="impact-card"><h3>Politiek</h3></div></div></section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">07 — Het dilemma</div><h2>Twee zwarte beesten</h2><div class="beasts-grid"><div class="beast"><h3>Te weinig krediet</h3></div><div class="beast"><h3>Te veel krediet</h3></div></div></section>
+      <div class="divider"></div>
+      <section class="loop-section"><div class="section-label">08 — De kern</div><h2>De oneindige, zichzelf versterkende cyclus</h2></section>
+      <div class="divider"></div>
+      <section class="reveal"><div class="section-label">09 — Wat kan ik doen?</div><h2>Drie lagen van financiële weerbaarheid</h2></section>
     </section>
   </main>
   <Footer />
 </Layout>
 
 <style>
-.gg-page{max-width:1060px;margin:0 auto}.gg-header{text-align:center}.gg-label{font:700 11px var(--font-heading);letter-spacing:.22em;text-transform:uppercase;color:var(--color-accent)}
-.gg-header h1{margin-top:14px;font:700 clamp(28px,4vw,44px)/1.18 var(--font-heading)}.gg-header em{font-family:var(--font-body);font-style:italic;color:var(--color-accent)}.gg-header p{max-width:620px;margin:14px auto 0;color:rgb(var(--muted-foreground))}.gg-rule{width:48px;height:2px;background:var(--color-accent);margin:20px auto 0}
-.gg-node{display:flex;flex-direction:column;align-items:center;margin-top:18px}.gg-flow{max-width:520px;width:100%;text-align:center;border-radius:16px;padding:18px 28px}.gg-dark{background:#151515;color:#fff}.gg-dark p{color:#ffffffb3}.gg-outline{border:1px solid var(--color-accent);background:color-mix(in srgb,var(--color-accent) 5%, white)}.gg-soft{border:1px solid #44b7d6;background:color-mix(in srgb,#44b7d6 8%, white)}.arr{margin:8px 0;color:rgb(var(--border));font-size:22px}
-.gg-cant{margin-top:8px;border:1px solid rgb(var(--border));border-radius:20px;background:rgb(var(--card));padding:24px}.head{display:flex;gap:12px;align-items:center}.badge{background:#111;color:#fff;padding:7px 12px;border-radius:10px;font:700 11px var(--font-heading);letter-spacing:.12em;text-transform:uppercase}
-.head p{color:rgb(var(--muted-foreground));font-size:13px}.waterfall{margin-top:18px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.step{text-align:center;padding:8px}.num{width:34px;height:34px;border-radius:999px;border:1px solid rgb(var(--border));display:grid;place-items:center;margin:0 auto 8px;font-weight:700}.step p{font-size:12px;color:rgb(var(--muted-foreground));margin:6px 0}.step span{font-size:10px;font-weight:700;text-transform:uppercase}
-.insight{margin-top:14px;border:1px solid color-mix(in srgb,var(--color-accent) 25%, white);background:color-mix(in srgb,var(--color-accent) 7%, white);border-radius:12px;padding:12px 14px;font-size:13px}
-.cols{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.col{display:flex;flex-direction:column;gap:10px}.col-head{font:700 12px var(--font-heading);text-transform:uppercase;letter-spacing:.12em;padding:12px;border:1px solid;border-radius:12px}.red{color:#b03b3b;border-color:#d08787;background:#d0878714}.amber{color:#97661f;border-color:#c49b5f;background:#c49b5f17}.teal{color:#2b7785;border-color:#66a8b5;background:#66a8b518}
-.card{border:1px solid rgb(var(--border));background:rgb(var(--card));border-radius:10px;padding:12px}.card p{font-size:13px;color:rgb(var(--muted-foreground));margin-top:4px}
-.sec{text-align:center;margin-top:36px}.sec h2{font:700 clamp(22px,3vw,32px)/1.25 var(--font-heading)}.sec em{font-family:var(--font-body);font-style:italic;color:var(--color-accent)}.sec p{margin-top:6px;color:rgb(var(--muted-foreground))}
-.impact{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.impact article{border:1px solid rgb(var(--border));background:rgb(var(--card));border-radius:14px;padding:16px}.impact h4{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-accent)}.impact h5{margin:8px 0;font-size:15px}.impact ul{padding-left:16px}.impact li{margin:3px 0;color:rgb(var(--muted-foreground));font-size:13px}
-.tiers{margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.tiers article{border:1px solid rgb(var(--border));background:rgb(var(--card));border-radius:14px;padding:16px;text-align:center}.tiers span{display:inline-block;margin-top:6px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--color-accent) 12%, white);font-size:11px}.tiers p{margin-top:8px;color:rgb(var(--muted-foreground));font-size:12px}
-.loop{margin-top:34px;background:#151515;border-radius:20px;padding:28px;text-align:center;color:#fff}.loop h2{font:700 30px var(--font-heading)}.loop em{font-family:var(--font-body);font-style:italic;color:#48c0de}.loop p{color:#ffffff9e;margin-top:6px}.flow{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.flow span{border:1px solid #ffffff2b;background:#ffffff14;padding:7px 10px;border-radius:10px;font-size:13px}.flow .hl{border-color:#5d7fe8;background:#5d7fe82e;color:#b8c8ff}
-.endcards{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.endcards article{border:1px solid rgb(var(--border));border-radius:16px;padding:18px}.endcards article:first-child{background:#d0878710}.endcards article:last-child{background:#66a8b518}.endcards small{text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:rgb(var(--muted-foreground))}.endcards h3{margin:8px 0}.endcards p{color:rgb(var(--muted-foreground));font-size:13px}
-.src{text-align:center;margin-top:28px;color:rgb(var(--muted-foreground));font-size:12px}
-@media(max-width:900px){.waterfall,.cols,.impact{grid-template-columns:1fr 1fr}.tiers{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.waterfall,.cols,.impact,.tiers,.endcards{grid-template-columns:1fr}.head{flex-direction:column;align-items:flex-start}}
+.gg-shell{padding:0;background:#f5f0e8;color:#0a0a0f;overflow:hidden}.hero{min-height:70svh;display:grid;place-items:center;text-align:center;padding:60px 24px;background:radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,146,42,.18) 0%, transparent 70%)}
+.hero h1{font-family:var(--font-heading);font-size:clamp(42px,8vw,96px);line-height:1}.hero h1 em{color:#c9922a;font-style:italic}.hero-sub{max-width:720px;margin:20px auto;color:#6b6560}
+.section-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#c9922a}.divider{height:1px;background:rgba(0,0,0,.12)}
+.gg-shell>section{padding:80px 24px;max-width:1200px;margin:0 auto}.lead{color:#6b6560;max-width:720px}.waterfall,.tiers,.impact-grid,.beasts-grid{margin-top:32px;display:grid;gap:1px;background:rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.12)}
+.waterfall{grid-template-columns:repeat(4,1fr)}.tiers{grid-template-columns:repeat(4,1fr)}.impact-grid{grid-template-columns:repeat(3,1fr)}.beasts-grid{grid-template-columns:1fr 1fr}
+.wf-step,.tier,.impact-card,.beast{background:#f5f0e8;padding:24px}.wf-num{font-size:40px;color:rgba(201,146,42,.3)}.loop-section{background:#0a0a0f;color:#f5f0e8;padding:80px 24px}
+@media (max-width:900px){.waterfall,.tiers,.impact-grid,.beasts-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.waterfall,.tiers,.impact-grid,.beasts-grid{grid-template-columns:1fr}}
 </style>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  els.forEach((el) => obs.observe(el));
+</script>
