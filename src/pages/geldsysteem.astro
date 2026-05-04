@@ -35,7 +35,7 @@ import { SITE } from "@/config";
     creëert het echte welvaart: jobs, bedrijven, innovatie, woningen.
   </p>
 
-  <div style="margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+  <div class="motor-grid" style="margin-top:48px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
     <div style="background:var(--paper); padding:28px 22px;">
       <div style="font-size:28px; margin-bottom:12px;">💰</div>
       <div style="font-family:var(--font-heading); font-size:17px; margin-bottom:8px;">Lenen</div>
@@ -70,26 +70,26 @@ import { SITE } from "@/config";
     Wanneer banken leningen geven, schrijven ze geld bij uit het niets, als een schuld. Geleend geld heeft een rentekost en die moet terugbetaald worden. Om die groeiende verplichtingen betaalbaar te houden, is vaak nieuw krediet nodig. Zo wordt de rekening niet weggewerkt, maar steeds verder vooruitgeschoven in de tijd.
   </p>
 
-  <div style="margin-top:48px; display:flex; flex-wrap:wrap; gap:2px; align-items:stretch;">
-    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(26,82,118,0.07); border:1px solid rgba(26,82,118,0.2); border-radius:4px; text-align:center;">
+  <div class="debt-flow" style="margin-top:48px; display:flex; flex-wrap:wrap; gap:2px; align-items:stretch;">
+    <div class="debt-flow-step" style="flex:1; min-width:160px; padding:26px 20px; background:rgba(26,82,118,0.07); border:1px solid rgba(26,82,118,0.2); border-radius:4px; text-align:center;">
       <div style="font-size:22px; margin-bottom:8px;">💸</div>
       <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Nieuw geld</div>
       <div style="font-size:12px; color:var(--muted);">Bank creëert geld bij het verstrekken van een lening</div>
     </div>
-    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
-    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
+    <div class="debt-flow-arrow" style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div class="debt-flow-step" style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
       <div style="font-size:22px; margin-bottom:8px;">📄</div>
       <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Schuld</div>
       <div style="font-size:12px; color:var(--muted);">Nieuw geld is tegelijk een schuld in de toekomst</div>
     </div>
-    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
-    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
+    <div class="debt-flow-arrow" style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div class="debt-flow-step" style="flex:1; min-width:160px; padding:26px 20px; background:rgba(201,146,42,0.07); border:1px solid rgba(201,146,42,0.25); border-radius:4px; text-align:center;">
       <div style="font-size:22px; margin-bottom:8px;">💰</div>
       <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Rente</div>
       <div style="font-size:12px; color:var(--muted);">Lenen kost geld: schuld + rente moet terugbetaald worden</div>
     </div>
-    <div style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
-    <div style="flex:1; min-width:160px; padding:26px 20px; background:rgba(192,57,43,0.1); border:1px solid rgba(192,57,43,0.35); border-radius:4px; text-align:center;">
+    <div class="debt-flow-arrow" style="display:flex; align-items:center; padding:0 4px; color:var(--gold); font-size:18px;">→</div>
+    <div class="debt-flow-step" style="flex:1; min-width:160px; padding:26px 20px; background:rgba(192,57,43,0.1); border:1px solid rgba(192,57,43,0.35); border-radius:4px; text-align:center;">
       <div style="font-size:22px; margin-bottom:8px;">⛓️</div>
       <div style="font-family:var(--font-heading); font-size:15px; margin-bottom:4px;">Meer lenen</div>
       <div style="font-size:12px; color:var(--muted);">Nieuw geld nodig om schulden betaalbaar te houden</div>
@@ -1433,6 +1433,21 @@ html[data-theme="dark"] .money-system {
   .money-system { margin-top: 1rem; }
   .money-system .hero { border-radius: 1.25rem; }
   .money-system section { padding: 3.5rem 0; }
+  .money-system .motor-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .money-system .debt-flow {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  .money-system .debt-flow-step {
+    width: 100%;
+    min-width: 0 !important;
+    flex: none !important;
+  }
+  .money-system .debt-flow-arrow {
+    display: none !important;
+  }
   .money-system [style*="grid-template-columns:1fr 1fr"],
   .money-system [style*="grid-template-columns:repeat(5,1fr)"],
   .money-system [style*="grid-template-columns:repeat(3,1fr)"] {
