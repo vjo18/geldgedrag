@@ -63,7 +63,7 @@ import { SITE } from "@/config";
 
 <!-- ═══════════════ 2. VERBORGEN KANT ═══════════════ -->
 <section class="reveal">
-  <div class="section-label">02 — Keerzijde 1: De schuldspiraal</div>
+  <div class="section-label">02 — Keerzijde: De schuldspiraal</div>
   <h2>Nieuw geld komt als schuld</h2>
   <p class="lead">
     Wanneer banken leningen geven aan bedrijven en particulieren, schrijven ze geld bij uit het niets, als een schuld. 
@@ -104,13 +104,13 @@ import { SITE } from "@/config";
 
 <!-- ═══════════════ 3. CANTILLON ═══════════════ -->
 <section class="reveal">
-  <div class="section-label">03 — Keerzijde 2: Ongelijkheid</div>
+  <div class="section-label">03 — Ongelijkheid</div>
   <h2>Nieuw geld bereikt niet iedereen tegelijk</h2>
   <p class="lead">
     <i>Richard Cantillon (1730): wie het nieuwe geld als eerste ontvangt, profiteert — wie het als laatste krijgt, verliest koopkracht.</i><br><br>
 
 Nieuw geld raakt niet iedereen op hetzelfde moment.
-    Wie dicht bij de bron van nieuw geld zit — zoals overheden, banken of financiële markten — koopt voordat de prijzen gestegen zijn.
+    Wie dicht bij de bron van nieuw geld zit en wie dus makkelijker geld kan lenen — zoals overheden, banken of financiële markten — koopt voordat de prijzen gestegen zijn.
     Wie als laatste komt, betaalt de hogere rekening.
   </p>
 
@@ -274,41 +274,46 @@ Nieuw geld raakt niet iedereen op hetzelfde moment.
     <div class="tier">
       <div class="tier-emoji">👷</div>
       <h3>Laag inkomen</h3>
+      <div class="tier-label">
+    <span class="inline-block rounded px-2 py-0.5 text-xs font-semibold font-heading tracking-wide bg-red-100 text-red-600">
+      Verliezen altijd
+    </span>
+  </div>
       <ul>
         <li>Geen spaargeld of bezittingen</li>
         <li>Prijzen stijgen sneller dan loon</li>
         <li>Moet vaker lenen om rond te komen</li>
-        <li>Verliest altijd</li>
       </ul>
+        
     </div>
     <div class="tier">
       <div class="tier-emoji">👨‍💼</div>
       <h3>Middenklasse</h3>
+      <div class="tier-label"><span class="inline-block rounded px-2 py-0.5 text-xs font-semibold font-heading tracking-wide bg-orange-100 text-orange-600">Werkende nieuwe armen</span></div>
       <ul>
         <li>Huis steeds minder bereikbaar</li>
         <li>Sparen voelt nutteloos</li>
         <li>Twee inkomens nodig voor zekerheid</li>
-        <li>Worden de nieuwe armen</li>
       </ul>
     </div>
     <div class="tier">
       <div class="tier-emoji">💼</div>
       <h3>Vermogenden</h3>
+      <div class="tier-label"><span class="inline-block rounded px-2 py-0.5 text-xs font-semibold font-heading tracking-wide bg-yellow-100 text-yellow-600">Langzaam uitgehold</span></div>
       <ul>
         <li>Bezitten vastgoed en aandelen</li>
         <li>Profiteren van activaprijsinflatie</li>
         <li>Maar minder snel dan de geldgroei</li>
-        <li>Vermogen wordt langzaam uitgehold</li>
       </ul>
     </div>
     <div class="tier">
       <div class="tier-emoji">🏛️</div>
       <h3>Politieke link</h3>
+      <div class="tier-label"><span class="inline-block rounded px-2 py-0.5 text-xs font-semibold font-heading tracking-wide bg-green-100 text-green-700">Snel aanpassen</span></div>
       <ul>
         <li>Zijn politiek geconnecteerd</li>
         <li>Profiteren optimaal van subsidies &amp; beleid</li>
         <li>Ontvangen nieuw geld vroeg</li>
-        <li>Kunnen zich snel aanpassen</li>
       </ul>
     </div>
   </div>
@@ -1080,6 +1085,11 @@ h2 {
   top: 3px;
 }
 
+.tier-label {
+  margin-bottom: 16px;
+  align-self: start;
+}
+
 /* ── IMPACT ── */
 .impact-grid {
   display: grid;
@@ -1450,5 +1460,7 @@ html[data-theme="dark"] .money-system {
     grid-template-columns: 1fr !important;
   }
 }
+
+
 
 </style>
