@@ -85,7 +85,7 @@ wordt aantrekkelijker dan sparen voor later.
 Niet noodzakelijk uit hebzucht.  
 Maar uit onzekerheid.  
 
-## Hyperbolic discounting
+## Liever onmiddellijke beloning
 
 Binnen de gedragspsychologie bestaat een concept:
 Delay discounting  
@@ -235,7 +235,7 @@ Volgens hem draait geld vooral om gedrag.
 Niet intelligentie.  
 Maar psychologie.  
 
-Hij schrijft:
+Hij schrijft:  
 “Doing well with money has little to do with how smart you are and a lot to do with how you behave.”  
 
 Volgens Housel bepalen emoties vaak meer  
