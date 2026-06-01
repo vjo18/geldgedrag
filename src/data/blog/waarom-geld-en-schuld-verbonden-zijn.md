@@ -172,10 +172,10 @@ Economie gaat niet alleen over geld.
 
 Maar ook over tijd.
 
-Mensen met een lage tijdsvoorkeur
+Mensen met een lage tijdsvoorkeur  
 denken meer op lange termijn.
 
-Ze sparen.
+Ze sparen.  
 Ze bouwen reserves op.
 Ze stellen consumptie uit.
 
