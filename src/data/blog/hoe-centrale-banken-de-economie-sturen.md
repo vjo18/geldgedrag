@@ -44,9 +44,7 @@ Centrale banken zeggen zelden:
 In plaats daarvan veranderen ze de omstandigheden.  
 
 Ze sturen via prikkels.  
-
 En mensen reageren daarop.  
-
 Vaak zonder het te beseffen.  
 
 ## De belangrijkste knop: rente
@@ -58,19 +56,15 @@ Rente is de prijs van geld in de tijd.
 
 Wanneer rente laag is:  
 
-wordt lenen goedkoper  
-
-wordt investeren aantrekkelijker  
-
-wordt sparen minder interessant  
+- wordt lenen goedkoper  
+- wordt investeren aantrekkelijker  
+- wordt sparen minder interessant  
 
 Wanneer rente hoog is:  
 
-wordt lenen duurder  
-
-wordt sparen aantrekkelijker  
-
-vertraagt de economie  
+- wordt lenen duurder  
+- wordt sparen aantrekkelijker  
+- vertraagt de economie  
 
 Dat klinkt technisch.  
 
@@ -81,11 +75,9 @@ Maar het is eigenlijk heel menselijk.
 Wanneer lenen goedkoop wordt,  
 verandert gedrag.  
 
-mensen kopen sneller een huis  
-
-bedrijven investeren sneller  
-
-risico nemen voelt logischer  
+Mensen kopen sneller een huis.  
+Bedrijven investeren sneller.  
+Risico nemen voelt logischer.  
 
 Wanneer lenen duurder wordt,  
 gebeurt het omgekeerde.  
@@ -107,16 +99,13 @@ hoeveel geld er beschikbaar is.
 
 Bijvoorbeeld door:  
 
-banken meer ruimte te geven om te lenen  
-
-activa op te kopen  
-
-liquiditeit toe te voegen aan het systeem  
+- banken meer ruimte te geven om te lenen  
+- activa op te kopen  
+- liquiditeit toe te voegen aan het systeem  
 
 Dit maakt krediet makkelijker of moeilijker.  
 
 En dus ook:  
-
 actie makkelijker of moeilijker.  
 
 ## Het systeem als thermostaat
@@ -199,9 +188,5 @@ Misschien is dat het belangrijkste inzicht:
 
 Je keuzes voelen persoonlijk.  
 
-Maar ze ontstaan  
-in een omgeving die voortdurend wordt gestuurd.  
-
-En misschien is de echte vraag:  
-
-In welke richting duwt het systeem vandaag?
+Maar ze ontstaan in een omgeving  
+die voortdurend wordt gestuurd.  
