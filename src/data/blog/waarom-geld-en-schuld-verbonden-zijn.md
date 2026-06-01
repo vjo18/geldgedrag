@@ -166,51 +166,51 @@ Niet omdat we dat bewust kiezen.
 
 Maar omdat de omgeving zo is ingericht.  
 
-## Hoge en lage tijdsvoorkeur
+## Tijdsvoorkeur
 
-Economie gaat niet alleen over geld.
+Economie gaat niet alleen over geld.\
 
-Maar ook over tijd.
+Maar ook over tijd.\
 
-Mensen met een lage tijdsvoorkeur  
-denken meer op lange termijn.
+Mensen met een lage tijdsvoorkeur\
+denken meer op lange termijn.\
 
-Ze sparen.  
-Ze bouwen reserves op.
-Ze stellen consumptie uit.
+Ze sparen.\
+Ze bouwen reserves op.\
+Ze stellen consumptie uit.\
 
-Een hoge tijdsvoorkeur doet vaker het omgekeerde.
+Een hoge tijdsvoorkeur doet vaker het omgekeerde.\
 
-Dan krijgt onmiddellijke behoefte meer gewicht
-dan toekomstige gevolgen.
+Dan krijgt onmiddellijke behoefte meer gewicht\
+dan toekomstige gevolgen.\
 
-En precies daar heeft een kredietsysteem invloed op.
+En precies daar heeft een kredietsysteem invloed op.\
 
-Wanneer lenen makkelijk beschikbaar is,
-wordt het eenvoudiger om consumptie naar vandaag te halen.
+Wanneer lenen makkelijk beschikbaar is,\
+wordt het eenvoudiger om consumptie naar vandaag te halen.\
 
-Je hoeft niet eerst jarenlang te sparen
-om vandaag al toegang te krijgen tot middelen.
+Je hoeft niet eerst jarenlang te sparen\
+om vandaag al toegang te krijgen tot middelen.\
 
-Daardoor kan het systeem
-een hogere tijdsvoorkeur versterken.
+Daardoor kan het systeem\
+een hogere tijdsvoorkeur versterken.\
 
-Niet omdat mensen irrationeel zijn.
+Niet omdat mensen irrationeel zijn.\
 
-Maar omdat de omgeving korte termijnkeuzes makkelijker maakt.
+Maar omdat de omgeving korte termijnkeuzes makkelijker maakt.\
 
-Consumeren nu
-wordt eenvoudiger dan wachten.
+Consumeren nu\
+wordt eenvoudiger dan wachten.\
 
-Schuld wordt zo meer dan alleen financieel.
+Schuld wordt zo meer dan alleen financieel.\
 
-Het wordt ook een verschuiving in tijd.
+Het wordt ook een verschuiving in tijd.\
 
-Je gebruikt vandaag middelen
-die je pas later moet terugverdienen.
+Je gebruikt vandaag middelen\
+die je pas later moet terugverdienen.\
 
-Toekomstige inspanning
-vastgelegd in het heden.
+Toekomstige inspanning\
+vastgelegd in het heden.\
 
 ## De kwetsbaarheid in het systeem
 
