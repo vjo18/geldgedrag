@@ -78,17 +78,41 @@ const isActive = (path: string) => {
           "hidden sm:flex",
         ]}
       >
+        <li>
+          <a
+            href={getBasePath("/geldsysteem")}
+            class:list={{ "active-nav": isActive("/geldsysteem") }}
+          >
+            Geldsysteem
+          </a>
+        </li>
+        <li>
+          <a
+            href={getBasePath("/kompas")}
+            class:list={{ "active-nav": isActive("/kompas") }}
+          >
+            Kompas
+          </a>
+        </li>
+        <li>
+          <a
+            href={getBasePath("/posts")}
+            class:list={{ "active-nav": isActive("/posts") }}
+          >
+            Artikels
+          </a>
+        </li>
         <li class="relative">
           <details class="group">
             <summary
               class:list={[
                 "flex cursor-pointer list-none items-center gap-1 hover:text-accent [&::-webkit-details-marker]:hidden",
                 {
-                  "active-nav": isActive("/geldsysteem") || isActive("/kompas"),
+                  "active-nav": isActive("/begeleiding") || isActive("/about"),
                 },
               ]}
             >
-              Thema’s
+              Meer
               <span
                 aria-hidden="true"
                 class="text-xs transition-transform group-open:rotate-180"
@@ -102,38 +126,22 @@ const isActive = (path: string) => {
             >
               <li>
                 <a
-                  href={getBasePath("/geldsysteem")}
-                  class:list={{ "active-nav": isActive("/geldsysteem") }}
+                  href={getBasePath("/begeleiding")}
+                  class:list={{ "active-nav": isActive("/begeleiding") }}
                 >
-                  Geldsysteem
+                  Begeleiding
                 </a>
               </li>
               <li>
                 <a
-                  href={getBasePath("/kompas")}
-                  class:list={{ "active-nav": isActive("/kompas") }}
+                  href={getBasePath("/about")}
+                  class:list={{ "active-nav": isActive("/about") }}
                 >
-                  Kompas
+                  Over
                 </a>
               </li>
             </ul>
           </details>
-        </li>
-        <li>
-          <a
-            href={getBasePath("/posts")}
-            class:list={{ "active-nav": isActive("/posts") }}
-          >
-            Artikels
-          </a>
-        </li>
-        <li>
-          <a
-            href={getBasePath("/about")}
-            class:list={{ "active-nav": isActive("/about") }}
-          >
-            Over
-          </a>
         </li>
         <li class="flex items-center gap-2 pt-1 sm:pt-0">
           <LinkButton
