@@ -88,20 +88,52 @@ const isActive = (path: string) => {
         </li>
         <li>
           <a
-            href={getBasePath("/posts")}
-            class:list={{ "active-nav": isActive("/posts") }}
+            href={getBasePath("/kompas")}
+            class:list={{ "active-nav": isActive("/kompas") }}
           >
-            Artikels
+            Kompas
           </a>
         </li>
-        <li>
-          <a
-            href={getBasePath("/about")}
-            class:list={{ "active-nav": isActive("/about") }}
-          >
-            Over
-          </a>
-        </li>
+        <li class="relative">
+          <details class="group">
+            <summary
+              class:list={[
+                "flex cursor-pointer list-none items-center gap-1 hover:text-accent [&::-webkit-details-marker]:hidden",
+                {
+                  "active-nav": isActive("/posts") || isActive("/about"),
+                },
+              ]}
+            >
+              Meer
+              <span
+                aria-hidden="true"
+                class="text-xs transition-transform group-open:rotate-180"
+              >
+                ▾
+              </span>
+            </summary>
+
+            <ul
+              class="mt-2 flex flex-col gap-2 rounded-2xl border border-border bg-background p-4 shadow-lg sm:absolute sm:right-auto sm:left-0 sm:z-50 sm:min-w-48"
+            >
+              <li>
+                <a
+                  href={getBasePath("/posts")}
+                  class:list={{ "active-nav": isActive("/posts") }}
+                >
+                  Artikels
+                </a>
+              </li>
+              <li>
+                <a
+                  href={getBasePath("/about")}
+                  class:list={{ "active-nav": isActive("/about") }}
+                >
+                  Over
+                </a>
+              </li>
+            </ul>
+          </details>
         <li class="flex items-center gap-2 pt-1 sm:pt-0">
           <LinkButton
             href={getBasePath("/search")}

@@ -89,6 +89,16 @@ html[data-theme="dark"] {
   @apply rounded-3xl border border-border bg-background/90 shadow-[0_10px_30px_rgba(21,21,21,0.04)];
 }
 
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
 :target {
   scroll-margin-block: 1rem;
 }
