@@ -85,6 +85,16 @@ html[data-theme="dark"] {
   @apply text-accent;
 }
 
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold, var(--color-accent));
+  margin-bottom: 1rem;
+}
+
 .surface {
   @apply rounded-3xl border border-border bg-background/90 shadow-[0_10px_30px_rgba(21,21,21,0.04)];
 }
