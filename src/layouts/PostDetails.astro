@@ -78,7 +78,9 @@ const allPosts = posts.map(({ data: { title }, id, filePath }) => ({
 const currentPostIndex = allPosts.findIndex(a => a.id === post.id);
 
 const prevPost =
-  currentPostIndex < allPosts.length - 1 ? allPosts[currentPostIndex + 1] : null;
+  currentPostIndex < allPosts.length - 1
+    ? allPosts[currentPostIndex + 1]
+    : null;
 const nextPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : null;
 ---
 
@@ -90,7 +92,9 @@ const nextPost = currentPostIndex > 0 ? allPosts[currentPostIndex - 1] : null;
     class:list={["app-layout pb-12", { "mt-8": !SITE.showBackButton }]}
     data-pagefind-body
   >
-    <h1 class="mt-6 mb-4 inline-block text-2xl font-bold text-accent sm:text-3xl">
+    <h1
+      class="mt-6 mb-4 inline-block font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em] text-accent"
+    >
       {title}
     </h1>
     <div class="my-2 flex items-center gap-2">

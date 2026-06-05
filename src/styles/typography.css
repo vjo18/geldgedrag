@@ -23,11 +23,16 @@
   }
 
   .app-prose h1 {
-    @apply text-4xl leading-tight sm:text-5xl;
+    font-size: clamp(2.5rem, 7vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
   }
 
   .app-prose h2 {
-    @apply mt-14 text-2xl leading-snug sm:text-3xl;
+    @apply mt-14;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
   }
 
   .app-prose h3 {

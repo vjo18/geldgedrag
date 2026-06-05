@@ -23,7 +23,7 @@ const startHerePosts = getSortedPosts(posts)
   <main id="main-content" class="app-layout pb-12">
     <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
       <h1
-        class="max-w-3xl font-heading text-4xl font-semibold tracking-tight text-accent"
+        class="max-w-3xl font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em] text-accent"
       >
         Over hoe geld ons gedrag stuurt
       </h1>
@@ -83,43 +83,59 @@ const startHerePosts = getSortedPosts(posts)
       </p>
     </section>
 
-
-
     <section class="surface mt-10 overflow-hidden border border-accent/20">
       <!-- Top label -->
 
-
       <div class="grid gap-0 sm:grid-cols-2">
-
         <!-- Left: text -->
-        <div class="flex flex-col justify-between gap-6 px-6 py-8 sm:px-10 sm:py-10">
+        <div
+          class="flex flex-col justify-between gap-6 px-6 py-8 sm:px-10 sm:py-10"
+        >
           <div>
-            <h2 class="font-heading text-3xl font-semibold tracking-tight">
-          Het geldsysteem
-        </h2>
-            <p class="article-copy mt-4 text-foreground/75 leading-relaxed">
-              Schuld, inflatie, ongelijkheid — ze lijken los van elkaar. 
-              Maar ze zijn de schakels van één zichzelf versterkende cyclus. 
-              Wie begrijpt hoe het systeem werkt, ziet ook waar er ruimte is om anders te kiezen.
+            <h2
+              class="font-heading text-[clamp(2rem,5vw,3.25rem)] leading-[1.1] font-semibold tracking-[-0.04em]"
+            >
+              Het geldsysteem
+            </h2>
+            <p class="article-copy mt-4 leading-relaxed text-foreground/75">
+              Schuld, inflatie, ongelijkheid — ze lijken los van elkaar. Maar ze
+              zijn de schakels van één zichzelf versterkende cyclus. Wie
+              begrijpt hoe het systeem werkt, ziet ook waar er ruimte is om
+              anders te kiezen.
             </p>
 
             <!-- Three hooks -->
             <ul class="mt-6 space-y-2.5">
               <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent">→</span>
-                <span>Hoe banken en overheden geld bijschrijven via leningen</span>
+                <span class="mt-0.5 font-heading font-semibold text-accent"
+                  >→</span
+                >
+                <span
+                  >Hoe banken en overheden geld bijschrijven via leningen</span
+                >
               </li>
               <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent">→</span>
-                <span>Waarom inflatie niet iedereen gelijk treft (Cantillon-effect)</span>
+                <span class="mt-0.5 font-heading font-semibold text-accent"
+                  >→</span
+                >
+                <span
+                  >Waarom inflatie niet iedereen gelijk treft (Cantillon-effect)</span
+                >
               </li>
-               <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent">→</span>
+              <li class="flex items-start gap-2.5 text-sm text-foreground/70">
+                <span class="mt-0.5 font-heading font-semibold text-accent"
+                  >→</span
+                >
                 <span>Wat de maatschappelijke gevolgen zijn</span>
               </li>
               <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent">→</span>
-                <span>Wat jij concreet kan doen om je koopkracht en tijd te beschermen</span>
+                <span class="mt-0.5 font-heading font-semibold text-accent"
+                  >→</span
+                >
+                <span
+                  >Wat jij concreet kan doen om je koopkracht en tijd te
+                  beschermen</span
+                >
               </li>
             </ul>
           </div>
@@ -127,60 +143,110 @@ const startHerePosts = getSortedPosts(posts)
           <div class="mt-2">
             <a
               href={getBasePath("/geldsysteem")}
-              class="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/8 px-5 py-2.5 font-heading text-sm font-semibold text-accent transition-colors hover:bg-accent/15 hover:border-accent/50"
+              class="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/8 px-5 py-2.5 font-heading text-sm font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/15"
             >
               Bekijk hoe het systeem werkt
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+              >
             </a>
           </div>
         </div>
 
         <!-- Right: mini visual of the cycle -->
-        <div class="flex items-center justify-center border-t border-accent/10 bg-foreground/[0.02] px-6 py-10 sm:border-l sm:border-t-0 sm:px-8">
+        <div
+          class="flex items-center justify-center border-t border-accent/10 bg-foreground/[0.02] px-6 py-10 sm:border-t-0 sm:border-l sm:px-8"
+        >
           <div class="cycle-preview w-full max-w-xs">
-
             <!-- Cycle nodes as a vertical flow -->
             <div class="relative">
               <!-- Connecting line -->
-              <div class="absolute left-[22px] top-4 h-[calc(100%-2rem)] w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent"></div>
+              <div
+                class="absolute top-4 left-[22px] h-[calc(100%-2rem)] w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent"
+              >
+              </div>
 
               <ol class="space-y-3">
-                {[
-                  { n: "1", label: "Meer schuld", sub: "overheid, bedrijven & gezinnen lenen" },
-                  { n: "2", label: "Meer geld in systeem", sub: "geldhoeveelheid neemt toe" },
-                  { n: "3", label: "Activa & prijzen stijgen", sub: "vastgoed & aandelen eerst" },
-                  { n: "4", label: "Druk op gezinnen", sub: "lonen volgen minder, koopkracht daalt" },
-                  { n: "5", label: "Politiek ingrijpen", sub: "gefinancierd met nieuwe schuld  ↩" },
-                ].map(({ n, label, sub }) => (
-                  <li class="flex items-center gap-3">
-                    <div class="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/25 bg-background font-heading text-sm font-bold text-accent shadow-sm">
-                      {n}
-                    </div>
-                    <div>
-                      <p class="font-heading text-sm font-semibold leading-tight text-foreground">{label}</p>
-                      <p class="mt-0.5 font-body text-xs text-foreground/50">{sub}</p>
-                    </div>
-                  </li>
-                ))}
+                {
+                  [
+                    {
+                      n: "1",
+                      label: "Meer schuld",
+                      sub: "overheid, bedrijven & gezinnen lenen",
+                    },
+                    {
+                      n: "2",
+                      label: "Meer geld in systeem",
+                      sub: "geldhoeveelheid neemt toe",
+                    },
+                    {
+                      n: "3",
+                      label: "Activa & prijzen stijgen",
+                      sub: "vastgoed & aandelen eerst",
+                    },
+                    {
+                      n: "4",
+                      label: "Druk op gezinnen",
+                      sub: "lonen volgen minder, koopkracht daalt",
+                    },
+                    {
+                      n: "5",
+                      label: "Politiek ingrijpen",
+                      sub: "gefinancierd met nieuwe schuld  ↩",
+                    },
+                  ].map(({ n, label, sub }) => (
+                    <li class="flex items-center gap-3">
+                      <div class="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/25 bg-background font-heading text-sm font-bold text-accent shadow-sm">
+                        {n}
+                      </div>
+                      <div>
+                        <p class="font-heading text-sm leading-tight font-semibold text-foreground">
+                          {label}
+                        </p>
+                        <p class="mt-0.5 font-body text-xs text-foreground/50">
+                          {sub}
+                        </p>
+                      </div>
+                    </li>
+                  ))
+                }
               </ol>
 
               <!-- Loop-back indicator -->
               <div class="mt-3 flex items-center gap-2 pl-2">
-                <div class="h-px flex-1 bg-gradient-to-r from-accent/30 to-transparent"></div>
-                <span class="font-heading text-xs font-semibold tracking-wide text-accent/60 uppercase">herhaalt zich ∞</span>
-                <div class="h-px flex-1 bg-gradient-to-l from-accent/30 to-transparent"></div>
+                <div
+                  class="h-px flex-1 bg-gradient-to-r from-accent/30 to-transparent"
+                >
+                </div>
+                <span
+                  class="font-heading text-xs font-semibold tracking-wide text-accent/60 uppercase"
+                  >herhaalt zich ∞</span
+                >
+                <div
+                  class="h-px flex-1 bg-gradient-to-l from-accent/30 to-transparent"
+                >
+                </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
 
     <section class="surface mt-10 px-6 py-8 sm:px-8">
       <div class="flex items-end justify-between gap-4">
-        <h2 class="font-heading text-3xl font-semibold tracking-tight">
+        <h2
+          class="font-heading text-[clamp(2rem,5vw,3.25rem)] leading-[1.1] font-semibold tracking-[-0.04em]"
+        >
           Lees meer
         </h2>
         <LinkButton
