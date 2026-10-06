@@ -26,9 +26,9 @@ const active = (path:string) => currentPath === path || currentPath.startsWith(p
 
     <nav id="nav-menu" class="nav-wrap">
       <ul id="menu-items" class="nav-list hidden sm:flex">
-        <li><a class:list={{"active-nav":active("/manifest")}} href={getBasePath("/manifest")}>Manifest</a></li>
-        <li><a class:list={{"active-nav":active("/data")}} href={getBasePath("/data")}>Data</a></li>
-        <li><a class:list={{"active-nav":active("/about")}} href={getBasePath("/about")}>Over</a></li>
+        <li><a class:list={{"active-nav":active("/begrijp-geld")}} href={getBasePath("/begrijp-geld")}>Begrijp geld</a></li>
+        <li><a class:list={{"active-nav":active("/geld-in-cijfers")}} href={getBasePath("/geld-in-cijfers")}>Geld in cijfers</a></li>
+        <li><a class:list={{"active-nav":active("/over")}} href={getBasePath("/over")}>Over</a></li>
         {SITE.lightAndDarkMode && (
           <li>
             <button id="theme-btn" class="theme-button" title="Wissel kleurmodus" aria-label="light" aria-live="polite">
