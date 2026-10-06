@@ -1,265 +1,184 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Card from "@/components/Card.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
 import { getBasePath } from "@/utils/getBasePath";
 
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-const startHerePosts = getSortedPosts(posts)
-  .filter(({ data }) => data.featured)
-  .slice(0, SITE.postPerIndex);
+const chapters = [
+  { n: "01", title: "Tijd", question: "Waar ruil je eigenlijk je leven voor?", text: "Onder iedere euro die je verdient zit ook iets schaarser: tijd die niet terugkomt." },
+  { n: "02", title: "Geld", question: "Wat is datgene waarvoor we onze tijd ruilen?", text: "Waarom vertrouwen we geld, hoe bewaart het koopkracht en waarom verandert die koopkracht?" },
+  { n: "03", title: "Krediet", question: "Waar komt nieuw geld vandaan?", text: "Leningen verbinden koopkracht vandaag met inkomen dat pas morgen verdiend wordt." },
+  { n: "04", title: "Groei", question: "Waarom moet morgen bijna altijd meer zijn dan vandaag?", text: "Schuld, rente, productie en verwachtingen maken groei tot meer dan een statistiek." },
+  { n: "05", title: "Bezit", question: "Waarom werkt bezit anders dan arbeid?", text: "Wie alleen tijd verkoopt en wie ook bezit opbouwt, ervaart dezelfde economie anders." },
+  { n: "06", title: "Gedrag", question: "Wat doet die omgeving met ons?", text: "Schaarste, vergelijking, status en angst beïnvloeden financiële keuzes." },
+  { n: "07", title: "Genoeg", question: "Waarom zegt geld nooit vanzelf: stop?", text: "Meer is meetbaar. Genoeg vraagt een oordeel over wat je werkelijk wilt beschermen." },
+  { n: "08", title: "Vrijheid", question: "Wat koop je uiteindelijk met vermogen?", text: "Niet alleen spullen, maar ook mogelijkheden: wachten, kiezen, zorgen, weigeren en veranderen." },
+];
 ---
 
 <Layout
-  title={`${SITE.title} | Psychologie, filosofie en financiële educatie`}
-  description="Een rustig essayplatform over hoe geld onze keuzes, tijd en gedrag beïnvloedt."
+  title={`${SITE.title} | Geld, gedrag en tijd`}
+  description="Geldgedrag onderzoekt hoe ons geldsysteem werkt, hoe het ons gedrag beïnvloedt en wat dat betekent voor de manier waarop we onze tijd gebruiken."
 >
   <Header />
-  <main id="main-content" class="app-layout pb-12">
-    <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
-      <h1
-        class="max-w-3xl font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em] text-foreground [&_em]:text-accent [&_em]:italic"
-      >
-        Over hoe <em>geld</em> ons <em>gedrag</em> stuurt
-      </h1>
-      <div class="article-copy mt-6 max-w-3xl space-y-5 text-foreground/80">
-        <p>
-          We denken vaak dat geld vooral een financieel onderwerp is. Iets voor
-          economen, banken of mensen die zich met investeren bezighouden. Maar
-          geld heeft een veel bredere invloed op ons leven. Het raakt aan hoe we
-          werken, hoe we consumeren, hoe we plannen maken voor de toekomst en
-          zelfs hoe we omgaan met onze gezondheid en relaties.
-        </p>
-        <p>
-          Geld beïnvloedt namelijk niet alleen onze financiële situatie. Het
-          beïnvloedt ook hoe we met tijd en keuzes omgaan.
-        </p>
-      </div>
 
-      <div
-        class="mt-12 grid gap-8 border-y border-border/80 py-8 sm:grid-cols-3 sm:gap-10"
-      >
-        <div class="space-y-3">
-          <p
-            class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-          >
-            Financiële educatie
-          </p>
-          <p class="article-copy text-foreground/78">
-            Heldere uitleg over geld, koopkracht, inflatie en vermogen.
-          </p>
-        </div>
-        <div class="space-y-3">
-          <p
-            class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-          >
-            Psychologie
-          </p>
-          <p class="article-copy text-foreground/78">
-            Ontdek waarom emoties en impulsen je financiële keuzes sturen.
-          </p>
-        </div>
-        <div class="space-y-3">
-          <p
-            class="font-heading text-sm font-semibold tracking-[0.24em] text-accent uppercase"
-          >
-            Filosofie
-          </p>
-          <p class="article-copy text-foreground/78">
-            Reflecteer over wat geld betekent voor een goed leven.
-          </p>
+  <main id="main-content" class="app-layout pb-16">
+    <section class="hero-panel mt-6">
+      <div class="hero-copy">
+        <p class="eyebrow">Geld · gedrag · tijd</p>
+        <h1>We werken voor geld.<br /><em>Maar wat werkt geld met ons?</em></h1>
+        <p class="lead">
+          Geld bepaalt waar we wonen, hoeveel we werken, wat we bewaren voor later
+          en welke risico's we durven nemen. Toch leren we opmerkelijk weinig over
+          het systeem waarin dat geld ontstaat.
+        </p>
+        <p class="lead">
+          Geldgedrag is een onderzoek naar geld, tijd en de keuzes die daaruit voortkomen.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-link" href={getBasePath("/manifest")}>Begin bij het manifest →</a>
+          <a class="quiet-link" href={getBasePath("/data")}>Bekijk de data</a>
         </div>
       </div>
 
-      <p class="article-copy mt-10 max-w-3xl text-foreground/80">
-        Het doel is om deze thema’s toegankelijk te maken, zonder te vervallen
-        in simplistische verklaringen of financieel advies. Het gaat vooral om
-        begrijpen hoe de context werkt waarin we onze keuzes maken.
+      <aside class="time-card" aria-label="Voorbeeld van geld uitgedrukt in tijd">
+        <p class="eyebrow">Een andere prijs</p>
+        <p class="time-amount">€160</p>
+        <div class="time-rule"></div>
+        <p class="time-result">8 uur</p>
+        <p class="time-note">bij €20 netto per gewerkt uur</p>
+      </aside>
+    </section>
+
+    <section class="statement-block">
+      <p class="eyebrow">Een vertrekpunt</p>
+      <h2>Geld is ook opgeslagen tijd.</h2>
+      <div class="statement-copy">
+        <p>
+          Als je werkt, ruil je een deel van je tijd en energie voor geld.
+          Wanneer je niet alles uitgeeft, probeer je een deel van die inspanning
+          mee te nemen naar de toekomst.
+        </p>
+        <p>
+          Een reserve kan een onverwachte rekening betalen. Vermogen kan ruimte
+          geven om minder te werken, voor iemand te zorgen of een andere richting
+          te kiezen. Geld is daarom meer dan een getal. Het verplaatst mogelijkheden door de tijd.
+        </p>
+      </div>
+    </section>
+
+    <section class="journey-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Het manifest</p>
+          <h2>Acht vragen. Eén verhaal.</h2>
+        </div>
+        <p>
+          Geen losse artikelen, maar een ontdekkingstocht van tijd naar geld,
+          van geld naar systeem en uiteindelijk terug naar de vraag hoe je wilt leven.
+        </p>
+      </div>
+
+      <div class="chapter-grid">
+        {chapters.map(chapter => (
+          <article class="chapter-card">
+            <span>{chapter.n}</span>
+            <p class="chapter-kicker">{chapter.title}</p>
+            <h3>{chapter.question}</h3>
+            <p>{chapter.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <a class="primary-link mt-link" href={getBasePath("/manifest")}>Lees het manifest →</a>
+    </section>
+
+    <section class="data-panel">
+      <div>
+        <p class="eyebrow">Data</p>
+        <h2>Je hoeft niemand op zijn woord te geloven.</h2>
+        <p class="data-intro">
+          Het manifest vertelt waarom een cijfer ertoe doet. De datalaag laat je
+          zelf kijken naar koopkracht, wonen, geldhoeveelheid, rente, schuld en bezit.
+        </p>
+        <a class="quiet-link light-link" href={getBasePath("/data")}>Open Geld in cijfers →</a>
+      </div>
+
+      <div class="mini-data-grid">
+        <div>
+          <span>Koopkracht</span>
+          <strong>€100 → €67</strong>
+          <small>20 jaar bij 2% inflatie, zonder rente</small>
+        </div>
+        <div>
+          <span>Wonen</span>
+          <strong>Loon ↔ woningprijs</strong>
+          <small>Wie houdt wie bij?</small>
+        </div>
+        <div>
+          <span>Geld</span>
+          <strong>M1 · M2 · M3</strong>
+          <small>Hoeveel geld bestaat er?</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-statement">
+      <p>Geld kun je opnieuw verdienen.</p>
+      <h2>Tijd niet.</h2>
+      <p class="closing-copy">
+        De belangrijkste financiële vraag is daarom niet alleen hoeveel geld je
+        kunt verzamelen, maar hoeveel zeggenschap je wilt houden over de tijd die je hebt.
       </p>
-    </section>
-
-    <section class="surface mt-10 overflow-hidden border border-accent/20">
-      <!-- Top label -->
-
-      <div class="grid gap-0 sm:grid-cols-2">
-        <!-- Left: text -->
-        <div
-          class="flex flex-col justify-between gap-6 px-6 py-8 sm:px-10 sm:py-10"
-        >
-          <div>
-            <h2
-              class="font-heading text-[clamp(2rem,5vw,3.25rem)] leading-[1.1] font-semibold tracking-[-0.04em]"
-            >
-              Geldsysteem
-            </h2>
-            <p class="article-copy mt-4 leading-relaxed text-foreground/75">
-              Schuld, inflatie, ongelijkheid — ze lijken los van elkaar. Maar ze
-              zijn de schakels van één zichzelf versterkende cyclus. Wie
-              begrijpt hoe het systeem werkt, ziet ook waar er ruimte is om
-              anders te kiezen.
-            </p>
-
-            <!-- Three hooks -->
-            <ul class="mt-6 space-y-2.5">
-              <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent"
-                  >→</span
-                >
-                <span
-                  >Hoe banken en overheden geld bijschrijven via leningen</span
-                >
-              </li>
-              <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent"
-                  >→</span
-                >
-                <span
-                  >Waarom inflatie niet iedereen gelijk treft (Cantillon-effect)</span
-                >
-              </li>
-              <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent"
-                  >→</span
-                >
-                <span>Wat de maatschappelijke gevolgen zijn</span>
-              </li>
-              <li class="flex items-start gap-2.5 text-sm text-foreground/70">
-                <span class="mt-0.5 font-heading font-semibold text-accent"
-                  >→</span
-                >
-                <span
-                  >Wat jij concreet kan doen om je koopkracht en tijd te
-                  beschermen</span
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="mt-2">
-            <a
-              href={getBasePath("/geldsysteem")}
-              class="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/8 px-5 py-2.5 font-heading text-sm font-semibold text-accent transition-colors hover:border-accent/50 hover:bg-accent/15"
-            >
-              Bekijk hoe het systeem werkt
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-              >
-            </a>
-          </div>
-        </div>
-
-        <!-- Right: mini visual of the cycle -->
-        <div
-          class="flex items-center justify-center border-t border-accent/10 bg-foreground/[0.02] px-6 py-10 sm:border-t-0 sm:border-l sm:px-8"
-        >
-          <div class="cycle-preview w-full max-w-xs">
-            <!-- Cycle nodes as a vertical flow -->
-            <div class="relative">
-              <!-- Connecting line -->
-              <div
-                class="absolute top-4 left-[22px] h-[calc(100%-2rem)] w-px bg-gradient-to-b from-accent/40 via-accent/20 to-transparent"
-              >
-              </div>
-
-              <ol class="space-y-3">
-                {
-                  [
-                    {
-                      n: "1",
-                      label: "Meer schuld",
-                      sub: "overheid, bedrijven & gezinnen lenen",
-                    },
-                    {
-                      n: "2",
-                      label: "Meer geld in systeem",
-                      sub: "geldhoeveelheid neemt toe",
-                    },
-                    {
-                      n: "3",
-                      label: "Activa & prijzen stijgen",
-                      sub: "vastgoed & aandelen eerst",
-                    },
-                    {
-                      n: "4",
-                      label: "Druk op gezinnen",
-                      sub: "lonen volgen minder, koopkracht daalt",
-                    },
-                    {
-                      n: "5",
-                      label: "Politiek ingrijpen",
-                      sub: "gefinancierd met nieuwe schuld  ↩",
-                    },
-                  ].map(({ n, label, sub }) => (
-                    <li class="flex items-center gap-3">
-                      <div class="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/25 bg-background font-heading text-sm font-bold text-accent shadow-sm">
-                        {n}
-                      </div>
-                      <div>
-                        <p class="font-heading text-sm leading-tight font-semibold text-foreground">
-                          {label}
-                        </p>
-                        <p class="mt-0.5 font-body text-xs text-foreground/50">
-                          {sub}
-                        </p>
-                      </div>
-                    </li>
-                  ))
-                }
-              </ol>
-
-              <!-- Loop-back indicator -->
-              <div class="mt-3 flex items-center gap-2 pl-2">
-                <div
-                  class="h-px flex-1 bg-gradient-to-r from-accent/30 to-transparent"
-                >
-                </div>
-                <span
-                  class="font-heading text-xs font-semibold tracking-wide text-accent/60 uppercase"
-                  >herhaalt zich ∞</span
-                >
-                <div
-                  class="h-px flex-1 bg-gradient-to-l from-accent/30 to-transparent"
-                >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="surface mt-10 px-6 py-8 sm:px-8">
-      <div class="flex items-end justify-between gap-4">
-        <h2
-          class="font-heading text-[clamp(2rem,5vw,3.25rem)] leading-[1.1] font-semibold tracking-[-0.04em]"
-        >
-          Lees meer
-        </h2>
-        <LinkButton
-          href={getBasePath("/posts")}
-          class="font-heading text-sm text-accent"
-        >
-          Alle artikels
-        </LinkButton>
-      </div>
-      <ul class="mt-6">
-        {startHerePosts.map(data => <Card variant="h3" {...data} />)}
-      </ul>
+      <a class="primary-link" href={getBasePath("/manifest")}>Begin bij het manifest →</a>
     </section>
   </main>
+
   <Footer />
 </Layout>
+
+<style>
+  .hero-panel{margin-top:1.5rem;display:grid;gap:3rem;padding:clamp(2rem,6vw,5rem) 0 4rem;border-bottom:1px solid var(--border)}
+  .hero-copy{max-width:48rem}
+  .eyebrow{font-family:var(--font-heading);font-size:.75rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  h1,h2,h3{font-family:var(--font-body)}
+  h1{margin-top:1rem;font-size:clamp(3.2rem,8vw,7.2rem);line-height:.96;letter-spacing:-.055em;font-weight:500}
+  h1 em{font-weight:400;color:var(--accent);font-style:italic}
+  .lead{margin-top:1.5rem;max-width:43rem;font-size:clamp(1.08rem,2vw,1.35rem);line-height:1.75;color:color-mix(in srgb,var(--foreground) 78%,transparent)}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center;margin-top:2rem}
+  .primary-link,.quiet-link{font-family:var(--font-heading);font-weight:650;text-decoration:none}
+  .primary-link{display:inline-flex;padding:.85rem 1.1rem;border:1px solid var(--accent);background:var(--accent);color:#fff}
+  .quiet-link{color:var(--foreground);border-bottom:1px solid var(--border);padding-bottom:.25rem}
+  .time-card{align-self:end;border-left:1px solid var(--border);padding-left:2rem}
+  .time-amount,.time-result{font-family:var(--font-heading);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;letter-spacing:-.05em}
+  .time-rule{height:1px;background:var(--border);margin:.8rem 0}
+  .time-note{color:color-mix(in srgb,var(--foreground) 60%,transparent);font-size:.9rem}
+  .statement-block,.journey-section,.closing-statement{padding:clamp(4rem,8vw,8rem) 0}
+  .statement-block h2,.journey-section h2,.data-panel h2,.closing-statement h2{margin-top:.75rem;font-size:clamp(2.4rem,6vw,5.2rem);line-height:1.03;letter-spacing:-.045em;font-weight:500}
+  .statement-copy{margin-top:2rem;display:grid;gap:1.5rem;max-width:52rem;font-size:1.15rem;line-height:1.8;color:color-mix(in srgb,var(--foreground) 78%,transparent)}
+  .journey-section{border-top:1px solid var(--border)}
+  .section-heading{display:grid;gap:2rem;align-items:end}
+  .section-heading>p{max-width:34rem;line-height:1.7;color:color-mix(in srgb,var(--foreground) 68%,transparent)}
+  .chapter-grid{display:grid;grid-template-columns:1fr;margin-top:3rem;border-top:1px solid var(--border)}
+  .chapter-card{padding:1.5rem 0;border-bottom:1px solid var(--border)}
+  .chapter-card>span{font-family:var(--font-heading);color:var(--accent);font-size:.75rem}
+  .chapter-kicker{font-family:var(--font-heading);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;margin-top:.8rem}
+  .chapter-card h3{font-size:1.45rem;line-height:1.2;margin-top:.65rem;font-weight:500}
+  .chapter-card>p:last-child{margin-top:.8rem;line-height:1.65;color:color-mix(in srgb,var(--foreground) 68%,transparent)}
+  .mt-link{margin-top:2rem}
+  .data-panel{display:grid;gap:3rem;background:#173c34;color:#f6f2e9;padding:clamp(2rem,6vw,4.5rem);margin-inline:calc(50% - 50vw);padding-inline:max(calc((100vw - min(100% - 2.5rem,64rem))/2),1.25rem)}
+  .data-panel .eyebrow{color:#e6a46c}
+  .data-intro{max-width:42rem;margin-top:1.5rem;font-size:1.1rem;line-height:1.75;color:rgba(246,242,233,.78)}
+  .light-link{display:inline-block;margin-top:1.5rem;color:#f6f2e9;border-color:rgba(246,242,233,.35)}
+  .mini-data-grid{display:grid;gap:1rem}
+  .mini-data-grid div{padding:1.25rem;border:1px solid rgba(246,242,233,.18)}
+  .mini-data-grid span,.mini-data-grid small{display:block;font-family:var(--font-heading)}
+  .mini-data-grid span{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#e6a46c}
+  .mini-data-grid strong{display:block;font-family:var(--font-body);font-size:1.7rem;font-weight:500;margin:.75rem 0}
+  .mini-data-grid small{color:rgba(246,242,233,.6)}
+  .closing-statement{text-align:center}
+  .closing-statement>p:first-child{font-family:var(--font-body);font-size:clamp(1.8rem,4vw,3.5rem)}
+  .closing-copy{max-width:42rem;margin:1.5rem auto 2rem;font-size:1.1rem;line-height:1.8;color:color-mix(in srgb,var(--foreground) 70%,transparent)}
+  @media(min-width:768px){.hero-panel{grid-template-columns:1.6fr .7fr}.section-heading{grid-template-columns:1.2fr .8fr}.chapter-grid{grid-template-columns:repeat(2,1fr)}.chapter-card{padding:2rem}.chapter-card:nth-child(odd){border-right:1px solid var(--border)}.data-panel{grid-template-columns:1.15fr .85fr;align-items:center}.mini-data-grid{grid-template-columns:1fr}}
+</style>
