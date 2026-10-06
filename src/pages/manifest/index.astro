@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { getBasePath } from "@/utils/getBasePath";
+
+const chapters = [
+  ["01","Tijd","De prijs van een leven","We beginnen niet bij banken of centrale banken, maar bij iets dat je iedere werkdag weggeeft: tijd."],
+  ["02","Geld","Wat is geld?","Waarom vertrouwen we een getal op een rekening, en wat verwachten we dat geld door de tijd heen voor ons bewaart?"],
+  ["03","Krediet","Waar komt geld vandaan?","Hoe bankleningen nieuw giraal geld kunnen creëren en waarom schuld heden en toekomst met elkaar verbindt."],
+  ["04","Groei","Waarom moet alles groeien?","Wat schuld, rente en verwachtingen doen met de druk op gezinnen, bedrijven en overheden."],
+  ["05","Bezit","Arbeid en bezit","Waarom een hoger inkomen niet hetzelfde is als een sterkere financiële positie."],
+  ["06","Gedrag","Wat geld met ons doet","Over schaarste, vergelijking, risico, status en de manier waarop onze omgeving onze keuzes beïnvloedt."],
+  ["07","Genoeg","Wanneer is meer genoeg?","Een financiële vraag die uiteindelijk filosofisch wordt: hoeveel ruimte wil je, en waarvoor?"],
+  ["08","Vrijheid","Wat vermogen werkelijk koopt","Niet alleen consumptie, maar ook de mogelijkheid om te wachten, nee te zeggen en anders te kiezen."],
+];
+---
+<Layout title="Manifest | Geld & gedrag" description="Een ontdekkingstocht door geld, krediet, groei, gedrag, genoeg en vrijheid.">
+  <Header />
+  <main id="main-content" class="app-layout pb-16">
+    <header class="manifest-intro">
+      <p class="eyebrow">Manifest</p>
+      <h1>Begrijp het systeem.<br /><em>Kijk daarna opnieuw naar je keuzes.</em></h1>
+      <p>Dit manifest is geen handleiding om rijk te worden. Het is een poging om verbanden zichtbaar te maken tussen geld, tijd, krediet, bezit, gedrag en vrijheid.</p>
+      <p>Je hoeft geen econoom te zijn. Je hoeft het ook niet met iedere interpretatie eens te zijn. Het doel is eenvoudiger: mechanismen zo helder zien dat je betere vragen kunt stellen.</p>
+    </header>
+
+    <section class="manifest-list">
+      {chapters.map(([n,kicker,title,text]) => (
+        <article>
+          <div class="chapter-no">{n}</div>
+          <div>
+            <p class="kicker">{kicker}</p>
+            <h2>{title}</h2>
+            <p>{text}</p>
+            <span class="status">Wordt geschreven</span>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="manifest-note">
+      <p>Het manifest groeit hoofdstuk voor hoofdstuk. Data en bronnen worden toegevoegd waar ze helpen om een mechanisme te onderzoeken, niet om een vooraf gekozen conclusie te versieren.</p>
+      <a href={getBasePath("/data")}>Bekijk de datalaag →</a>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .manifest-intro{padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--border);max-width:52rem}
+  .eyebrow,.kicker,.status{font-family:var(--font-heading);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;font-weight:700;color:var(--accent)}
+  h1,h2{font-family:var(--font-body);font-weight:500;letter-spacing:-.045em}
+  h1{font-size:clamp(3rem,8vw,6.5rem);line-height:.98;margin-top:1rem}
+  h1 em{font-weight:400;color:var(--accent)}
+  .manifest-intro>p:not(.eyebrow){font-size:1.1rem;line-height:1.8;color:color-mix(in srgb,var(--foreground) 72%,transparent);margin-top:1.25rem}
+  .manifest-list article{display:grid;grid-template-columns:4rem 1fr;gap:1.25rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+  .chapter-no{font-family:var(--font-heading);color:var(--accent);font-size:.8rem}
+  h2{font-size:clamp(1.8rem,4vw,3rem);margin-top:.5rem}
+  article p:not(.kicker){max-width:44rem;margin-top:.8rem;line-height:1.75;color:color-mix(in srgb,var(--foreground) 70%,transparent)}
+  .status{display:inline-block;margin-top:1rem;color:color-mix(in srgb,var(--foreground) 45%,transparent)}
+  .manifest-note{margin:4rem 0;padding:2rem;border:1px solid var(--border)}
+  .manifest-note p{max-width:46rem;line-height:1.75}.manifest-note a{display:inline-block;margin-top:1rem;font-family:var(--font-heading);font-weight:650;color:var(--accent)}
+</style>
