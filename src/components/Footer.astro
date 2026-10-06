@@ -1,36 +1,26 @@
 ---
-import type { HTMLAttributes } from "astro/types";
-import Socials from "./Socials.astro";
-
 const currentYear = new Date().getFullYear();
-
-type Props = {
-  noMarginTop?: boolean;
-} & HTMLAttributes<"footer">;
-
-const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+import { getBasePath } from "@/utils/getBasePath";
 ---
-
-<footer
-  class:list={["app-layout pb-8", { "mt-auto pt-12": !noMarginTop }, className]}
-  {...attrs}
->
-  <div
-    class="surface flex flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6"
-  >
+<footer class="app-layout pb-10 pt-12">
+  <div class="site-footer">
     <div>
-      <p
-        class="font-heading text-sm font-semibold tracking-[0.18em] text-accent uppercase"
-      >
-        Geld & gedrag
-      </p>
-      <p class="mt-2 max-w-xl text-sm leading-7 text-foreground/80">
-        Een rustig platform over financiële educatie, psychologie en filosofie.
-      </p>
+      <a class="footer-brand" href={getBasePath("/")}>geld&amp;gedrag.</a>
+      <p>Een onafhankelijk project over geld, gedrag en tijd.</p>
     </div>
-    <div class="flex flex-col items-start gap-3 sm:items-end">
-      <Socials />
-      <p class="text-sm text-foreground/70">© {currentYear} Geld & gedrag.</p>
-    </div>
+    <nav aria-label="Voetnavigatie">
+      <a href={getBasePath("/manifest")}>Manifest</a>
+      <a href={getBasePath("/data")}>Data</a>
+      <a href={getBasePath("/about")}>Over</a>
+    </nav>
+    <p class="copyright">© {currentYear} Geld & gedrag</p>
   </div>
 </footer>
+<style>
+  .site-footer{border-top:1px solid var(--border);padding-top:2rem;display:grid;gap:1.5rem;color:color-mix(in srgb,var(--foreground) 68%,transparent);font-size:.9rem}
+  .footer-brand{font-family:var(--font-body);font-size:1.25rem;font-weight:600;color:var(--foreground);text-decoration:none}
+  .site-footer nav{display:flex;gap:1.25rem;font-family:var(--font-heading)}
+  .site-footer nav a{color:inherit;text-decoration:none}
+  .copyright{font-family:var(--font-heading);font-size:.8rem}
+  @media(min-width:768px){.site-footer{grid-template-columns:1fr auto;align-items:end}.copyright{grid-column:1/-1}}
+</style>
