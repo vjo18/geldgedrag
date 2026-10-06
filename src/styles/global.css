@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 @import "tailwindcss";
 @import "./typography.css";
 
@@ -6,21 +6,21 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #f4f2ef;
-  --foreground: #151515;
-  --accent: #5370d9;
-  --accent-soft: #31b4da;
-  --muted: #e7e2da;
-  --border: #d7d0c6;
+  --background: #f6f2e9;
+  --foreground: #17312c;
+  --accent: #173c34;
+  --accent-soft: #d9e5df;
+  --muted: #eee7dc;
+  --border: #d9d1c4;
 }
 
 html[data-theme="dark"] {
-  --background: #121212;
-  --foreground: #f4f2ef;
-  --accent: #7f97f2;
-  --accent-soft: #5dcbe9;
-  --muted: #222222;
-  --border: #343434;
+  --background: #10211e;
+  --foreground: #f6f2e9;
+  --accent: #e6a46c;
+  --accent-soft: #24423b;
+  --muted: #18302b;
+  --border: #355049;
 }
 
 @theme inline {
@@ -36,69 +36,16 @@ html[data-theme="dark"] {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-accent-soft) transparent;
-  }
-
-  html {
-    @apply overflow-y-scroll scroll-smooth;
-  }
-
-  body {
-    @apply flex min-h-svh flex-col bg-background font-body text-foreground antialiased selection:bg-accent selection:text-white;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  button,
-  nav,
-  .font-heading {
-    @apply font-heading;
-  }
-
-  a,
-  button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
-  }
-
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
+  * { @apply border-border outline-accent/75; scrollbar-color: var(--accent-soft) transparent; }
+  html { @apply overflow-y-scroll scroll-smooth; }
+  body { @apply flex min-h-svh flex-col bg-background font-body text-foreground antialiased selection:bg-accent selection:text-white; }
+  button, nav, .font-heading { @apply font-heading; }
+  a,button { @apply outline-offset-2 outline-accent focus-visible:outline-2 focus-visible:outline-dashed; }
+  button:not(:disabled),[role="button"]:not(:disabled){cursor:pointer}
 }
 
-@utility max-w-app {
-  @apply max-w-4xl;
-}
+@utility max-w-app { @apply max-w-5xl; }
+@utility app-layout { @apply mx-auto w-full max-w-app px-5 sm:px-6; }
 
-@utility app-layout {
-  @apply mx-auto w-full max-w-app px-5 sm:px-6;
-}
-
-.active-nav {
-  @apply text-accent;
-}
-
-.surface {
-  @apply rounded-3xl border border-border bg-background/90 shadow-[0_10px_30px_rgba(21,21,21,0.04)];
-}
-
-.section-label {
-  font-family: var(--font-heading);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-:target {
-  scroll-margin-block: 1rem;
-}
+.active-nav { color: var(--accent); }
+:target { scroll-margin-block: 1rem; }
