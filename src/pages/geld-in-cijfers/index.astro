@@ -1,0 +1,70 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const datasets = [
+  ["Koopkracht","Wat doet aanhoudende inflatie met dezelfde €100 door de tijd?","Rekenmodel"],
+  ["Wonen","Hoe ontwikkelen woningprijzen zich tegenover lonen en inkomen?","In voorbereiding"],
+  ["Geldhoeveelheid","Hoe veranderen M1, M2 en M3 in het eurogebied?","In voorbereiding"],
+  ["Rente","Hoe verandert de prijs van lenen door de tijd?","In voorbereiding"],
+  ["Schuld","Hoe ontwikkelen private en publieke schulden zich?","In voorbereiding"],
+  ["Bezit","Hoe is vermogen verdeeld en hoe verandert de verhouding tussen arbeid en bezit?","In voorbereiding"],
+];
+---
+<Layout title="Geld in cijfers | Geld & gedrag" description="Data en visualisaties bij Geldgedrag.">
+  <Header />
+  <main id="main-content" class="app-layout pb-16">
+    <header class="data-intro">
+      <p class="eyebrow">Geld in cijfers</p>
+      <h1>Kijk zelf.</h1>
+      <p>Geld in cijfers is bedoeld om vragen uit Begrijp geld toetsbaar en zichtbaar te maken. Geen scherm vol koersen, maar één vraag per grafiek.</p>
+    </header>
+
+    <section class="first-chart">
+      <div>
+        <p class="eyebrow">Koopkracht</p>
+        <h2>Wat doet 2% inflatie over twintig jaar?</h2>
+        <p>Bij een constante inflatie van 2% per jaar koopt €100 na twintig jaar ongeveer wat €67 vandaag koopt. Dit is een rekenvoorbeeld, geen voorspelling.</p>
+      </div>
+      <div class="chart-card" aria-label="Illustratie koopkracht">
+        <div class="values"><strong>€100</strong><span>vandaag</span></div>
+        <div class="line"><span></span></div>
+        <div class="values end"><strong>€67</strong><span>na 20 jaar</span></div>
+      </div>
+    </section>
+
+    <section class="dataset-grid">
+      {datasets.map(([title,text,status]) => (
+        <article>
+          <p class="eyebrow">{status}</p>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </section>
+
+    <p class="source-note">Bij elke toekomstige visualisatie komen bron, periode, definities en methodologie zichtbaar naast de grafiek te staan.</p>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .data-intro{padding:clamp(4rem,9vw,8rem) 0 4rem;max-width:52rem}
+  .eyebrow{font-family:var(--font-heading);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--accent)}
+  h1,h2,h3{font-family:var(--font-body);font-weight:500;letter-spacing:-.045em}
+  h1{font-size:clamp(4rem,10vw,8rem);line-height:.9;margin-top:1rem}
+  .data-intro>p:last-child{margin-top:1.5rem;font-size:1.15rem;line-height:1.8;color:color-mix(in srgb,var(--foreground) 70%,transparent)}
+  .first-chart{display:grid;gap:2rem;padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  h2{font-size:clamp(2rem,5vw,4rem);margin-top:.75rem;line-height:1.05}
+  .first-chart>div>p:last-child{margin-top:1rem;line-height:1.75;color:color-mix(in srgb,var(--foreground) 68%,transparent)}
+  .chart-card{padding:2rem;background:#173c34;color:#f6f2e9;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:end}
+  .values strong{display:block;font-family:var(--font-heading);font-size:2rem}.values span{font-size:.8rem;color:rgba(246,242,233,.6)}
+  .line{height:5rem;border-bottom:1px solid rgba(246,242,233,.35);position:relative}.line span{position:absolute;left:0;right:0;bottom:0;height:1px;background:#e6a46c;transform:rotate(8deg);transform-origin:left}
+  .end{text-align:right}
+  .dataset-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--border);margin-top:4rem}
+  .dataset-grid article{padding:2rem 0;border-bottom:1px solid var(--border)}
+  h3{font-size:2rem;margin-top:.6rem}.dataset-grid article>p:last-child{margin-top:.75rem;line-height:1.7;color:color-mix(in srgb,var(--foreground) 65%,transparent)}
+  .source-note{margin:3rem 0 1rem;max-width:42rem;font-size:.9rem;line-height:1.7;color:color-mix(in srgb,var(--foreground) 55%,transparent)}
+  @media(min-width:768px){.first-chart{grid-template-columns:1fr 1fr;align-items:center}.dataset-grid{grid-template-columns:repeat(2,1fr)}.dataset-grid article{padding:2rem}.dataset-grid article:nth-child(odd){border-right:1px solid var(--border)}}
+</style>
