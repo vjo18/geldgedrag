@@ -1,0 +1,73 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const datasets = [
+  ["Koopkracht", "Wat doet aanhoudende inflatie met dezelfde €100 door de tijd?", "Rekenmodel"],
+  ["Wonen", "Hoe ontwikkelen woningprijzen zich tegenover lonen en inkomen?", "In voorbereiding"],
+  ["Geldhoeveelheid", "Hoe veranderen M1, M2 en M3 in het eurogebied?", "In voorbereiding"],
+  ["Rente", "Hoe verandert de prijs van lenen door de tijd?", "In voorbereiding"],
+  ["Schuld", "Hoe ontwikkelen private en publieke schulden zich?", "In voorbereiding"],
+  ["Bezit", "Hoe is vermogen verdeeld en hoe verandert de verhouding tussen arbeid en bezit?", "In voorbereiding"],
+];
+---
+
+<Layout title="Data | Geld & gedrag" description="Data en visualisaties bij Geldgedrag.">
+  <Header />
+  <main id="main-content" class="app-layout pb-12">
+    <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
+      <p class="font-heading text-sm font-semibold tracking-[0.18em] text-accent uppercase">
+        Data
+      </p>
+      <h1 class="mt-3 font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em]">
+        Kijk zelf naar de cijfers
+      </h1>
+      <p class="article-copy mt-5 max-w-2xl text-foreground/75">
+        Geen scherm vol koersen, maar data die helpt om vragen uit Systeem
+        zichtbaar en toetsbaar te maken.
+      </p>
+    </section>
+
+    <section class="surface mt-10 px-6 py-8 sm:px-10 sm:py-10">
+      <div class="grid gap-8 sm:grid-cols-2">
+        <div>
+          <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+            Koopkracht
+          </p>
+          <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">
+            Wat doet 2% inflatie over twintig jaar?
+          </h2>
+          <p class="article-copy mt-4 text-foreground/75">
+            Bij een constante inflatie van 2% per jaar koopt €100 na twintig jaar
+            ongeveer wat €67 vandaag koopt. Dit is een rekenvoorbeeld, geen voorspelling.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-border bg-foreground/[0.02] p-6">
+          <div class="flex items-end justify-between gap-6">
+            <div>
+              <span class="font-heading text-xs text-foreground/55 uppercase">Vandaag</span>
+              <strong class="mt-1 block font-heading text-3xl">€100</strong>
+            </div>
+            <span class="pb-2 font-heading text-accent">→</span>
+            <div class="text-right">
+              <span class="font-heading text-xs text-foreground/55 uppercase">Na 20 jaar</span>
+              <strong class="mt-1 block font-heading text-3xl text-accent">€67</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 grid gap-6 sm:grid-cols-2">
+      {datasets.map(([title, text, status]) => (
+        <article class="surface px-6 py-8 sm:px-10">
+          <p class="font-heading text-xs font-semibold tracking-[0.14em] text-accent uppercase">{status}</p>
+          <h2 class="mt-2 font-heading text-2xl font-semibold tracking-tight">{title}</h2>
+          <p class="article-copy mt-3 text-foreground/70">{text}</p>
+        </article>
+      ))}
+    </section>
+  </main>
+  <Footer />
+</Layout>
