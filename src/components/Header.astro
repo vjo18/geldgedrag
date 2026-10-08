@@ -1,74 +1,160 @@
 ---
+import logoDark from "@/assets/logo/logo-dark.svg";
+import logoLight from "@/assets/logo/logo-light.svg";
+import IconX from "@/assets/icons/IconX.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
+import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import IconX from "@/assets/icons/IconX.svg";
+import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 import { getBasePath } from "@/utils/getBasePath";
 
 const { pathname } = Astro.url;
-const currentPath = pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0,-1) : pathname;
-const active = (path:string) => currentPath === path || currentPath.startsWith(path + "/");
+const currentPath =
+  pathname.endsWith("/") && pathname !== "/" ? pathname.slice(0, -1) : pathname;
+
+const isActive = (path: string) => {
+  const currentPathArray = currentPath.split("/").filter(p => p.trim());
+  const pathArray = path.split("/").filter(p => p.trim());
+  return currentPath === path || currentPathArray[0] === pathArray[0];
+};
 ---
 
-<a id="skip-to-content" href="#main-content" class="absolute start-4 -top-full z-50 bg-background px-3 py-2 text-accent focus:top-4">Ga naar inhoud</a>
+<a
+  id="skip-to-content"
+  href="#main-content"
+  class="absolute start-16 -top-full z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
+>
+  Ga naar inhoud
+</a>
 
 <header class="app-layout pt-6 sm:pt-8">
-  <div class="site-header">
-    <a class="wordmark" href={getBasePath("/")} aria-label="Geldgedrag homepage">
-      geld<span>&amp;</span>gedrag<span class="dot">.</span>
-    </a>
+  <div
+    class="surface flex flex-col justify-between px-5 py-4 sm:flex-row sm:items-center sm:px-6"
+  >
+    <div class="flex items-center justify-between gap-4">
+      <a
+        href={getBasePath("/")}
+        class="font-heading text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+      >
+        <span class="flex items-center gap-3">
+          <span class="relative block size-8 shrink-0 sm:size-8">
+            <img
+              src={logoLight.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 h-full w-full object-contain dark:hidden"
+            />
+            <img
+              src={logoDark.src}
+              alt=""
+              aria-hidden="true"
+              class="absolute inset-0 hidden h-full w-full object-contain dark:block"
+            />
+          </span>
+          <span>{SITE.title}</span>
+        </span>
+      </a>
 
-    <button id="menu-btn" class="menu-button sm:hidden" aria-label="Open menu" aria-expanded="false">
-      <IconMenuDeep id="menu-icon" />
-      <IconX id="close-icon" class="hidden" />
-    </button>
+      <button
+        id="menu-btn"
+        class="focus-outline ms-auto flex p-2 sm:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="menu-items"
+      >
+        <IconX id="close-icon" class="hidden" />
+        <IconMenuDeep id="menu-icon" />
+      </button>
+    </div>
 
-    <nav id="nav-menu" class="nav-wrap">
-      <ul id="menu-items" class="nav-list hidden sm:flex">
-        <li><a class:list={{"active-nav":active("/begrijp-geld")}} href={getBasePath("/begrijp-geld")}>Begrijp geld</a></li>
-        <li><a class:list={{"active-nav":active("/geld-in-cijfers")}} href={getBasePath("/geld-in-cijfers")}>Geld in cijfers</a></li>
-        <li><a class:list={{"active-nav":active("/over")}} href={getBasePath("/over")}>Over</a></li>
-        {SITE.lightAndDarkMode && (
-          <li>
-            <button id="theme-btn" class="theme-button" title="Wissel kleurmodus" aria-label="light" aria-live="polite">
-              <IconMoon class="absolute scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-              <IconSunHigh class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-            </button>
-          </li>
-        )}
+    <nav id="nav-menu" class="mt-4 sm:mt-0">
+      <ul
+        id="menu-items"
+        class:list={[
+          "mt-3 flex flex-col gap-2 font-heading text-sm font-medium sm:mt-0 sm:flex-row sm:items-center sm:gap-6 sm:text-base",
+          "hidden sm:flex",
+        ]}
+      >
+        <li>
+          <a
+            href={getBasePath("/systeem")}
+            class:list={{ "active-nav": isActive("/systeem") }}
+          >
+            Systeem
+          </a>
+        </li>
+        <li>
+          <a
+            href={getBasePath("/data")}
+            class:list={{ "active-nav": isActive("/data") }}
+          >
+            Data
+          </a>
+        </li>
+        <li>
+          <a
+            href={getBasePath("/over")}
+            class:list={{ "active-nav": isActive("/over") }}
+          >
+            Over
+          </a>
+        </li>
+        <li class="flex items-center gap-2 pt-1 sm:pt-0">
+          <LinkButton
+            href={getBasePath("/search")}
+            class:list={[
+              "focus-outline flex p-2 hover:text-accent",
+              { "text-accent": isActive("/search") },
+            ]}
+            title="Zoeken"
+            aria-label="Zoeken"
+          >
+            <IconSearch />
+            <span class="sr-only">Zoeken</span>
+          </LinkButton>
+          {
+            SITE.lightAndDarkMode && (
+              <button
+                id="theme-btn"
+                class="focus-outline relative flex size-10 items-center justify-center p-2 hover:text-accent"
+                title="Wissel tussen light en dark mode"
+                aria-label="light"
+                aria-live="polite"
+              >
+                <IconMoon class="absolute scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <IconSunHigh class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+              </button>
+            )
+          }
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
 <script>
-  function setupMenu(){
-    const btn=document.querySelector("#menu-btn");
-    const items=document.querySelector("#menu-items");
-    const menu=document.querySelector("#menu-icon");
-    const close=document.querySelector("#close-icon");
-    if(!btn||!items||!menu||!close)return;
-    btn.addEventListener("click",()=>{
-      const open=btn.getAttribute("aria-expanded")==="true";
-      btn.setAttribute("aria-expanded",open?"false":"true");
-      items.classList.toggle("hidden");
-      menu.classList.toggle("hidden");
-      close.classList.toggle("hidden");
+  function toggleNav() {
+    const menuBtn = document.querySelector("#menu-btn");
+    const menuItems = document.querySelector("#menu-items");
+    const menuIcon = document.querySelector("#menu-icon");
+    const closeIcon = document.querySelector("#close-icon");
+
+    if (!menuBtn || !menuItems || !menuIcon || !closeIcon) return;
+
+    menuBtn.addEventListener("click", () => {
+      const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
+
+      menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
+      menuBtn.setAttribute("aria-label", openMenu ? "Open menu" : "Sluit menu");
+
+      menuItems.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
     });
   }
-  setupMenu();
-  document.addEventListener("astro:after-swap",setupMenu);
-</script>
 
-<style>
-  .site-header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);padding:1rem 0}
-  .wordmark{font-family:var(--font-body);font-size:1.45rem;font-weight:600;letter-spacing:-.04em;text-decoration:none;color:var(--foreground)}
-  .wordmark span{color:var(--accent)}
-  .wordmark .dot{color:#e6a46c}
-  .menu-button,.theme-button{position:relative;display:flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem}
-  .nav-list{font-family:var(--font-heading);gap:1.5rem;align-items:center;font-size:.9rem;font-weight:600}
-  .nav-list a{text-decoration:none;color:color-mix(in srgb,var(--foreground) 72%,transparent)}
-  .nav-list a:hover,.nav-list a.active-nav{color:var(--accent)}
-  @media(max-width:639px){.site-header{flex-wrap:wrap}.nav-wrap{width:100%}.nav-list{margin-top:1rem;flex-direction:column;align-items:flex-start;gap:.85rem;padding:1rem 0}.nav-list:not(.hidden){display:flex}}
-</style>
+  toggleNav();
+  document.addEventListener("astro:after-swap", toggleNav);
+</script>
