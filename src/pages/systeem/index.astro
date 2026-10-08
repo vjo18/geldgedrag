@@ -28,11 +28,14 @@ const sections = [
         <p class="eyebrow">Systeem · doorlopende tekst</p>
         <h1>Wat geld van ons vraagt</h1>
         <p class="subtitle">Over geld, tijd en de keuzes die ons leven bepalen.</p>
+        <div class="article-meta screen-only">
+          <span id="reading-time">Leestijd berekenen…</span>
+          <span aria-hidden="true">·</span>
+          <button id="print-page" class="print-button" type="button">
+            Afdrukken
+          </button>
+        </div>
       </div>
-
-      <button id="print-page" class="print-button screen-only" type="button">
-        Afdrukken
-      </button>
     </header>
 
     <details class="mobile-toc screen-only">
@@ -186,12 +189,6 @@ const sections = [
         </section>
       </article>
 
-      <aside class="reading-tools screen-only">
-        <button class="print-link" id="print-page-side" type="button">
-          Afdrukken
-        </button>
-        <span>of bewaar als PDF</span>
-      </aside>
     </div>
   </main>
 
@@ -201,7 +198,17 @@ const sections = [
     const print = () => window.print();
 
     document.querySelector("#print-page")?.addEventListener("click", print);
-    document.querySelector("#print-page-side")?.addEventListener("click", print);
+
+    const article = document.querySelector(".manifest-text");
+    const readingTime = document.querySelector("#reading-time");
+    if (article && readingTime) {
+      const words = (article.textContent || "")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean).length;
+      const minutes = Math.max(1, Math.ceil(words / 220));
+      readingTime.textContent = `${minutes} min lezen`;
+    }
 
     const tocLinks = Array.from(
       document.querySelectorAll(".desktop-toc a")
@@ -246,10 +253,6 @@ const sections = [
     margin: 3.5rem auto 0;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2rem;
   }
 
   .eyebrow,
@@ -280,20 +283,24 @@ const sections = [
     color: color-mix(in srgb, var(--foreground) 72%, transparent);
   }
 
-  .print-button,
-  .print-link {
-    flex: none;
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 1.35rem;
     font-family: var(--font-heading);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent);
+    font-size: 0.8rem;
+    color: color-mix(in srgb, var(--foreground) 52%, transparent);
   }
 
   .print-button {
-    padding: 0.65rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    padding: 0;
+    border: 0;
     background: transparent;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
   }
 
   .mobile-toc {
@@ -347,8 +354,7 @@ const sections = [
     justify-content: center;
   }
 
-  .desktop-toc,
-  .reading-tools {
+  .desktop-toc {
     display: none;
   }
 
@@ -440,13 +446,12 @@ const sections = [
     }
 
     .reading-grid {
-      grid-template-columns: 13rem minmax(0, 46rem) 8rem;
-      gap: 2.5rem;
+      grid-template-columns: 13rem minmax(0, 46rem);
+      gap: 2.75rem;
       justify-content: center;
     }
 
-    .desktop-toc,
-    .reading-tools {
+    .desktop-toc {
       display: block;
       position: sticky;
       top: 2rem;
@@ -475,17 +480,6 @@ const sections = [
       font-weight: 700;
     }
 
-    .reading-tools {
-      font-family: var(--font-heading);
-      font-size: 0.72rem;
-      color: color-mix(in srgb, var(--foreground) 48%, transparent);
-    }
-
-    .reading-tools span {
-      display: block;
-      margin-top: 0.35rem;
-      line-height: 1.45;
-    }
   }
 
   @media (max-width: 640px) {
@@ -495,8 +489,6 @@ const sections = [
 
     .reading-header {
       margin-top: 2rem;
-      align-items: flex-start;
-      flex-direction: column;
     }
 
     .manifest-text section {
@@ -522,8 +514,7 @@ const sections = [
     :global(header),
     :global(footer),
     .screen-only,
-    .desktop-toc,
-    .reading-tools {
+    .desktop-toc {
       display: none !important;
     }
 
