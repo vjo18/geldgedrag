@@ -1,0 +1,158 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { getBasePath } from "@/utils/getBasePath";
+
+const sections = [
+  ["01", "tijd", "Geld gaat ook over tijd"],
+  ["02", "geld", "Wat is geld?"],
+  ["03", "krediet", "Hoe geld ontstaat"],
+  ["04", "groei", "Waarom groei zoveel aandacht krijgt"],
+  ["05", "bezit", "Arbeid en bezit"],
+  ["06", "gedrag", "Wat geld met ons doet"],
+  ["07", "genoeg", "Wanneer is genoeg genoeg?"],
+  ["08", "vrijheid", "Wat vermogen werkelijk koopt"],
+];
+---
+
+<Layout
+  title="Systeem | Geld & gedrag"
+  description="Een doorlopende tekst over geld, tijd, krediet, groei, bezit, gedrag, genoeg en vrijheid."
+>
+  <Header />
+  <main id="main-content" class="app-layout pb-12">
+    <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
+      <p class="font-heading text-sm font-semibold tracking-[0.18em] text-accent uppercase">
+        Systeem
+      </p>
+      <h1 class="mt-3 max-w-3xl font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em]">
+        Wat geld van ons vraagt
+      </h1>
+      <p class="article-copy mt-5 max-w-2xl text-lg text-foreground/75">
+        Over geld, tijd en de keuzes die ons leven bepalen.
+      </p>
+    </section>
+
+    <section class="surface mt-10 px-6 py-8 sm:px-8">
+      <div class="grid gap-8 lg:grid-cols-[13rem_minmax(0,1fr)]">
+        <aside class="lg:sticky lg:top-6 lg:self-start">
+          <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">
+            Inhoud
+          </p>
+          <nav class="mt-4 space-y-2">
+            {sections.map(([n, id, title]) => (
+              <a
+                href={`#${id}`}
+                class="grid grid-cols-[2rem_1fr] gap-2 font-heading text-sm leading-5 text-foreground/65 hover:text-accent"
+              >
+                <span class="text-accent/75">{n}</span>
+                <span>{title}</span>
+              </a>
+            ))}
+          </nav>
+        </aside>
+
+        <article class="article-copy max-w-none">
+          <section class="border-b border-border/80 pb-10">
+            <p class="text-xl leading-9 text-foreground/90">
+              Wie geld verdient, besteedt daar vaak een deel van zijn tijd en
+              energie aan. We betalen er ons dagelijks leven mee en proberen iets
+              te bewaren voor later. Maar ondertussen gaat het leven door.
+            </p>
+            <p>
+              Daarom gaat geld voor mij over meer dan bedragen. Het gaat ook over
+              wat we vandaag moeten doen en wat we later kunnen kiezen.
+            </p>
+            <p>
+              Dit verhaal probeert verbanden zichtbaar te maken tussen geld,
+              krediet, groei, bezit en gedrag. Niet om één verklaring of één
+              financieel product als antwoord naar voren te schuiven.
+            </p>
+          </section>
+
+          <section id="tijd" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">01 · Tijd</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Geld gaat ook over tijd</h2>
+            <p class="mt-5 text-lg leading-8">
+              Aan het einde van een werkdag staat er meestal nog geen extra bedrag
+              op je rekening. Toch heb je die dag al iets gegeven: aandacht,
+              inspanning, kennis, energie en uren die niet terugkomen.
+            </p>
+            <p>
+              Stel dat je netto twintig euro per gewerkt uur verdient. Een aankoop
+              van honderdzestig euro vertegenwoordigt dan ongeveer acht uur
+              arbeidsinkomen. Dat maakt die aankoop niet goed of fout. Het maakt
+              alleen een tweede prijs zichtbaar.
+            </p>
+            <div class="my-8 rounded-2xl border border-border bg-foreground/[0.02] p-6">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p class="font-heading text-xs text-foreground/55 uppercase">Aankoop</p>
+                  <p class="mt-1 font-heading text-3xl font-semibold">€160</p>
+                </div>
+                <div>
+                  <p class="font-heading text-xs text-foreground/55 uppercase">Bij €20 netto per uur</p>
+                  <p class="mt-1 font-heading text-3xl font-semibold text-accent">8 uur</p>
+                </div>
+              </div>
+            </div>
+            <p>
+              Een buffer voelt daarom anders dan een hoog loon dat volledig
+              opgaat. Wie enkele maanden kan overbruggen, heeft meer ruimte om te
+              wachten, te onderhandelen of een slechte situatie te verlaten.
+            </p>
+          </section>
+
+          <section id="geld" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">02 · Geld</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat is geld?</h2>
+            <p>We gebruiken het iedere dag, maar geld is geen natuurverschijnsel. Welke functies verwachten we ervan en hoe betrouwbaar is het als brug tussen vandaag en morgen?</p>
+          </section>
+
+          <section id="krediet" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">03 · Krediet</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Hoe geld ontstaat</h2>
+            <p>Een groot deel van het geld waarmee we betalen bestaat als banktegoed. Wanneer banken krediet verstrekken, kan tegelijk nieuw giraal geld ontstaan.</p>
+          </section>
+
+          <section id="groei" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">04 · Groei</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Waarom groei zoveel aandacht krijgt</h2>
+            <p>Gezinnen, bedrijven en overheden maken afspraken over toekomstige betalingen. Wanneer inkomens en productie groeien, zijn die afspraken gemakkelijker te dragen.</p>
+          </section>
+
+          <section id="bezit" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">05 · Bezit</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Arbeid en bezit werken anders</h2>
+            <p>Voor veel mensen is tijd hun eerste economische bezit. Maar tijd is begrensd. Bezit kan op een andere manier bijdragen aan toekomstige mogelijkheden.</p>
+          </section>
+
+          <section id="gedrag" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">06 · Gedrag</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat geld met ons doet</h2>
+            <p>Geldzorgen nemen aandacht in. Vergelijking kan het gevoel geven achter te lopen. Schaarste en onzekerheid veranderen hoe we risico ervaren.</p>
+          </section>
+
+          <section id="genoeg" class="border-b border-border/80 py-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">07 · Genoeg</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wanneer is genoeg genoeg?</h2>
+            <p>Meer geld is eenvoudig te meten. Genoeg niet. Het hangt samen met levensstijl, verplichtingen, veiligheid, tijd en de ruimte om anders te kunnen kiezen.</p>
+          </section>
+
+          <section id="vrijheid" class="pt-10">
+            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">08 · Vrijheid</p>
+            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat vermogen werkelijk koopt</h2>
+            <p>Uiteindelijk keert het verhaal terug naar waar het begon: tijd. Vermogen kan consumptie kopen, maar ook wachten, rust en de mogelijkheid om nee te zeggen.</p>
+            <p class="mt-6">
+              <a href={getBasePath("/data")} class="font-heading font-semibold text-accent">
+                Bekijk de data →
+              </a>
+            </p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
