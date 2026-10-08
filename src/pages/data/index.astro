@@ -29,7 +29,7 @@ const datasets = [
       </p>
     </section>
 
-    <section class="surface mt-10 px-6 py-8 sm:px-8">
+    <section class="surface mt-10 px-6 py-8 sm:px-10 sm:py-10">
       <div class="grid gap-8 sm:grid-cols-2">
         <div>
           <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">
@@ -61,7 +61,7 @@ const datasets = [
 
     <section class="mt-10 grid gap-6 sm:grid-cols-2">
       {datasets.map(([title, text, status]) => (
-        <article class="surface px-6 py-6">
+        <article class="surface px-6 py-8 sm:px-10">
           <p class="font-heading text-xs font-semibold tracking-[0.14em] text-accent uppercase">{status}</p>
           <h2 class="mt-2 font-heading text-2xl font-semibold tracking-tight">{title}</h2>
           <p class="article-copy mt-3 text-foreground/70">{text}</p>
