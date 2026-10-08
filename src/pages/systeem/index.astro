@@ -21,138 +21,581 @@ const sections = [
   description="Een doorlopende tekst over geld, tijd, krediet, groei, bezit, gedrag, genoeg en vrijheid."
 >
   <Header />
-  <main id="main-content" class="app-layout pb-12">
-    <section class="surface mt-6 px-6 py-8 sm:px-10 sm:py-12">
-      <p class="font-heading text-sm font-semibold tracking-[0.18em] text-accent uppercase">
-        Systeem
-      </p>
-      <h1 class="mt-3 max-w-3xl font-heading text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.02] font-semibold tracking-[-0.04em]">
-        Wat geld van ons vraagt
-      </h1>
-      <p class="article-copy mt-5 max-w-2xl text-lg text-foreground/75">
-        Over geld, tijd en de keuzes die ons leven bepalen.
-      </p>
-    </section>
 
-    <section class="surface mt-10 px-6 py-8 sm:px-8">
-      <div class="grid gap-8 lg:grid-cols-[13rem_minmax(0,1fr)]">
-        <aside class="lg:sticky lg:top-6 lg:self-start">
-          <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">
-            Inhoud
-          </p>
-          <nav class="mt-4 space-y-2">
-            {sections.map(([n, id, title]) => (
-              <a
-                href={`#${id}`}
-                class="grid grid-cols-[2rem_1fr] gap-2 font-heading text-sm leading-5 text-foreground/65 hover:text-accent"
-              >
-                <span class="text-accent/75">{n}</span>
-                <span>{title}</span>
-              </a>
-            ))}
-          </nav>
-        </aside>
-
-        <article class="article-copy max-w-none">
-          <section class="border-b border-border/80 pb-10">
-            <p class="text-xl leading-9 text-foreground/90">
-              Wie geld verdient, besteedt daar vaak een deel van zijn tijd en
-              energie aan. We betalen er ons dagelijks leven mee en proberen iets
-              te bewaren voor later. Maar ondertussen gaat het leven door.
-            </p>
-            <p>
-              Daarom gaat geld voor mij over meer dan bedragen. Het gaat ook over
-              wat we vandaag moeten doen en wat we later kunnen kiezen.
-            </p>
-            <p>
-              Dit verhaal probeert verbanden zichtbaar te maken tussen geld,
-              krediet, groei, bezit en gedrag. Niet om één verklaring of één
-              financieel product als antwoord naar voren te schuiven.
-            </p>
-          </section>
-
-          <section id="tijd" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">01 · Tijd</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Geld gaat ook over tijd</h2>
-            <p class="mt-5 text-lg leading-8">
-              Aan het einde van een werkdag staat er meestal nog geen extra bedrag
-              op je rekening. Toch heb je die dag al iets gegeven: aandacht,
-              inspanning, kennis, energie en uren die niet terugkomen.
-            </p>
-            <p>
-              Stel dat je netto twintig euro per gewerkt uur verdient. Een aankoop
-              van honderdzestig euro vertegenwoordigt dan ongeveer acht uur
-              arbeidsinkomen. Dat maakt die aankoop niet goed of fout. Het maakt
-              alleen een tweede prijs zichtbaar.
-            </p>
-            <div class="my-8 rounded-2xl border border-border bg-foreground/[0.02] p-6">
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <p class="font-heading text-xs text-foreground/55 uppercase">Aankoop</p>
-                  <p class="mt-1 font-heading text-3xl font-semibold">€160</p>
-                </div>
-                <div>
-                  <p class="font-heading text-xs text-foreground/55 uppercase">Bij €20 netto per uur</p>
-                  <p class="mt-1 font-heading text-3xl font-semibold text-accent">8 uur</p>
-                </div>
-              </div>
-            </div>
-            <p>
-              Een buffer voelt daarom anders dan een hoog loon dat volledig
-              opgaat. Wie enkele maanden kan overbruggen, heeft meer ruimte om te
-              wachten, te onderhandelen of een slechte situatie te verlaten.
-            </p>
-          </section>
-
-          <section id="geld" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">02 · Geld</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat is geld?</h2>
-            <p>We gebruiken het iedere dag, maar geld is geen natuurverschijnsel. Welke functies verwachten we ervan en hoe betrouwbaar is het als brug tussen vandaag en morgen?</p>
-          </section>
-
-          <section id="krediet" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">03 · Krediet</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Hoe geld ontstaat</h2>
-            <p>Een groot deel van het geld waarmee we betalen bestaat als banktegoed. Wanneer banken krediet verstrekken, kan tegelijk nieuw giraal geld ontstaan.</p>
-          </section>
-
-          <section id="groei" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">04 · Groei</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Waarom groei zoveel aandacht krijgt</h2>
-            <p>Gezinnen, bedrijven en overheden maken afspraken over toekomstige betalingen. Wanneer inkomens en productie groeien, zijn die afspraken gemakkelijker te dragen.</p>
-          </section>
-
-          <section id="bezit" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">05 · Bezit</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Arbeid en bezit werken anders</h2>
-            <p>Voor veel mensen is tijd hun eerste economische bezit. Maar tijd is begrensd. Bezit kan op een andere manier bijdragen aan toekomstige mogelijkheden.</p>
-          </section>
-
-          <section id="gedrag" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">06 · Gedrag</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat geld met ons doet</h2>
-            <p>Geldzorgen nemen aandacht in. Vergelijking kan het gevoel geven achter te lopen. Schaarste en onzekerheid veranderen hoe we risico ervaren.</p>
-          </section>
-
-          <section id="genoeg" class="border-b border-border/80 py-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">07 · Genoeg</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wanneer is genoeg genoeg?</h2>
-            <p>Meer geld is eenvoudig te meten. Genoeg niet. Het hangt samen met levensstijl, verplichtingen, veiligheid, tijd en de ruimte om anders te kunnen kiezen.</p>
-          </section>
-
-          <section id="vrijheid" class="pt-10">
-            <p class="font-heading text-xs font-semibold tracking-[0.18em] text-accent uppercase">08 · Vrijheid</p>
-            <h2 class="mt-2 font-heading text-3xl font-semibold tracking-tight">Wat vermogen werkelijk koopt</h2>
-            <p>Uiteindelijk keert het verhaal terug naar waar het begon: tijd. Vermogen kan consumptie kopen, maar ook wachten, rust en de mogelijkheid om nee te zeggen.</p>
-            <p class="mt-6">
-              <a href={getBasePath("/data")} class="font-heading font-semibold text-accent">
-                Bekijk de data →
-              </a>
-            </p>
-          </section>
-        </article>
+  <main id="main-content" class="reading-page">
+    <header class="reading-header">
+      <div>
+        <p class="eyebrow">Systeem · doorlopende tekst</p>
+        <h1>Wat geld van ons vraagt</h1>
+        <p class="subtitle">Over geld, tijd en de keuzes die ons leven bepalen.</p>
       </div>
-    </section>
+
+      <button id="print-page" class="print-button screen-only" type="button">
+        Afdrukken
+      </button>
+    </header>
+
+    <details class="mobile-toc screen-only">
+      <summary>Inhoud</summary>
+      <nav>
+        {sections.map(([n, id, title]) => (
+          <a href={`#${id}`}>
+            <span>{n}</span>
+            <strong>{title}</strong>
+          </a>
+        ))}
+      </nav>
+    </details>
+
+    <div class="reading-grid">
+      <aside class="desktop-toc screen-only" aria-label="Inhoud">
+        <p class="toc-title">Inhoud</p>
+        <nav>
+          {sections.map(([n, id, title]) => (
+            <a href={`#${id}`}>
+              <span>{n}</span>
+              <strong>{title}</strong>
+            </a>
+          ))}
+        </nav>
+      </aside>
+
+      <article class="manifest-text">
+        <section class="intro">
+          <p class="standfirst">
+            Wie geld verdient, besteedt daar vaak een deel van zijn tijd en
+            energie aan. We betalen er ons dagelijks leven mee en proberen iets
+            te bewaren voor later. Maar ondertussen gaat het leven door.
+          </p>
+          <p>
+            Daarom gaat geld voor mij over meer dan bedragen. Het gaat ook over
+            wat we vandaag moeten doen en wat we later kunnen kiezen.
+          </p>
+          <p>
+            Dit verhaal probeert verbanden zichtbaar te maken tussen geld,
+            krediet, groei, bezit en gedrag. Niet om één verklaring of één
+            financieel product als antwoord naar voren te schuiven, maar om het
+            systeem beter te leren zien.
+          </p>
+        </section>
+
+        <section id="tijd">
+          <p class="chapter-label">01 · Tijd</p>
+          <h2>Geld gaat ook over tijd</h2>
+          <p class="lead">
+            Aan het einde van een werkdag staat er meestal nog geen extra bedrag
+            op je rekening. Toch heb je die dag al iets gegeven: aandacht,
+            inspanning, kennis, energie en uren die niet terugkomen.
+          </p>
+          <p>
+            Stel dat je netto twintig euro per gewerkt uur verdient. Een aankoop
+            van honderdzestig euro vertegenwoordigt dan ongeveer acht uur
+            arbeidsinkomen. Dat maakt die aankoop niet goed of fout. Het maakt
+            alleen een tweede prijs zichtbaar.
+          </p>
+
+          <div class="inline-example">
+            <div>
+              <span>Aankoop</span>
+              <strong>€160</strong>
+            </div>
+            <div>
+              <span>Bij €20 netto per uur</span>
+              <strong>8 uur</strong>
+            </div>
+          </div>
+
+          <p>
+            Een buffer voelt daarom anders dan een hoog loon dat volledig
+            opgaat. Wie enkele maanden kan overbruggen, heeft meer ruimte om te
+            wachten, te onderhandelen of een slechte situatie te verlaten.
+          </p>
+        </section>
+
+        <section id="geld">
+          <p class="chapter-label">02 · Geld</p>
+          <h2>Wat is geld?</h2>
+          <p>
+            We gebruiken het iedere dag, maar geld is geen natuurverschijnsel.
+            Welke functies verwachten we ervan en hoe betrouwbaar is het als brug
+            tussen vandaag en morgen?
+          </p>
+        </section>
+
+        <section id="krediet">
+          <p class="chapter-label">03 · Krediet</p>
+          <h2>Hoe geld ontstaat</h2>
+          <p>
+            Een groot deel van het geld waarmee we betalen bestaat als
+            banktegoed. Wanneer banken krediet verstrekken, kan tegelijk nieuw
+            giraal geld ontstaan.
+          </p>
+        </section>
+
+        <section id="groei">
+          <p class="chapter-label">04 · Groei</p>
+          <h2>Waarom groei zoveel aandacht krijgt</h2>
+          <p>
+            Gezinnen, bedrijven en overheden maken afspraken over toekomstige
+            betalingen. Wanneer inkomens en productie groeien, zijn die afspraken
+            gemakkelijker te dragen.
+          </p>
+        </section>
+
+        <section id="bezit">
+          <p class="chapter-label">05 · Bezit</p>
+          <h2>Arbeid en bezit werken anders</h2>
+          <p>
+            Voor veel mensen is tijd hun eerste economische bezit. Maar tijd is
+            begrensd. Bezit kan op een andere manier bijdragen aan toekomstige
+            mogelijkheden.
+          </p>
+        </section>
+
+        <section id="gedrag">
+          <p class="chapter-label">06 · Gedrag</p>
+          <h2>Wat geld met ons doet</h2>
+          <p>
+            Geldzorgen nemen aandacht in. Vergelijking kan het gevoel geven
+            achter te lopen. Schaarste en onzekerheid veranderen hoe we risico
+            ervaren.
+          </p>
+        </section>
+
+        <section id="genoeg">
+          <p class="chapter-label">07 · Genoeg</p>
+          <h2>Wanneer is genoeg genoeg?</h2>
+          <p>
+            Meer geld is eenvoudig te meten. Genoeg niet. Het hangt samen met
+            levensstijl, verplichtingen, veiligheid, tijd en de ruimte om anders
+            te kunnen kiezen.
+          </p>
+        </section>
+
+        <section id="vrijheid">
+          <p class="chapter-label">08 · Vrijheid</p>
+          <h2>Wat vermogen werkelijk koopt</h2>
+          <p>
+            Uiteindelijk keert het verhaal terug naar waar het begon: tijd.
+            Vermogen kan consumptie kopen, maar ook wachten, rust en de
+            mogelijkheid om nee te zeggen.
+          </p>
+          <p class="screen-only">
+            <a class="data-link" href={getBasePath("/data")}>Bekijk de data →</a>
+          </p>
+        </section>
+      </article>
+
+      <aside class="reading-tools screen-only">
+        <button class="print-link" id="print-page-side" type="button">
+          Afdrukken
+        </button>
+        <span>of bewaar als PDF</span>
+      </aside>
+    </div>
   </main>
+
   <Footer />
+
+  <script is:inline>
+    const print = () => window.print();
+
+    document.querySelector("#print-page")?.addEventListener("click", print);
+    document.querySelector("#print-page-side")?.addEventListener("click", print);
+
+    const tocLinks = Array.from(
+      document.querySelectorAll(".desktop-toc a")
+    );
+    const sections = tocLinks
+      .map(link => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        entries => {
+          const current = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!current) return;
+
+          tocLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + current.target.id
+            );
+          });
+        },
+        { rootMargin: "-15% 0px -70% 0px", threshold: [0, 0.1, 0.5] }
+      );
+
+      sections.forEach(section => observer.observe(section));
+    }
+  </script>
 </Layout>
+
+<style>
+  .reading-page {
+    width: min(100% - 2.5rem, 76rem);
+    margin-inline: auto;
+    padding-bottom: 4rem;
+  }
+
+  .reading-header {
+    width: min(100%, 46rem);
+    margin: 3.5rem auto 0;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .eyebrow,
+  .chapter-label,
+  .toc-title {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .reading-header h1 {
+    margin-top: 0.65rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    font-weight: 650;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    max-width: 38rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--foreground) 72%, transparent);
+  }
+
+  .print-button,
+  .print-link {
+    flex: none;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .print-button {
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: transparent;
+  }
+
+  .mobile-toc {
+    width: min(100%, 46rem);
+    margin: 1.5rem auto 0;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .mobile-toc summary {
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .mobile-toc nav {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .mobile-toc a,
+  .desktop-toc a {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-family: var(--font-heading);
+  }
+
+  .mobile-toc a {
+    font-size: 0.86rem;
+    color: color-mix(in srgb, var(--foreground) 72%, transparent);
+  }
+
+  .mobile-toc a span,
+  .desktop-toc a span {
+    color: var(--accent);
+  }
+
+  .mobile-toc a strong,
+  .desktop-toc a strong {
+    font-weight: 500;
+  }
+
+  .reading-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 46rem);
+    justify-content: center;
+  }
+
+  .desktop-toc,
+  .reading-tools {
+    display: none;
+  }
+
+  .manifest-text {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .manifest-text section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .manifest-text section:last-child {
+    border-bottom: 0;
+  }
+
+  .manifest-text p {
+    margin-top: 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: color-mix(in srgb, var(--foreground) 84%, transparent);
+  }
+
+  .manifest-text .standfirst {
+    margin-top: 0;
+    font-size: 1.35rem;
+    line-height: 1.65;
+    color: var(--foreground);
+  }
+
+  .manifest-text .lead {
+    font-size: 1.18rem;
+    line-height: 1.78;
+    color: var(--foreground);
+  }
+
+  .manifest-text h2 {
+    margin-top: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.12;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+  }
+
+  .inline-example {
+    margin: 2rem 0;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--foreground) 2%, transparent);
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .inline-example div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .inline-example span {
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    color: color-mix(in srgb, var(--foreground) 55%, transparent);
+  }
+
+  .inline-example strong {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+  }
+
+  .inline-example div:last-child strong {
+    color: var(--accent);
+  }
+
+  .data-link {
+    font-family: var(--font-heading);
+    font-weight: 650;
+    color: var(--accent);
+  }
+
+  @media (min-width: 1100px) {
+    .mobile-toc {
+      display: none;
+    }
+
+    .reading-grid {
+      grid-template-columns: 13rem minmax(0, 46rem) 8rem;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+
+    .desktop-toc,
+    .reading-tools {
+      display: block;
+      position: sticky;
+      top: 2rem;
+      align-self: start;
+      padding-top: 3.5rem;
+    }
+
+    .desktop-toc nav {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .desktop-toc a {
+      font-size: 0.78rem;
+      line-height: 1.35;
+      color: color-mix(in srgb, var(--foreground) 58%, transparent);
+    }
+
+    .desktop-toc a:hover,
+    .desktop-toc a.active {
+      color: var(--foreground);
+    }
+
+    .desktop-toc a.active strong {
+      font-weight: 700;
+    }
+
+    .reading-tools {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      color: color-mix(in srgb, var(--foreground) 48%, transparent);
+    }
+
+    .reading-tools span {
+      display: block;
+      margin-top: 0.35rem;
+      line-height: 1.45;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .reading-page {
+      width: min(100% - 2rem, 76rem);
+    }
+
+    .reading-header {
+      margin-top: 2rem;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .manifest-text section {
+      padding: 2.75rem 0;
+    }
+
+    .manifest-text p {
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .manifest-text .standfirst {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 18mm 18mm 20mm;
+    }
+
+    :global(header),
+    :global(footer),
+    .screen-only,
+    .desktop-toc,
+    .reading-tools {
+      display: none !important;
+    }
+
+    :global(html),
+    :global(body) {
+      background: #fff !important;
+      color: #111 !important;
+    }
+
+    .reading-page,
+    .reading-header,
+    .reading-grid,
+    .manifest-text {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: block !important;
+    }
+
+    .reading-header {
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 8mm !important;
+      margin-bottom: 6mm !important;
+    }
+
+    .reading-header h1 {
+      font-size: 28pt;
+      color: #111 !important;
+    }
+
+    .subtitle {
+      color: #333 !important;
+    }
+
+    .manifest-text section {
+      padding: 8mm 0 !important;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .manifest-text h2 {
+      font-size: 19pt;
+      color: #111 !important;
+      break-after: avoid;
+    }
+
+    .manifest-text p,
+    .manifest-text .lead,
+    .manifest-text .standfirst {
+      color: #111 !important;
+      font-size: 10.5pt;
+      line-height: 1.55;
+    }
+
+    .chapter-label,
+    .eyebrow {
+      color: #333 !important;
+    }
+
+    .inline-example {
+      border: 1px solid #bbb;
+      background: transparent !important;
+      break-inside: avoid;
+    }
+
+    .inline-example strong {
+      color: #111 !important;
+    }
+
+    a {
+      color: #111 !important;
+      text-decoration: none !important;
+    }
+  }
+</style>
