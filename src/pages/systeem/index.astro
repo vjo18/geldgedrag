@@ -4,16 +4,6 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { getBasePath } from "@/utils/getBasePath";
 
-const sections = [
-  ["01", "tijd", "Geld gaat ook over tijd"],
-  ["02", "geld", "Wat is geld?"],
-  ["03", "krediet", "Hoe geld ontstaat"],
-  ["04", "groei", "Waarom groei zoveel aandacht krijgt"],
-  ["05", "bezit", "Arbeid en bezit"],
-  ["06", "gedrag", "Wat geld met ons doet"],
-  ["07", "genoeg", "Wanneer is genoeg genoeg?"],
-  ["08", "vrijheid", "Wat vermogen werkelijk koopt"],
-];
 ---
 
 <Layout
@@ -38,31 +28,8 @@ const sections = [
       </div>
     </header>
 
-    <details class="mobile-toc screen-only">
-      <summary>Inhoud</summary>
-      <nav>
-        {sections.map(([n, id, title]) => (
-          <a href={`#${id}`}>
-            <span>{n}</span>
-            <strong>{title}</strong>
-          </a>
-        ))}
-      </nav>
-    </details>
 
     <div class="reading-grid">
-      <aside class="desktop-toc screen-only" aria-label="Inhoud">
-        <p class="toc-title">Inhoud</p>
-        <nav>
-          {sections.map(([n, id, title]) => (
-            <a href={`#${id}`}>
-              <span>{n}</span>
-              <strong>{title}</strong>
-            </a>
-          ))}
-        </nav>
-      </aside>
-
       <article class="manifest-text">
         <section class="intro">
           <p class="standfirst">
@@ -210,34 +177,6 @@ const sections = [
       readingTime.textContent = `${minutes} min lezen`;
     }
 
-    const tocLinks = Array.from(
-      document.querySelectorAll(".desktop-toc a")
-    );
-    const sections = tocLinks
-      .map(link => document.querySelector(link.getAttribute("href")))
-      .filter(Boolean);
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        entries => {
-          const current = entries
-            .filter(entry => entry.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-          if (!current) return;
-
-          tocLinks.forEach(link => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === "#" + current.target.id
-            );
-          });
-        },
-        { rootMargin: "-15% 0px -70% 0px", threshold: [0, 0.1, 0.5] }
-      );
-
-      sections.forEach(section => observer.observe(section));
-    }
   </script>
 </Layout>
 
@@ -303,59 +242,9 @@ const sections = [
     color: var(--accent);
   }
 
-  .mobile-toc {
-    width: min(100%, 46rem);
-    margin: 1.5rem auto 0;
-    border: 1px solid var(--border);
-    border-radius: 1rem;
-    padding: 0.9rem 1rem;
-  }
-
-  .mobile-toc summary {
-    cursor: pointer;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    color: var(--accent);
-  }
-
-  .mobile-toc nav {
-    display: grid;
-    gap: 0.55rem;
-    margin-top: 1rem;
-  }
-
-  .mobile-toc a,
-  .desktop-toc a {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    gap: 0.5rem;
-    text-decoration: none;
-    font-family: var(--font-heading);
-  }
-
-  .mobile-toc a {
-    font-size: 0.86rem;
-    color: color-mix(in srgb, var(--foreground) 72%, transparent);
-  }
-
-  .mobile-toc a span,
-  .desktop-toc a span {
-    color: var(--accent);
-  }
-
-  .mobile-toc a strong,
-  .desktop-toc a strong {
-    font-weight: 500;
-  }
-
   .reading-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 46rem);
-    justify-content: center;
-  }
-
-  .desktop-toc {
-    display: none;
+    width: min(100%, 46rem);
+    margin-inline: auto;
   }
 
   .manifest-text {
@@ -364,26 +253,29 @@ const sections = [
   }
 
   .manifest-text section {
-    padding: 3.5rem 0;
-    border-bottom: 1px solid var(--border);
+    padding: 4.5rem 0 0;
   }
 
-  .manifest-text section:last-child {
-    border-bottom: 0;
+  .manifest-text .intro {
+    padding-top: 3rem;
+  }
+
+  .manifest-text section + section {
+    margin-top: 1rem;
   }
 
   .manifest-text p {
     margin-top: 1.2rem;
     font-family: var(--font-body);
-    font-size: 1.08rem;
-    line-height: 1.85;
+    font-size: 1.12rem;
+    line-height: 1.9;
     color: color-mix(in srgb, var(--foreground) 84%, transparent);
   }
 
   .manifest-text .standfirst {
     margin-top: 0;
-    font-size: 1.35rem;
-    line-height: 1.65;
+    font-size: 1.32rem;
+    line-height: 1.7;
     color: var(--foreground);
   }
 
@@ -440,48 +332,6 @@ const sections = [
     color: var(--accent);
   }
 
-  @media (min-width: 1100px) {
-    .mobile-toc {
-      display: none;
-    }
-
-    .reading-grid {
-      grid-template-columns: 13rem minmax(0, 46rem);
-      gap: 2.75rem;
-      justify-content: center;
-    }
-
-    .desktop-toc {
-      display: block;
-      position: sticky;
-      top: 2rem;
-      align-self: start;
-      padding-top: 3.5rem;
-    }
-
-    .desktop-toc nav {
-      margin-top: 1rem;
-      display: grid;
-      gap: 0.6rem;
-    }
-
-    .desktop-toc a {
-      font-size: 0.78rem;
-      line-height: 1.35;
-      color: color-mix(in srgb, var(--foreground) 58%, transparent);
-    }
-
-    .desktop-toc a:hover,
-    .desktop-toc a.active {
-      color: var(--foreground);
-    }
-
-    .desktop-toc a.active strong {
-      font-weight: 700;
-    }
-
-  }
-
   @media (max-width: 640px) {
     .reading-page {
       width: min(100% - 2rem, 76rem);
@@ -513,8 +363,7 @@ const sections = [
 
     :global(header),
     :global(footer),
-    .screen-only,
-    .desktop-toc {
+    .screen-only {
       display: none !important;
     }
 
@@ -551,8 +400,8 @@ const sections = [
     }
 
     .manifest-text section {
-      padding: 8mm 0 !important;
-      border-bottom: 1px solid #ddd;
+      padding: 8mm 0 0 !important;
+      border-bottom: 0;
     }
 
     .manifest-text h2 {
