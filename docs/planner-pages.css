@@ -1,0 +1,5 @@
+.planner-pages { display:flex;flex-wrap:wrap;gap:10px 26px;padding:18px 0 24px;margin:0 0 32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line); }
+.planner-pages a { color:var(--muted);font-size:.8rem;text-decoration:none;padding:3px 0;border-bottom:1px solid transparent; }
+.planner-pages a:hover { color:var(--accent); }
+.planner-pages a[aria-current='page'] { color:var(--ink);border-bottom-color:var(--accent);font-weight:600; }
+@media(max-width:760px) { .planner-pages { gap:8px 20px;padding-block:15px 20px; } }

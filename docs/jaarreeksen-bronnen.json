@@ -1,0 +1,297 @@
+{
+  "updated": "2026-10-28",
+  "provided": {
+    "files": [
+      "Werkmap DATA en BRONNEN"
+    ],
+    "status": "Waarden en bronvermeldingen overgenomen uit de aangeleverde werkmap; oorspronkelijke exports niet volledig onafhankelijk herhaald.",
+    "equity": "MSCI en S&P netto-rendementsindex, oorspronkelijk USD, gedeeld door historische EUR/USD; decemberobservaties.",
+    "prices": "Goud en bitcoin uit werkmap, EUR-perspectief; zie bronwissels en reconstructie in BRONNEN.",
+    "cpi": "Statbel, kolom E: indexbasis 2025 volgens werkmap; jaargemiddelde aanbevolen in BRONNEN.",
+    "wage": "OECD Average annual wages, België, lopende prijzen EUR per voltijdsequivalent per jaar.",
+    "house": "Voor essay: OECD nominal house price index, jaarlijkse gemiddelden (kolom G). Verkoopprijzen (H) blijven apart, wegens categoriewissel rond 2017.",
+    "m3": "ECB BSI.M.U2.Y.V.M30.X.1.U2.2300.Z01.E, decemberstanden; miljoen EUR naar miljard EUR / 1000.",
+    "debt": "België: NBB geconsolideerde overheidsschuld S13; S14-leningen en S11-leningen plus schuldbewijzen, jaareinde, miljard EUR.",
+    "gdp": "België: Eurostat nama_10_gdp / NBB, B1GQ, lopende prijzen, miljard EUR; recente jaren kunnen voorlopig zijn."
+  },
+  "eurostat": {
+    "url": "https://ec.europa.eu/eurostat/en/web/products-euro-indicators/w/2-21102026-ap",
+    "release": "2026-10-21",
+    "coverage": "2022–2025",
+    "geography": "Euro area 20, vaste samenstelling; niet EA21 of België",
+    "debt": "Geconsolideerde bruto overheidsschuld op jaareinde, miljoen EUR. Niet alle publieke en private schulden samen.",
+    "gdp": "Nominaal bbp tegen marktprijzen gedurende het jaar, miljoen EUR. Geen reële groei."
+  },
+  "workbook": {
+    "name": "geldgedrag_data_basis_v2 (2).xlsx",
+    "data_sheet": "DATA",
+    "source_sheet": "BRONNEN",
+    "imported": "2026-10-28",
+    "range": "1999–2025",
+    "status": "Waarden en bronvermeldingen overgenomen uit de aangeleverde werkmap; oorspronkelijke exports niet volledig onafhankelijk herhaald.",
+    "sources": [
+      {
+        "column": "M0 / monetaire basis",
+        "series": "Base money",
+        "area": "Eurozone",
+        "unit": "€ mld",
+        "provider": "ECB Data Portal",
+        "dataset": "ILM.M.U2.C.LT00001.Z5.EUR",
+        "frequency": "Maandelijks",
+        "year_observation": "December / einde jaar",
+        "reference": "https://data.ecb.europa.eu/data/datasets/ILM/ILM.M.U2.C.LT00001MP.Z5.EUR",
+        "notes": "ECB noemt dit 'Base money'; M0 is informele benaming.",
+        "urls": [
+          "https://data.ecb.europa.eu/data/datasets/ILM/ILM.M.U2.C.LT00001MP.Z5.EUR"
+        ]
+      },
+      {
+        "column": "M3",
+        "series": "Monetary aggregate M3 – stocks",
+        "area": "Eurozone",
+        "unit": "€ mld",
+        "provider": "ECB Data Portal",
+        "dataset": "BSI.M.U2.Y.V.M30.X.1.U2.2300.Z01.E",
+        "frequency": "Maandelijks",
+        "year_observation": "December / einde jaar",
+        "reference": "https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.U2.Y.V.M30.X.1.U2.2300.Z01.E",
+        "notes": "Waarden zijn miljoenen euro; deel door 1.000 voor € mld.",
+        "urls": [
+          "https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.U2.Y.V.M30.X.1.U2.2300.Z01.E"
+        ]
+      },
+      {
+        "column": "HICP",
+        "series": "HICP – all items",
+        "area": "Eurozone",
+        "unit": "Index",
+        "provider": "Eurostat",
+        "dataset": "HICP, all-items index, HICP.M.U2.N.000000.4D0.ANR",
+        "frequency": "Maandelijks / jaarlijks",
+        "year_observation": "Jaargemiddelde aanbevolen",
+        "reference": "https://data.ecb.europa.eu/data/datasets/HICP/HICP.M.U2.N.000000.4D0.ANR?utm_source=chatgpt.com",
+        "notes": "Vanaf 2026 zijn HICP-reeksen opnieuw gerefereerd naar 2025=100; gebruik één consistente complete reeks. =AVERAGEIF('DATA(HICP)'!C:C;Sheet1!A2;'DATA(HICP)'!D:D)",
+        "urls": [
+          "https://data.ecb.europa.eu/data/datasets/HICP/HICP.M.U2.N.000000.4D0.ANR?utm_source=chatgpt.com"
+        ]
+      },
+      {
+        "column": "CPI",
+        "series": "Consumptieprijsindex",
+        "area": "België",
+        "unit": "Index",
+        "provider": "Statbel",
+        "dataset": "CPI sinds 1920",
+        "frequency": "Maandelijks",
+        "year_observation": "Jaargemiddelde aanbevolen",
+        "reference": "https://statbel.fgov.be/nl/open-data/consumptieprijsindex-en-gezondheidsindex",
+        "notes": "Primaire koopkrachtindicator voor België.",
+        "urls": [
+          "https://statbel.fgov.be/nl/open-data/consumptieprijsindex-en-gezondheidsindex"
+        ]
+      },
+      {
+        "column": "Lonen",
+        "series": "Gemiddeld bruto jaarloon",
+        "area": "België",
+        "unit": "€ per voltijdsequivalent per jaar",
+        "provider": "OECD",
+        "dataset": "Average annual wages – current prices, EUR",
+        "frequency": "Jaarlijks",
+        "year_observation": "Jaarwaarde rechtstreeks gebruiken",
+        "reference": "https://data-explorer.oecd.org/vis?fs[0]=Topic,1%7CEmployment%23JOB%23%7CBenefits%252C%20earnings%20and%20wages%23JOB_BW%23&pg=0&fc=Topic&bp=true&snb=21&vw=tl&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_EARNINGS%40AV_AN_WAGE&df[ag]=OECD.ELS.SAE&df[vs]=1.0&dq=BEL..EUR..V..&pd=1990,&to[TIME_PERIOD]=false",
+        "notes": "Gemiddeld jaarlijks brutoloon per werknemer, omgerekend naar voltijdsequivalent. Meet de loonontwikkeling vanuit werknemersperspectief vóór belastingen en werknemersbijdragen. Geschikt om nominale loongroei doorheen de tijd te volgen en te vergelijken met inflatie. Voor vergelijking met andere nominale reeksen kan desgewenst worden omgezet naar een gemeenschappelijke index, bv. 2000=100.",
+        "urls": [
+          "https://data-explorer.oecd.org/vis?fs%5B0%5D=Topic,1%7CEmployment%23JOB%23%7CBenefits%252C%20earnings%20and%20wages%23JOB_BW%23&pg=0&fc=Topic&bp=true&snb=21&vw=tl&df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_EARNINGS%40AV_AN_WAGE&df%5Bag%5D=OECD.ELS.SAE&df%5Bvs%5D=1.0&dq=BEL..EUR..V..&pd=1990,&to%5BTIME_PERIOD%5D=false",
+          "https://data-explorer.oecd.org/vis?fs[0]=Topic,1%7CEmployment%23JOB%23%7CBenefits%252C%20earnings%20and%20wages%23JOB_BW%23&pg=0&fc=Topic&bp=true&snb=21&vw=tl&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_EARNINGS%40AV_AN_WAGE&df[ag]=OECD.ELS.SAE&df[vs]=1.0&dq=BEL..EUR..V..&pd=1990,&to[TIME_PERIOD]=false"
+        ]
+      },
+      {
+        "column": "Huizen",
+        "series": "Nominal House Price Index",
+        "area": "België",
+        "unit": "Index",
+        "provider": "OECD",
+        "dataset": "Analytical house prices indicators – Nominal House Price Index",
+        "frequency": "Jaarlijks / kwartaal",
+        "year_observation": "Jaarlijkse reeks rechtstreeks gebruiken; OECD-jaarcijfer = jaargemiddelde",
+        "reference": "https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.ECO.MPD&df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_AN_HOUSE_PRICES%40DF_HOUSE_PRICES",
+        "notes": "Beste consistente indexreeks voor lange historische evolutie. Geschikt voor een reeks vanaf 1999 en vergelijking met lonen en inflatie.",
+        "urls": [
+          "https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.ECO.MPD&df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_AN_HOUSE_PRICES%40DF_HOUSE_PRICES"
+        ]
+      },
+      {
+        "column": "Huizen",
+        "series": "Verkoopprijzen vastgoed",
+        "area": "België",
+        "unit": "€ per woning",
+        "provider": "Statbel",
+        "dataset": "Vastgoedprijzen / verkopen vastgoed volgens aard",
+        "frequency": "Jaarlijks",
+        "year_observation": "Jaarwaarde rechtstreeks gebruiken",
+        "reference": "https://statbel.fgov.be/nl/open-data?category=66&page=0\n2010-...: https://statbel.fgov.be/nl/open-data/verkopen-vastgoed-volgens-aard-de-verkoopsakte-belgie\n1973-2017: https://statbel.fgov.be/nl/open-data/verkoop-van-onroerende-goederen-belgie-volgens-aard-op-het-kadastrale-plan",
+        "notes": "Werkelijke verkoopprijzen in euro. Historische data beschikbaar vanaf vóór 1999. Minder geschikt als zuivere prijsindex omdat de samenstelling van verkochte woningen doorheen de tijd kan wijzigen. Reeks 1999-2017 = Gewone woonhuizen: Q50 (€) ; Reeks 2017 - ... = Mediaan Huizen met 2 of 3 gevels (gesloten + halfopen bebouwing)",
+        "urls": [
+          "https://statbel.fgov.be/nl/open-data?category=66&page=0",
+          "https://statbel.fgov.be/nl/open-data/verkopen-vastgoed-volgens-aard-de-verkoopsakte-belgie",
+          "https://statbel.fgov.be/nl/open-data/verkoop-van-onroerende-goederen-belgie-volgens-aard-op-het-kadastrale-plan"
+        ]
+      },
+      {
+        "column": "Aandelen MSCI ACWI IMI",
+        "series": "MSCI ACWI IMI Net Return",
+        "area": "Wereld",
+        "unit": "Index",
+        "provider": "MSCI",
+        "dataset": "MSCI ACWI IMI – Net Return – USD",
+        "frequency": "Maandelijks",
+        "year_observation": "December / laatste beschikbare observatie van het jaar",
+        "reference": "MSCI ACWI IMI Index",
+        "notes": "Net Return wordt gebruikt i.p.v. Price Index, zodat netto herbelegde dividenden worden meegenomen. Oorspronkelijke reeks in USD; voor vergelijking vanuit EUR-perspectief omgerekend via index USD / EURUSD. Daarna geïndexeerd op 1999=100. MSCI-indexcode 664204. Benadert beter het rendement van een accumulating ETF dan een Price Index, maar houdt geen rekening met o.a. ETF-kosten en tracking difference.",
+        "urls": [
+          "https://www.msci.com/indexes/index/664204/msci-acwi-imi-index"
+        ]
+      },
+      {
+        "column": "Aandelen S&P 500",
+        "series": "S&P 500 Net Total Return",
+        "area": "VS",
+        "unit": "Index",
+        "provider": "S&P Dow Jones Indices / Investing / YCharts",
+        "dataset": "S&P 500 Net Total Return, USD",
+        "frequency": "Dagelijks / maandelijks",
+        "year_observation": "Laatste handelsdag / decemberobservatie van het jaar",
+        "reference": "S&P 500 – S&P Dow Jones Indices · Investing S&P 500 Net TR Historical Data · YCharts S&P 500 Net Total Return (^STRN)\n\nhttps://www.investing.com/indices/sp-500-net-tr",
+        "notes": "Net Total Return. Voor 1998–2006 zijn jaarultimo-waarden handmatig afgelezen uit YCharts (^STRN); vanaf 2007 wordt het gedownloade Investing-bestand gebruikt. Oorspronkelijke reeks in USD; omgerekend naar EUR via Net TR USD / EURUSD, daarna 1999=100. De bronwissel rond 2007 veroorzaakt een kleine afwijking in overlappende observaties, die voor deze langetermijnvergelijking wordt geaccepteerd.\nBijvoorbeeld voor de S&P 500 eind 2025 hadden we:\n- S&P 500 Net TR = 13.116,21 USD\n- EUR/USD = 1,1746\nDan:\n\\[\n13.116,21 / 1,1746 = \\mathbf{11.166,53}\n\\]",
+        "urls": [
+          "https://www.investing.com/indices/sp-500-net-tr"
+        ]
+      },
+      {
+        "column": "Aandelen STOXX Europe 600",
+        "series": "STOXX Europe 600 Net Return",
+        "area": "Europa",
+        "unit": "Index",
+        "provider": "STOXX",
+        "dataset": "STOXX Europe 600 EUR Net Return (SXXR)",
+        "frequency": "Dagelijks",
+        "year_observation": "Laatste handelsdag van het jaar",
+        "reference": "STOXX Europe 600 Net Return (SXXR)",
+        "notes": "Officiële Net Return EUR-reeks. ISIN EU0009658210. Dividenden worden netto herbelegd. Reeks is reeds in EUR, dus geen wisselkoersconversie. Jaarwaarde = laatste officiële handelsdag van ieder kalenderjaar. Daarna geïndexeerd op 1999=100.\nAlle aandelenindices worden als Net Return / Net Total Return gebruikt. Dividenden worden dus netto herbelegd. USD-reeksen (MSCI ACWI IMI en S&P 500) worden eerst naar EUR omgerekend met de historische EUR/USD-koers; EUR-reeksen (STOXX Europe 600 en BEL 20) vereisen geen valutaomrekening. Vervolgens worden alle aandelenreeksen geïndexeerd op 1999=100.",
+        "urls": [
+          "https://nl.investing.com/indices/stoxx-600"
+        ]
+      },
+      {
+        "column": "Aandelen BEL 20",
+        "series": "BEL 20 Net Return",
+        "area": "België",
+        "unit": "Index",
+        "provider": "Euronext / historische marktdata",
+        "dataset": "BEL 20 Net Return",
+        "frequency": "Dagelijks / maandelijks",
+        "year_observation": "December / laatste handelsdag van het jaar",
+        "reference": "Euronext BEL 20",
+        "notes": "Net Return-variant gebruiken in plaats van de gewone BEL 20 Price Index, zodat netto herbelegde dividenden worden meegenomen. Reeks in EUR; dus geen FX-conversie. Daarna geïndexeerd op 1999=100.",
+        "urls": [
+          "https://nl.investing.com/indices/bel-20"
+        ]
+      },
+      {
+        "column": "Goud",
+        "series": "Goudprijs",
+        "area": "Wereld / EUR-perspectief",
+        "unit": "EUR per troy ounce",
+        "provider": "Investing historische marktdata",
+        "dataset": "XAU/EUR; vóór beschikbaarheid aangevuld met XAU/USD en EUR/USD",
+        "frequency": "Maandelijks",
+        "year_observation": "December / einde jaar",
+        "reference": "Investing XAU/EUR",
+        "notes": "Directe XAU/EUR-reeks beschikbaar vanaf 2006. Voor eerdere jaren wordt de EUR-goudprijs gereconstrueerd als XAU/USD ÷ EUR/USD. Eenheid = euro per troy ounce. Vervolgens geïndexeerd op 1999=100 voor vergelijking met de andere reeksen.",
+        "urls": [
+          "https://nl.investing.com/currencies/xau-eur"
+        ]
+      },
+      {
+        "column": "Bitcoin",
+        "series": "Bitcoinprijs",
+        "area": "Wereld / EUR-perspectief",
+        "unit": "EUR per BTC",
+        "provider": "Investing historische marktdata",
+        "dataset": "BTC/USD + EUR/USD",
+        "frequency": "Maandelijks",
+        "year_observation": "December / einde jaar",
+        "reference": "Investing Bitcoin Historical Data",
+        "notes": "Beschikbare gebruikte BTC-historiek begint in 2010. BTC/USD wordt naar EUR omgerekend als BTC/USD ÷ EUR/USD. Omdat er geen 1999-waarde bestaat, wordt Bitcoin afzonderlijk geïndexeerd op 2010=100.",
+        "urls": [
+          "https://www.investing.com/crypto/bitcoin/historical-data"
+        ]
+      },
+      {
+        "column": "Overheidsschuld",
+        "series": "Geconsolideerde bruto overheidsschuld",
+        "area": "België",
+        "unit": "€ mld",
+        "provider": "Nationale Bank van België (NBB)",
+        "dataset": "Consolidated gross debt of general government – General government, consolidated – Financial instrument: Total",
+        "frequency": "Jaarlijks",
+        "year_observation": "Uitstaand bedrag einde jaar",
+        "reference": "https://data.bis.org/topics/TOTAL_CREDIT\nhttps://dataexplorer.nbb.be/vis?tm=debt&pg=0&snb=48&df[ds]=disseminate&df[id]=DF_CGD&df[ag]=BE2&lc=en&dq=A.CGD.S1300%2BS1311.F&pd=1998,2025&to[TIME_PERIOD]=false",
+        "notes": "Maastrichtschuld van de gezamenlijke Belgische overheid (S.13), geconsolideerd tussen de overheidssectoren. Bronwaarden zijn € miljoen; deel door 1.000 voor € mld. Gebruik General government, consolidated, niet alleen Federal government. Voor vergelijking met de andere reeksen kan de nominale schuld worden geïndexeerd op 1999=100. De NBB definieert de cijfers als uitstaande bedragen aan het einde van de periode. (nbb.be)",
+        "urls": [
+          "https://data.bis.org/topics/TOTAL_CREDIT",
+          "https://dataexplorer.nbb.be/vis?tm=debt&pg=0&snb=48&df[ds]=disseminate&df[id]=DF_CGD&df[ag]=BE2&lc=en&dq=A.CGD.S1300%2BS1311.F&pd=1998,2025&to[TIME_PERIOD]=false"
+        ]
+      },
+      {
+        "column": "Schuld gezinnen",
+        "series": "Uitstaande schuld huishoudens",
+        "area": "België",
+        "unit": "€ mld",
+        "provider": "Nationale Bank van België (NBB) – NBB.Stat",
+        "dataset": "Financial accounts: Financial assets and liabilities of individuals and non-financial corporations – Households (S.14) – Financial wealth – Financial liabilities: Short-term loans + Long-term loans",
+        "frequency": "Jaarlijks",
+        "year_observation": "Q4 / einde jaar",
+        "reference": "https://data.bis.org/topics/TOTAL_CREDIT\nhttps://dataexplorer.nbb.be/vis?lc=en&df[ds]=disseminate&df[id]=DF_FAHHNFC&df[ag]=BE2&df[vs]=1.0&av=true&dq=Q.LE.S14%2BS11.LL%2BL3S%2BLS%2BL3L&pd=1998-Q1,&to[TIME_PERIOD]=false",
+        "notes": "Totale uitstaande leningschuld van Belgische huishoudens (S.14). Berekend als kortlopende leningen + langlopende leningen. Hypothecaire leningen, consumentenkredieten e.d. niet afzonderlijk optellen omdat deze uitsplitsingen reeds in de hoofdcategorieën zijn opgenomen. Bronwaarden in € mln; delen door 1.000 voor € mld. Gebruik Q4 als eindejaarswaarde. Voor vergelijking met andere reeksen geïndexeerd op 1999=100.",
+        "urls": [
+          "https://data.bis.org/topics/TOTAL_CREDIT",
+          "https://dataexplorer.nbb.be/vis?lc=en&df[ds]=disseminate&df[id]=DF_FAHHNFC&df[ag]=BE2&df[vs]=1.0&av=true&dq=Q.LE.S14%2BS11.LL%2BL3S%2BLS%2BL3L&pd=1998-Q1,&to[TIME_PERIOD]=false"
+        ]
+      },
+      {
+        "column": "Schuld bedrijven",
+        "series": "Uitstaande schuld niet-financiële ondernemingen",
+        "area": "België",
+        "unit": "€ mld",
+        "provider": "Nationale Bank van België (NBB) – NBB.Stat",
+        "dataset": "Financial accounts: Financial assets and liabilities of individuals and non-financial corporations – Non-financial corporations – Financial wealth – Financial liabilities: Short-term debt securities + Long-term debt securities + Short-term loans + Long-term loans",
+        "frequency": "Jaarlijks",
+        "year_observation": "Q4 / einde jaar",
+        "reference": "https://data.bis.org/topics/TOTAL_CREDIT\nhttps://dataexplorer.nbb.be/vis?lc=en&df[ds]=disseminate&df[id]=DF_FAHHNFC&df[ag]=BE2&df[vs]=1.0&av=true&dq=Q.LE.S14%2BS11.LL%2BL3S%2BLS%2BL3L&pd=1998-Q1,&to[TIME_PERIOD]=false",
+        "notes": "Uitstaande schuld van Belgische niet-financiële ondernemingen. Berekend als kortlopende + langlopende schuldbewijzen + kortlopende + langlopende leningen. Aandelen/eigen vermogen en overige financiële verplichtingen worden niet als schuld meegerekend. Onderliggende “of which”-categorieën worden niet apart opgeteld om dubbeltelling te vermijden. Bronwaarden in € mln; delen door 1.000 voor € mld. Gebruik Q4 als eindejaarswaarde. Voor vergelijking met andere reeksen geïndexeerd op 1999=100.",
+        "urls": [
+          "https://data.bis.org/topics/TOTAL_CREDIT",
+          "https://dataexplorer.nbb.be/vis?lc=en&df[ds]=disseminate&df[id]=DF_FAHHNFC&df[ag]=BE2&df[vs]=1.0&av=true&dq=Q.LE.S14%2BS11.LL%2BL3S%2BLS%2BL3L&pd=1998-Q1,&to[TIME_PERIOD]=false"
+        ]
+      },
+      {
+        "column": "BBP",
+        "series": "Bruto binnenlands product tegen marktprijzen",
+        "area": "België",
+        "unit": "€ mld",
+        "provider": "Eurostat / NBB",
+        "dataset": "nama_10_gdp – Gross domestic product at market prices (B1GQ), Current prices (CP_MEUR)",
+        "frequency": "Jaarlijks",
+        "year_observation": "Jaarwaarde",
+        "reference": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table?lang=en&category=na10.nama10.nama_10_ma\nhttps://dataexplorer.nbb.be/vis?utm_source=chatgpt.com&pg=0&fs[0]=Belgian%20economy,0%7CNational%20accounts%20%26%20GDP%23NAT%23&fc=Belgian%20economy&bp=true&snb=12&df[ds]=disseminate&df[id]=DF_QNA_DISS&df[ag]=BE2&df[vs]=1.0&dq=A.1.B1GM..V.N&pd=1995,&to[TIME_PERIOD]=false",
+        "notes": "Nominaal BBP van België tegen marktprijzen volgens ESA 2010. Reeks: A, CP_MEUR, B1GQ, BE. Bronwaarden in € mln; delen door 1.000 voor € mld. Lopende prijzen, dus inclusief prijs/inflatie-effecten. Voor vergelijking met andere reeksen geïndexeerd op 1999=100. 2024–2025 kunnen voorlopige waarden bevatten; behoud de Eurostat-flags bij brondata.",
+        "urls": [
+          "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table?lang=en&category=na10.nama10.nama_10_ma",
+          "https://dataexplorer.nbb.be/vis?utm_source=chatgpt.com&pg=0&fs[0]=Belgian%20economy,0%7CNational%20accounts%20%26%20GDP%23NAT%23&fc=Belgian%20economy&bp=true&snb=12&df[ds]=disseminate&df[id]=DF_QNA_DISS&df[ag]=BE2&df[vs]=1.0&dq=A.1.B1GM..V.N&pd=1995,&to[TIME_PERIOD]=false"
+        ]
+      }
+    ]
+  }
+}
