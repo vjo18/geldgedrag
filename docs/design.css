@@ -363,3 +363,20 @@ th:first-child, td:first-child { text-align: left; }
 @media(max-width:760px) {
  .essay-download { flex-direction:column;align-items:flex-start;gap:20px; }
 }
+
+/* Wide introductions and figures, with the long-form text kept readable. */
+.reading.reading-wide { max-width:none; }
+.reading.reading-wide > * { max-width:var(--reading); }
+.reading.reading-wide > .page-intro,
+.reading.reading-wide > .essay-introduction,
+.reading.reading-wide > .essay-figure,
+.reading.reading-wide > .essay-part-title,
+.reading.reading-wide > .essay-download,
+.reading.reading-wide > .essay-offline { max-width:none; }
+.reading-wide .page-intro h1,
+.reading-wide .essay-introduction h1,
+.reading-wide .page-intro > p,
+.reading-wide .essay-introduction > p { max-width:none; }
+.reading-wide .page-intro { padding-bottom:30px;margin-bottom:32px;border-bottom:1px solid var(--line); }
+.reading-wide .essay-thesis { max-width:none; }
+@media print { .reading.reading-wide > * { max-width:none; } }
