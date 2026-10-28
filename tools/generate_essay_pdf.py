@@ -55,6 +55,15 @@ class DOM(HTMLParser):
 def clean(s):return re.sub(r'\s+',' ',s).strip().replace('\u2011','-').replace('\u2013','-').replace('\u2014','-')
 def txt(n):return clean(n.text())
 def esc(s):return escape(clean(s))
+def inline(n):
+ """Preserve source links and emphasis in the offline reading edition."""
+ if isinstance(n,str):return escape(re.sub(r'\s+',' ',n).replace('\u2011','-').replace('\u2013','-').replace('\u2014','-'))
+ content=''.join(inline(c) for c in n.children)
+ if n.tag=='a' and n.attrs.get('href','').startswith('https://'):
+  return '<link href="'+escape(n.attrs['href'],quote=True)+'" color="#976342">'+content+'</link>'
+ if n.tag in ('strong','b'):return '<b>'+content+'</b>'
+ if n.tag in ('em','i'):return '<i>'+content+'</i>'
+ return content
 dom=DOM((DIST/'essay.html').read_text());article=dom.root.all('article')[0]
 rows=list(csv.DictReader((DIST/'jaarreeksen.csv').open(),delimiter=';'))
 for r in rows:
@@ -65,7 +74,7 @@ for r in long:
 S={}
 def style(name,**kw):
  defaults=dict(fontName='Serif',fontSize=10.2,leading=15.6,textColor=colors.HexColor(INK),spaceAfter=10,allowWidows=0,allowOrphans=0);defaults.update(kw);S[name]=ParagraphStyle(name,**defaults);return S[name]
-style('Body');style('Small',fontSize=8,leading=12,textColor=colors.HexColor(MUTED));style('Reference',fontSize=8.5,leading=12.6,spaceAfter=10)
+style('Body');style('Small',fontSize=8,leading=12,textColor=colors.HexColor(MUTED));style('Reference',fontSize=8.5,leading=12,spaceAfter=8)
 style('Part',fontSize=25,leading=31,spaceAfter=25,keepWithNext=True)
 style('Chapter',fontSize=15,leading=20,spaceBefore=20,spaceAfter=12,keepWithNext=True)
 style('Eyebrow',fontName='SansBold',fontSize=8,leading=12,textColor=colors.HexColor(ACCENT),spaceAfter=12)
@@ -175,7 +184,7 @@ def walk(n):
   heading=P(('<font color="'+ACCENT+'">'+m[1]+'</font>  '+esc(m[2])) if m else esc(text),'Chapter');hcount+=1;heading.tocText=text;heading.tocLevel=1;heading.bookmark='heading-'+str(hcount);story.append(heading);return
  if n.tag=='p':
   text=txt(n)
-  if text:story.append(P(esc(text),'Reference' if source_section else 'Body'))
+  if text:story.append(P(inline(n),'Reference' if source_section else 'Body'))
   return
  if n.tag in ['ul','ol']:
   for li in n.all('li'):story.append(P('• '+esc(txt(li))))
