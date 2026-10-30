@@ -1,55 +1,29 @@
 name: CI
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+  workflow_call:
 
 permissions:
   contents: read
-
-on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - reopened
-  workflow_call:
 
 jobs:
   build:
     name: Code standards & build
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-    strategy:
-      matrix:
-        node-version: [20]
-
     steps:
-      - name: "☁️ Checkout repository"
+      - name: Checkout repository
         uses: actions/checkout@v6
-
-      - name: "📦 Install pnpm"
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.11.1
-
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-
-      - name: "📦 Install dependencies"
-        run: pnpm install
-
-      - name: "🔎 Lint code"
-        run: pnpm run lint
-
-      - name: "📝 Checking code format"
-        run: pnpm run format:check
-
-      - name: "🚀 Build the project"
-        run: pnpm run build
+          node-version: '24'
+      - name: Validate static website
+        run: python3 tools/check_site.py
+      - name: Check JavaScript syntax
+        run: |
+          for file in docs/*.js; do
+            node --check "$file"
+          done

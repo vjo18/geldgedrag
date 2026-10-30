@@ -1,0 +1,47 @@
+/* This page extends the shared design without changing the essay's styles. */
+.compare-intro { padding-bottom:48px; }
+.compare-intro .lead { max-width:780px; }
+.compare-section { padding:54px 0;border-top:1px solid var(--line); }
+.compare-section h2 { margin:16px 0 24px;max-width:860px; }
+.compare-copy { max-width:780px; }
+.compare-table-wrap,.history-table-wrap { width:100%;overflow-x:auto; }
+.compare-table { min-width:880px;margin:24px 0 0; }
+.compare-table caption,.history-results caption,.history-values caption { text-align:left;font-size:.74rem;color:var(--muted);padding:0 0 14px; }
+.compare-table th,.compare-table td { text-align:left;line-height:1.8;padding:20px 18px; }
+.compare-table thead th { font-size:.74rem; }
+.compare-table tbody th { color:var(--ink);background:transparent;font-family:var(--serif);font-weight:400;font-size:1.2rem;min-width:145px; }
+.compare-table tbody td { width:27%;font-size:.84rem; }
+.compare-callout { margin:30px 0;padding:24px 28px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:var(--radius);background:var(--surface);max-width:900px; }
+.compare-callout p { font-size:.9rem;line-height:1.85; }
+.compare-callout strong { display:block;color:var(--ink);font-size:.9rem;margin-bottom:12px; }
+.compare-two { display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:30px 0; }
+.compare-two article { padding-top:22px;border-top:1px solid var(--line); }
+.compare-two p { font-size:.95rem; }
+.history-panel { background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;margin:28px 0; }
+.history-controls { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:end; }
+.history-controls label { min-height:24px; }
+.history-controls select { font-size:.8rem;padding:12px 10px; }
+.history-checks { display:flex;flex-wrap:wrap;gap:10px 24px;border:0;border-top:1px solid var(--line);padding:22px 0 0;margin:24px 0 16px; }
+.history-checks legend { color:var(--muted);font-size:.73rem;padding:0 14px 0 0; }
+.history-checks label { display:flex;gap:9px;align-items:center;font-weight:500;font-size:.78rem;margin:0; }
+.history-checks input { width:16px;height:16px;min-height:0;padding:0;accent-color:var(--ink); }
+.history-provenance { margin:22px 0 16px; }
+#history-status { margin-bottom:12px;min-height:1.7em; }
+.history-chart { position:relative;width:100%;min-width:0; }
+.history-chart svg { display:block;width:100%;height:auto;font-family:var(--sans); }
+.compare-tooltip { position:absolute;z-index:5;background:var(--ink);color:var(--paper);border-radius:4px;padding:12px 16px;font-size:.75rem;line-height:1.8;pointer-events:none;width:210px; }
+.compare-tooltip strong { display:block;margin-bottom:6px; }
+.compare-legend { display:flex;flex-wrap:wrap;gap:20px;font-size:.75rem;margin:8px 0 28px;color:var(--muted); }
+.compare-legend i { display:inline-block;vertical-align:middle;width:17px;height:3px;margin-right:8px; }
+.history-results { min-width:600px; }
+.history-results th,.history-results td { padding:13px 12px; }
+.history-results tbody th { text-align:left;font-weight:500;background:transparent; }
+.history-values { margin-top:24px; }
+.history-values summary { color:var(--ink);font-size:.83rem;cursor:pointer;padding:12px 0; }
+.history-values table { margin-top:12px;min-width:430px; }
+.history-panel button:disabled { opacity:.5;cursor:default; }
+.compare-section .reading-column h3 { margin-top:30px; }
+.compare-sources { font-size:.87rem;line-height:2; }
+@media(max-width:900px) { .history-controls { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:760px) { .compare-section { padding-block:40px; }.compare-intro { padding-bottom:32px; }.compare-two { grid-template-columns:1fr;gap:22px; }.history-panel { padding:20px; }.compare-callout { padding:20px; }.history-controls { gap:16px 12px; }.history-chart svg { min-height:220px; }.history-checks { gap:14px; }.history-checks label { width:100%; } }
+@media(max-width:440px) { .history-controls { grid-template-columns:1fr; }.history-controls label { min-height:0; } }

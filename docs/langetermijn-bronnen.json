@@ -1,0 +1,32 @@
+{
+  "retrieved": "2026-10-28",
+  "coverage": "1964–2022",
+  "sources": [
+    {
+      "columns": [
+        "industrial_wage_index_2015"
+      ],
+      "url": "https://fred.stlouisfed.org/data/LCWRMN01BEA661N",
+      "provider": "OECD via FRED",
+      "measure": "Annual industrial hourly wage rates Belgium, not seasonally adjusted, index 2015=100"
+    },
+    {
+      "columns": [
+        "belgian_cpi_index_2015"
+      ],
+      "url": "https://fred.stlouisfed.org/data/BELCPIALLAINMEI",
+      "provider": "OECD via FRED",
+      "measure": "Annual CPI Belgium, index 2015=100"
+    },
+    {
+      "columns": [
+        "sp500_price_return_pct",
+        "sp500_total_return_pct"
+      ],
+      "url": "https://www.slickcharts.com/sp500/returns/details",
+      "provider": "Slickcharts",
+      "measure": "Calendar-year S&P 500 price and total returns in USD, published rounded to two decimals"
+    }
+  ],
+  "method": "Set all series to 100 in selected base year; compound S&P annual returns starting with next year. Annual wages and CPI versus year-end investment indices. No FX adjustment, taxes or fees. A Belgian CPI adjustment of USD returns is not an EUR investor return."
+}

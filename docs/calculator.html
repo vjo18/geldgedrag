@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Calculator · Vermogensplanner — Geldgedrag</title><meta content="#223d34" name="theme-color"><script defer src="site.js"></script><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="planner-pages.css"></head><body data-page="calculator" class="lab-page"><a class="skip" href="#main">Ga naar inhoud</a><header class="site-header"><div class="shell nav"><a class="brand" href="index.html">geldgedrag<span>.be</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Menu openen"><span></span><span></span></button><nav id="site-navigation" aria-label="Hoofdnavigatie" class="nav-links"><a href="index.html">Home</a><a href="essay.html">Essay</a><a href="playbook.html">Playbook</a><a href="endowment.html" class="is-section-current">Vermogensplanner</a><a href="over.html">Over</a></nav></div></header><main id="main" class="page-frame"><div class="kicker">Vermogensplanner · Calculator</div><h1>Wat kan je bezit voor je betekenen?</h1><p class="lead">Kies een terugkerende uitgave en onderzoek wat die onder verschillende aannames vraagt. Vergelijk het scenario met je bestaande bezit en bekijk hoe de historische trend verandert.</p><nav class="planner-pages" aria-label="Binnen de Vermogensplanner"><a href="endowment.html">Overzicht</a><a href="vermogensvormen.html">Vermogensvormen</a><a href="calculator.html" aria-current="page">Calculator</a><a href="methodologie.html">Methodologie</a></nav><div class="planner-note">Van inzicht naar een persoonlijk plan. <a href="playbook.html">Begin bij jouw genoeg</a></div><div class="lab-inline-explainer"><strong>Vermogensplanner</strong> · Onderzoek hoe opgebouwd vermogen periodieke uitgaven zou kunnen ondersteunen. Dit is geïnspireerd op het <a href="endowment.html#endowment-principe">endowmentprincipe</a>: vermogen met een langdurig doel en mogelijke uitkeringen. Historische trends zijn geen voorspellingen.</div><div class="major-section" id="marketArea"><div class="major-heading"><span class="step-num">01</span><div><h2>Prijshistoriek en trend</h2><p>Onderzoek de historische koers, kies het trendvenster en bekijk hoe het model evolueert.</p></div></div><section class="card market-controls"><div><label for="asset">Actief</label><select id="asset"><option value="btc">Bitcoin — power law</option><option value="gold">Goud — exponentieel</option><option value="sp">S&amp;P 500 — exponentieel</option><option value="msci">MSCI ACWI IMI — exponentieel</option></select></div><div><label for="trendStart">Startjaar trendberekening</label><select id="trendStart"></select><p class="hint" hidden="" id="trendWindowNote">Kies vanaf welk historisch jaar de regressie, R², CAGR en percentielen worden berekend. De historische brongegevens blijven ongewijzigd.</p></div><div class="live-panel"><div><b>Actuele marktprijs (automatisch)</b></div><div id="livePrice">Automatisch laden…</div><div class="hint" id="liveMeta">Historische regressie blijft gebaseerd op de decembergegevens t/m 2025. Voor goud zijn oudere EUR-omrekeningen vóór 1999 indicatieve historische equivalenten, geen destijds verhandelde europrijzen.</div><input checked hidden="" id="useLive" type="checkbox"></div><div class="note" hidden="" id="status">Ingebouwde historische EUR-reeksen worden direct geladen, ook zonder internet.</div></section><section class="card stack result-card"><h2>Historische trend en waardering</h2><div class="kpis"><div class="kpi"><small>Historische slotkoers (2025)</small><strong id="kSpot">—</strong></div><div class="kpi"><small>Trendprijs nu</small><strong id="kTrend">—</strong></div><div class="kpi"><small>Huidig residu-percentiel</small><strong id="kPct">—</strong></div><div class="kpi"><small>Historische CAGR</small><strong id="kCagr">—</strong></div><div class="kpi"><small>R² op logprijzen</small><strong id="kR2">—</strong></div><div class="kpi"><small>Exponent / jaarlijkse trendgroei</small><strong id="kExponent">—</strong></div></div><div class="chartwrap" id="priceChartWrap"><div class="hoverbox" hidden="" id="priceChartTooltip"></div><svg aria-label="Historische prijzen, trendlijn en percentielbanden" id="chart" role="img" viewbox="0 0 750 330"><text fill="#6a7d70" x="30" y="165">De ingebouwde koershistoriek wordt geladen…</text></svg></div><div class="legend"><span><i class="swatch" style="background:#1e7550"></i>Koers</span><span><i class="swatch" style="background:#dd9843"></i>Trend</span><span><i class="swatch" style="background:#c5dbc4"></i>P10–P90-band</span><span><i class="swatch" style="background:#8fb69a"></i>P10, P20, P50, P80, P90 — parallelle log-residubanen</span></div><div class="hint" hidden="" id="stability">Exponentstabiliteit: —</div></section></div><div class="major-section" id="endowmentArea"><div class="major-heading"><span class="step-num">02</span><div><h2>Endowmentberekening en uitkeringsplan</h2><p>Vul in wat je wilt uitkeren en wat je al bezit. Kies daarna een historisch percentiel en vergelijk ook andere aannames. Een lager percentiel is geen gegarandeerde veilige grens.</p></div></div><section class="card plan-controls"><h3>Instellingen uitkeringsplan</h3><div class="plan-fields"><div class="twocol"><div><label for="payment">Gewenste uitkering</label><input id="payment" min="0" step="10" type="number" value="200"></div><div><label for="frequency">Frequentie</label><select id="frequency"><option value="12">Maandelijks</option><option value="1">Jaarlijks</option></select></div></div><div class="twocol"><div><label for="start">Startjaar</label><input id="start" max="2100" min="2026" type="number" value="2035"></div><div><label for="duration">Uitkeringsduur (jaren)</label><input id="duration" max="80" min="1" type="number" value="30"></div></div><div class="twocol"><div><label for="inflation">Jaarlijkse inflatie (%)</label><input id="inflation" max="20" min="0" step="0.25" type="number" value="2"></div><div><label for="fee">Transactiekost (%)</label><input id="fee" max="10" min="0" step="0.05" type="number" value="0.25"></div></div><div class="twocol"><div><label for="taxRate">Meerwaardebelasting (%)</label><input id="taxRate" max="100" min="0" step="0.5" type="number" value="10"></div><div><label for="taxExempt">Jaarlijkse vrijstelling meerwaarden (€)</label><input id="taxExempt" min="0" step="500" type="number" value="10000"></div></div><div class="twocol"><div><label for="taxBasis">Fiscale aanschaffingswaarde per eenheid (€)</label><input id="taxBasis" min="0" placeholder="Standaard: huidige koers" step="any" type="number"></div><div><label for="taxUsed">Vrijstelling elders benut per jaar (€)</label><input id="taxUsed" min="0" step="500" type="number" value="0"></div></div><div><label for="holdings">Reeds in bezit (BTC / ounces / theoretische indexeenheden)</label><input id="holdings" min="0" step="any" type="number" value="0.5"></div><div><label for="contribution">Extra periodieke inleg (per maand)</label><input id="contribution" min="0" step="25" type="number" value="0"></div></div><div class="percent-control"><h3>Conservativiteit</h3><input id="method" type="hidden" value="historical"><div><label for="percentile">Gekozen percentiel: <b id="pLabel">P20</b></label><input id="percentile" max="95" min="5" step="5" type="range" value="20"></div></div></section><section class="card stack result-card"><h2>Jouw endowmentberekening</h2><div class="result-groups"><div class="result-group"><h3>Theoretisch benodigde positie</h3><div class="kpis"><div class="kpi"><small>Benodigde eenheden</small><strong id="kUnits">—</strong></div><div class="kpi"><small>Aankoopkost van benodigde positie</small><strong id="kCost">—</strong></div></div></div><div class="result-group"><h3>Mijn bestaande bezit</h3><div class="kpis"><div class="kpi"><small>Reeds in bezit</small><strong id="kOwn">—</strong></div><div class="kpi"><small>Nog bij te kopen / overschot</small><strong id="kGap">—</strong><small class="gap-cost" id="kGapCost"></small></div><div class="kpi"><small>Eerste haalbare startjaar</small><strong id="kYear">—</strong></div></div></div><strong aria-hidden="true" id="kFuture" style="display:none"></strong></div><p class="note" hidden="" id="resultsNote">Berekening op basis van de ingebouwde jaarultimo-koersen.</p></section><section class="card stack" id="wealthSection"><h2>Hoe evolueren je bezit en uitkeringen?</h2><div class="chart-mode"><button class="selected" id="modeActual" type="button">Mijn bestaande bezit</button><button id="modeRequired" type="button">Theoretisch benodigde positie</button></div><div class="chartwrap" id="wealthWrap"><div class="hoverbox" hidden="" id="wealthHover"></div><svg aria-label="Evolutie portefeuillewaarde, cumulatieve uitkeringen en resterende eenheden" id="wealthChart" role="img" viewbox="0 0 750 300"></svg></div><div class="legend"><span><i class="swatch" style="background:#17764c"></i>Portefeuillewaarde</span><span><i class="swatch" style="background:#2768c9"></i>Cumulatieve netto-uitkeringen</span><span><i class="swatch" style="background:#e08c31"></i>Resterende eenheden (rechteras)</span></div><div class="kpis"><div class="kpi"><small>Totaal netto uitgekeerd (nominaal)</small><strong id="kPaid">—</strong></div><div class="kpi"><small>Totale geschatte belasting</small><strong id="kTaxPaid">—</strong></div><div class="kpi"><small>Resterende eenheden einde</small><strong id="kRemain">—</strong></div></div><p class="note" id="fundingNote">—</p></section><section class="card stack" id="annualEvolution"><h2>Jaarlijkse evolutie</h2><div style="overflow-x:auto"><table><thead><tr><th>Jaar</th><th>Koers</th><th>Netto uitkering</th><th>Cumulatief</th><th>Belasting</th><th>Resterende eenheden</th><th>Waarde einde jaar</th></tr></thead><tbody id="yearRows"></tbody></table></div></section></div><div class="major-section" id="trendDetailArea"><div class="major-heading"><span class="step-num">03</span><div><h2>Hoe evolueert het trendmodel doorheen de jaren?</h2><p>Elke historische waarde wordt opnieuw geschat met de gegevens die toen beschikbaar waren. De verwachte modelgroei loopt door tot het einde van je uitkeringsperiode.</p></div></div><section class="card stack" id="trendEvolution"><h2>Trendevolutie bij jaarlijkse herberekening</h2>
+<p class="hint" id="paramDescription"></p><h3>Jaarlijkse ontwikkeling van de trendparameter</h3><div class="chartwrap trend-evolution-wrap"><svg aria-label="Trendparameter doorheen de jaren" id="trendParamChart" role="img" viewbox="0 0 750 235"></svg></div>
+<h3>Jaarlijkse ontwikkeling van R²</h3><div class="chartwrap trend-evolution-wrap"><svg aria-label="R kwadraat doorheen de jaren" id="trendR2Chart" role="img" viewbox="0 0 750 235"></svg></div>
+<h3>Trendwaarde en actuele historische jaarultimo-koers</h3><div class="chartwrap trend-evolution-wrap"><svg aria-label="Jaarlijkse koers en toenmalige trendwaarde" id="trendPriceChart" role="img" viewbox="0 0 750 235"></svg></div>
+<h3>Verwachte modelgroei per jaar (%) — historiek en projectie</h3><div class="chartwrap trend-evolution-wrap"><svg aria-label="Jaarlijkse evolutie van de verwachte modelgroei in procent" id="trendCagrChart" role="img" viewbox="0 0 750 235"></svg></div>
+<p class="hint" hidden="" id="trendEvolutionNote">De eerste waarden verschijnen na minimaal acht jaarpunten. Kortere reeksen en vroege percentielen zijn statistisch instabiel.</p>
+<div style="overflow-x:auto"><table><thead><tr><th>Jaar</th><th>Datapunten</th><th>Jaarultimo</th><th>Trendwaarde</th><th>Trendparameter</th><th>R²</th><th>Verwachte modelgroei volgend jaar</th></tr></thead><tbody id="trendEvolutionRows"></tbody></table></div></section></div><p class="single-disclaimer">Modelscenario op basis van historische data, geen voorspelling of beleggingsadvies. Bekijk de <a href="methodologie.html">methodologie, bronnen en beperkingen</a>.</p></main><script>
+const EMBEDDED_HISTORY={"btc":[[2010,0.22],[2011,3.63],[2012,10.23],[2013,586.32],[2014,263.04],[2015,395.95],[2016,916.39],[2017,11545.85],[2018,3234.28],[2019,6419.63],[2020,23703.76],[2021,40657.55],[2022,15452.63],[2023,38304.19],[2024,90367.24],[2025,74589.39]],"gold":[[1975,113.59],[1976,110.71],[1977,127.96],[1978,156.35],[1979,339.51],[1980,441.43],[1981,363.03],[1982,468.32],[1983,463.75],[1984,433.38],[1985,370.35],[1986,355.35],[1987,366.72],[1988,347.65],[1989,328.41],[1990,282.57],[1991,259.45],[1992,269.35],[1993,347.53],[1994,307.31],[1995,289.05],[1996,291.53],[1997,264.05],[1998,245.76],[1999,286.12],[2000,289.04],[2001,313.12],[2002,330.48],[2003,329.76],[2004,323.4],[2005,436.96],[2006,482.38],[2007,571.35],[2008,629.52],[2009,765.7],[2010,1062.25],[2011,1208.73],[2012,1268.65],[2013,876.47],[2014,978.09],[2015,976.78],[2016,1094.69],[2017,1085.33],[2018,1118.16],[2019,1352.72],[2020,1552.28],[2021,1607.89],[2022,1704.17],[2023,1868.71],[2024,2534.08],[2025,3673.87]],"sp":[[1999,1992.25],[2000,1955.91],[2001,1811.01],[2002,1175.67],[2003,1258.83],[2004,1292.62],[2005,1552.0],[2006,1591.24],[2007,1511.86],[2008,986.97],[2009,1209.92],[2010,1480.96],[2011,1553.16],[2012,1755.74],[2013,2217.02],[2014,2846.38],[2015,3194.24],[2016,3670.13],[2017,3895.17],[2018,3872.73],[2019,5178.55],[2020,5597.09],[2021,7706.36],[2022,6670.5],[2023,8128.91],[2024,10788.52],[2025,11166.53]],"msci":[[1999,716.65],[2000,648.46],[2001,578.62],[2002,366.86],[2003,453.42],[2004,495.33],[2005,629.85],[2006,685.02],[2007,685.87],[2008,414.28],[2009,555.34],[2010,675.58],[2011,643.11],[2012,735.45],[2013,873.74],[2014,1032.38],[2015,1123.23],[2016,1256.89],[2017,1362.63],[2018,1277.98],[2019,1660.68],[2020,1769.61],[2021,2238.31],[2022,1940.67],[2023,2292.17],[2024,2844.87],[2025,3060.7]]};
+const $=id=>document.getElementById(id);let liveQuotes={};let liveRequest=0;let series=[];let model=null;let wealthMode="actual";let lastCompute=null;let activeSource='';let residuals=[];const DAY=86400000, yearMs=365.2425*DAY, genesis=Date.UTC(2009,0,3);const nf=new Intl.NumberFormat('nl-BE',{maximumFractionDigits:2});const money=n=>Number.isFinite(n)?nf.format(n):'—';const units=n=>Number.isFinite(n)?new Intl.NumberFormat('nl-BE',{maximumFractionDigits:8}).format(n):'—';const quantile=(v,p)=>{let a=[...v].filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return NaN;let x=(a.length-1)*p,i=Math.floor(x);return a[i]+(a[Math.min(i+1,a.length-1)]-a[i])*(x-i)};const regress=(x,y)=>{let n=x.length,sx=0,sy=0,sxx=0,sxy=0;for(let i=0;i<n;i++){sx+=x[i];sy+=y[i];sxx+=x[i]*x[i];sxy+=x[i]*y[i]}let b=(n*sxy-sx*sy)/(n*sxx-sx*sx),a=(sy-b*sx)/n;let avg=sy/n,ss=0,err=0;for(let i=0;i<n;i++){ss+=(y[i]-avg)**2;err+=(y[i]-a-b*x[i])**2}return {a,b,r2:ss?1-err/ss:NaN}};const tx=d=>$('asset').value==='btc'?Math.log(Math.max(1,(d-genesis)/DAY)): (d-series[0].date)/yearMs;const fit=data=>regress(data.map(v=>tx(v.date)),data.map(v=>Math.log(v.price)));const trend=(d,m=model)=>Math.exp(m.a+m.b*tx(d));const utcYear=y=>Date.UTC(y,0,1);const addYears=(d,y)=>d+y*yearMs;const fmtDate=d=>new Date(d).toISOString().slice(0,10);
+function parseCSV(raw){let lines=raw.replace(/^\uFEFF/,'').split(/\r?\n/).filter(v=>v.trim());let delim=lines[0].includes(';')?';':lines[0].includes('\t')?'\t':',';let head=lines[0].split(delim).map(s=>s.replace(/["']/g,'').trim().toLowerCase());let di=head.findIndex(s=>['date','datum','datetime_utc','timestamp','time'].includes(s)),pi=head.findIndex(s=>['close','price','prijs','btc_close_usd','adj close','adjusted close','value','last','nav'].includes(s));if(di<0||pi<0)throw Error('Kolommen datum/prijs niet gevonden. Verwacht Date,Close of date,price.');let a=[];for(let line of lines.slice(1)){let cols=line.split(delim).map(s=>s.trim().replace(/^"|"$/g,''));let ds=cols[di],date=/^\d{10,13}$/.test(ds)?Number(ds)*(ds.length===10?1000:1):Date.parse(ds);let v=cols[pi].replace(/[$€\s]/g,'');if(delim===';'&&v.includes(','))v=v.replace(',','.');v=Number(v);if(Number.isFinite(date)&&Number.isFinite(v)&&v>0)a.push({date,price:v})}a.sort((a,b)=>a.date-b.date);let map=new Map;for(let x of a){let k=new Date(x.date).toISOString().slice(0,7);map.set(k,x)}return [...map.values()];}
+function priceAt(d,p,method){
+ // Historische residu-kwantielen: voor alle toekomstige horizons dezelfde
+ // multiplicatieve afwijking ten opzichte van EEN regressietrend.
+ // Daardoor blijft P10 < P20 < P50 < P80 < P90 en kruisen de banen niet.
+ const last=series.at(-1);
+ if(d<=last.date)return last.price;
+ const q=quantile(residuals,p/100);
+ return trend(d)*Math.exp(q);
+}
+function valuationSpot(){const a=$("asset").value,q=liveQuotes[a];return $("useLive").checked&&q&&Number.isFinite(q.price)?q.price:series.at(-1).price}
+function taxSettings(){let spot=valuationSpot();let basis=$('taxBasis').value.trim()===''?spot:Math.max(0,Number($('taxBasis').value)||0);return {rate:Math.max(0,Number($('taxRate').value)||0)/100,exempt:Math.max(0,(Number($('taxExempt').value)||0)-(Number($('taxUsed').value)||0)),basis}};
+function saleForNet(net,price,year,used,tax){let gainShare=Math.max(0,1-tax.basis/price),allow=Math.max(0,tax.exempt-(used[year]||0));let threshold=gainShare>0?allow/gainShare:Infinity;let gross=net<=threshold?net:(net-tax.rate*allow)/(1-tax.rate*gainShare);if(!Number.isFinite(gross)||gross<0)return NaN;let gain=gross*gainShare;used[year]=(used[year]||0)+gain;return gross}
+function required(startYear,p,method){let amount=Math.max(0,Number($('payment').value)||0),frequency=Number($('frequency').value),duration=Math.max(1,Number($('duration').value)||1),infl=Math.max(0,Number($('inflation').value)||0)/100,fee=Math.max(0,Number($('fee').value)||0)/100;let n=Math.round(duration*frequency),total=0,used={},tax=taxSettings();for(let j=0;j<n;j++){let d=addYears(utcYear(startYear),j/frequency),price=priceAt(d,p,method);if(!Number.isFinite(price)||price<=0)return NaN;let nominal=amount*(1+infl)**(j/frequency);let gross=saleForNet(nominal/(1-fee),price,new Date(d).getUTCFullYear(),used,tax);total+=gross/price}return total}
+function accumulatedBy(year,p,method){let q=Math.max(0,Number($('holdings').value)||0),c=Math.max(0,Number($('contribution').value)||0);if(!c)return q;let now=series.at(-1).date;let months=Math.max(0,Math.floor((utcYear(year)-now)/yearMs*12));for(let j=1;j<=months;j++){let d=addYears(now,j/12),price=priceAt(d,p,method);if(!Number.isFinite(price)||price<=0)return NaN;q+=c/price}return q}
+function earliest(p,method){let startMin=Math.max(new Date(series.at(-1).date).getUTCFullYear()+1,2026),max=Math.min(2100,startMin+50);for(let y=startMin;y<=max;y++){let need=required(y,p,method),have=accumulatedBy(y,p,method);if(Number.isFinite(need)&&Number.isFinite(have)&&have>=need)return y}return null}
+function draw(){
+ const svg=$('chart');if(!model)return;
+ const last=series.at(-1),lastDate=last.date,first=series[0].date;
+ const endYear=Math.max(new Date(lastDate).getUTCFullYear()+1,Number($('start').value)+Math.max(1,Number($('duration').value))-1);
+ const far=Date.UTC(Math.min(2200,endYear),11,31),xmin=first,xmax=far;
+ const qvals=[10,20,50,80,90];
+ // Dezelfde historische log-residu-kwantielen voor historiek én projectie.
+ const scenario=(date,p)=>trend(date)*Math.exp(quantile(residuals,p/100));
+ const years=[];for(let y=new Date(first).getUTCFullYear();y<=new Date(far).getUTCFullYear();y++)years.push({year:y,date:Date.UTC(y,11,31)});
+ const allPrices=[...series.map(v=>v.price),...years.flatMap(v=>[trend(v.date),scenario(v.date,10),scenario(v.date,90)])].filter(v=>Number.isFinite(v)&&v>0);
+ if(!allPrices.length)return;
+ let ymin=Math.log(Math.min(...allPrices)),ymax=Math.log(Math.max(...allPrices));const pad=Math.max(.12,(ymax-ymin)*.08);ymin-=pad;ymax+=pad;
+ const xx=d=>55+660*(d-xmin)/(xmax-xmin),yy=p=>295-260*(Math.log(Math.max(1e-12,p))-ymin)/(ymax-ymin);
+ const line=arr=>arr.filter(v=>v.price>0&&Number.isFinite(v.price)).map((v,i)=>(i?'L':'M')+xx(v.date).toFixed(1)+' '+yy(v.price).toFixed(1)).join(' ');
+ const lo=years.map(v=>({date:v.date,price:scenario(v.date,10)})),hi=years.map(v=>({date:v.date,price:scenario(v.date,90)}));
+ const poly=lo.concat([...hi].reverse()).map(v=>xx(v.date).toFixed(1)+','+yy(v.price).toFixed(1)).join(' ');
+ const percentilePaths=qvals.map((p)=>`<path d="${line(years.map(v=>({date:v.date,price:scenario(v.date,p)})))}" fill="none" stroke="#95b89a" stroke-width="1" stroke-dasharray="3 4" opacity=".9"/>`).join('');
+ let ticks='';for(let j=0;j<5;j++){let y=35+j*65,val=Math.exp(ymax-j/4*(ymax-ymin));ticks+=`<line x1="55" y1="${y}" x2="715" y2="${y}" stroke="#e4ede3"/><text x="50" y="${y+4}" font-size="11" text-anchor="end" fill="#6a7e70">${val>=1000?(val/1000).toFixed(0)+'k':val.toFixed(val<1?2:0)}</text>`}
+ let xlabels='';for(let j=0;j<6;j++){let d=xmin+(xmax-xmin)*j/5;xlabels+=`<text x="${xx(d)}" y="318" font-size="11" text-anchor="middle" fill="#6a7e70">${new Date(d).getUTCFullYear()}</text>`}
+ const lastX=xx(lastDate);
+ svg.innerHTML=`${ticks}<polygon points="${poly}" fill="#c5dbc4" opacity=".45"/>${percentilePaths}<path d="${line(years.map(v=>({date:v.date,price:trend(v.date)})))}" fill="none" stroke="#dd9843" stroke-width="2.4"/><path d="${line(series)}" fill="none" stroke="#1e7550" stroke-width="2"/><line x1="${lastX}" y1="30" x2="${lastX}" y2="295" stroke="#789585" stroke-dasharray="4 4"/>${xlabels}<line id="priceCross" x1="0" x2="0" y1="30" y2="295" stroke="#506a5c" stroke-dasharray="4 4" visibility="hidden"/><rect id="priceHit" x="55" y="30" width="660" height="265" fill="transparent" style="cursor:crosshair"/>`;
+ const tip=$('priceChartTooltip'),cross=$('priceCross'),hit=$('priceHit');
+ const show=e=>{
+  const rect=svg.getBoundingClientRect(),vx=(e.clientX-rect.left)/rect.width*750;
+  const targetDate=xmin+(Math.max(55,Math.min(715,vx))-55)/660*(xmax-xmin);
+  const point=years.reduce((a,b)=>Math.abs(a.date-targetDate)<Math.abs(b.date-targetDate)?a:b);
+  const historical=point.date<=lastDate,actual=series.find(v=>new Date(v.date).getUTCFullYear()===point.year);
+  const vals=qvals.map(p=>`P${p}: <b>${money(scenario(point.date,p))} €</b>`).join('<br>');
+  tip.innerHTML=`<b>${point.year} — ${historical?'historisch':'projectie'}</b><br>${actual?'Waargenomen koers: '+money(actual.price)+' €<br>':''}Trendwaarde: ${money(trend(point.date))} €<br>${vals}`;
+  tip.hidden=false;cross.setAttribute('x1',xx(point.date));cross.setAttribute('x2',xx(point.date));cross.setAttribute('visibility','visible');
+  const wr=$('priceChartWrap').getBoundingClientRect(),desiredX=e.clientX-wr.left+12,desiredY=e.clientY-wr.top+12;
+  tip.style.left=Math.max(5,Math.min(wr.width-tip.offsetWidth-5,desiredX))+'px';
+  tip.style.top=Math.max(5,Math.min(wr.height-tip.offsetHeight-5,desiredY))+'px';
+ };
+ hit.addEventListener('pointermove',show);hit.addEventListener('click',show);
+ hit.addEventListener('pointerleave',()=>{tip.hidden=true;cross.setAttribute('visibility','hidden')});
+}
+
+function simulate(startYear,p,method,initialUnits,withContributions=false){
+ const amount=Math.max(0,Number($('payment').value)||0),freq=Number($('frequency').value),dur=Math.max(1,Number($('duration').value)||1),infl=Math.max(0,Number($('inflation').value)||0)/100,fee=Math.max(0,Number($('fee').value)||0)/100,tax=taxSettings();
+ let unitsLeft=initialUnits,cumulative=0,taxPaid=0,rows=[],used={},last=series.at(-1),firstYear=new Date(last.date).getUTCFullYear(),shortfall=0,contributed=0;
+ const monthly=withContributions?Math.max(0,Number($('contribution').value)||0):0;
+ for(let year=firstYear;year<startYear+dur;year++){
+   let annual=0,annualTax=0,annualMiss=0;
+   if(year>firstYear&&monthly){for(let m=0;m<12;m++){let d=Date.UTC(year,m,15),price=priceAt(d,p,method);if(!Number.isFinite(price)||price<=0)return null;unitsLeft+=monthly/price;contributed+=monthly;}}
+   if(year>=startYear){for(let k=0;k<freq;k++){
+     const j=(year-startYear)*freq+k,d=addYears(utcYear(startYear),j/freq),price=priceAt(d,p,method);
+     if(!Number.isFinite(price)||price<=0)return null;
+     const net=amount*(1+infl)**(j/freq),prior=used[year]||0,gross=saleForNet(net/(1-fee),price,year,used,tax);
+     if(!Number.isFinite(gross))return null;
+     const neededUnits=gross/price,sold=Math.min(unitsLeft,neededUnits),fraction=neededUnits>0?sold/neededUnits:1;
+     unitsLeft=Math.max(0,unitsLeft-sold);
+     // A partially funded payment generates tax only on the actual proceeds.
+     const actualGross=sold*price,gain=Math.max(0,1-tax.basis/price)*actualGross;
+     const prevTaxable=Math.max(0,prior-tax.exempt);used[year]=(used[year]||0)+gain;
+     const newTaxable=Math.max(0,used[year]-tax.exempt),thisTax=(newTaxable-prevTaxable)*tax.rate;
+     annualTax+=thisTax;
+     const actualNet=Math.max(0,actualGross*(1-fee)-thisTax);
+     annual+=Math.min(net,actualNet);annualMiss+=Math.max(0,net-actualNet);
+   }}
+   cumulative+=annual;taxPaid+=annualTax;shortfall+=annualMiss;
+   const endPrice=priceAt(Date.UTC(year,11,31),p,method);
+   if(!Number.isFinite(endPrice))return null;
+   rows.push({year,price:endPrice,paid:annual,cumulative,tax:annualTax,units:unitsLeft,value:unitsLeft*endPrice,miss:annualMiss});
+ }
+ return {rows,cumulative,taxPaid,remaining:unitsLeft,shortfall,contributed};
+}
+function renderWealth(sim){
+ const svg=$('wealthChart');const hover=$('wealthHover');hover.hidden=true;
+ if(!sim){svg.innerHTML='<text x="35" y="140" fill="#777">Onvoldoende gegevens voor de volledige projectie.</text>';$('yearRows').innerHTML='<tr><td colspan="7">Geen volledige simulatie beschikbaar.</td></tr>';for(const id of ['kPaid','kTaxPaid','kRemain'])$(id).textContent='—';$('fundingNote').textContent='Niet genoeg historische backtestgegevens voor deze horizon.';return}
+ $('kPaid').textContent=money(sim.cumulative)+' €';$('kTaxPaid').textContent=money(sim.taxPaid)+' €';$('kRemain').textContent=units(sim.remaining);
+ $('fundingNote').innerHTML=wealthMode==='actual'?(sim.shortfall>0.01?`<span class="warning">Met je huidige bezit kan niet alles worden uitgekeerd.</span> Niet gefinancierd: <b>${money(sim.shortfall)} €</b>. Totaal extra ingelegd: ${money(sim.contributed)} €.`:`Met je huidige bezit en extra inleg worden alle gesimuleerde uitkeringen gedekt. Extra ingelegd: ${money(sim.contributed)} €.`):'Dit is het theoretisch benodigde startbezit, zonder je bestaande positie of extra inleg.';
+ const r=sim.rows,maxV=Math.max(1,...r.map(x=>Math.max(x.value,x.cumulative))),maxU=Math.max(1e-12,...r.map(x=>x.units)),x=i=>60+(i/Math.max(1,r.length-1))*630,y=v=>250-v/maxV*205,yu=v=>250-v/maxU*205;
+ const path=fn=>r.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+fn(v).toFixed(1)).join(' ');
+ let g='';for(let k=0;k<=4;k++){const v=maxV*k/4,yy=y(v);g+=`<line x1="60" y1="${yy}" x2="690" y2="${yy}" stroke="#e2ebe3"/><text x="53" y="${yy+4}" text-anchor="end" font-size="11" fill="#687b6e">${v>=1e6?(v/1e6).toFixed(1)+'m':v>=1000?Math.round(v/1000)+'k':Math.round(v)}</text>`}
+ for(let k=0;k<=5;k++){let i=Math.round((r.length-1)*k/5);g+=`<text x="${x(i)}" y="276" text-anchor="middle" font-size="11" fill="#687b6e">${r[i].year}</text>`}
+ svg.innerHTML=g+`<path d="${path(v=>y(v.value))}" fill="none" stroke="#17764c" stroke-width="2.7"/><path d="${path(v=>y(v.cumulative))}" fill="none" stroke="#2768c9" stroke-width="2.5"/><path d="${path(v=>yu(v.units))}" fill="none" stroke="#e08c31" stroke-width="2.4"/><text x="690" y="18" text-anchor="end" font-size="11" fill="#e08c31">Eenheden: max ${units(maxU)}</text><g id="hoverMarks" style="pointer-events:none"></g><rect x="60" y="25" width="630" height="235" fill="transparent" style="cursor:crosshair" id="hoverTarget"/>`;
+ const show=i=>{const v=r[i];$('hoverMarks').innerHTML=`<line x1="${x(i)}" y1="35" x2="${x(i)}" y2="250" stroke="#536e61" stroke-dasharray="4 4"/><circle cx="${x(i)}" cy="${y(v.value)}" r="5" fill="#17764c" stroke="white" stroke-width="2"/><circle cx="${x(i)}" cy="${y(v.cumulative)}" r="5" fill="#2768c9" stroke="white" stroke-width="2"/><circle cx="${x(i)}" cy="${yu(v.units)}" r="5" fill="#e08c31" stroke="white" stroke-width="2"/>`;
+ hover.innerHTML=`<b>${v.year}</b><br>Modelkoers: ${money(v.price)} €<br>Portefeuille: ${money(v.value)} €<br>Resterend: ${units(v.units)} eenheden<br>Uitgekeerd dit jaar: ${money(v.paid)} €<br>Cumulatief: ${money(v.cumulative)} €<br>Belasting dit jaar: ${money(v.tax)} €<br>Niet uitgekeerd: ${money(v.miss)} €`;hover.hidden=false;hover.style.left=Math.max(4,Math.min(($("wealthWrap").clientWidth-225),x(i)/750*$("wealthWrap").clientWidth+8))+'px';hover.style.top='5px';};
+ const target=$('hoverTarget');target.addEventListener('pointermove',e=>{let rect=svg.getBoundingClientRect(),vx=(e.clientX-rect.left)/rect.width*750,i=Math.max(0,Math.min(r.length-1,Math.round((vx-60)/630*(r.length-1))));show(i)});
+ target.addEventListener('click',e=>{let rect=svg.getBoundingClientRect(),vx=(e.clientX-rect.left)/rect.width*750,i=Math.max(0,Math.min(r.length-1,Math.round((vx-60)/630*(r.length-1))));show(i)});
+ target.addEventListener('pointerleave',()=>{hover.hidden=true;$('hoverMarks').innerHTML=''});
+ $('yearRows').innerHTML=r.map(v=>`<tr><td>${v.year}</td><td>${money(v.price)} €</td><td>${money(v.paid)} €</td><td>${money(v.cumulative)} €</td><td>${money(v.tax)} €</td><td>${units(v.units)}</td><td>${money(v.value)} €</td></tr>`).join('');
+}
+function compute(){if(!series.length||!model)return;let last=series.at(-1),spot=valuationSpot(),lp=Math.log(spot),nowTrend=trend(last.date),pct=100*residuals.filter(v=>v<=lp-Math.log(nowTrend)).length/residuals.length;let histCagr=(last.price/series[0].price)**(yearMs/(last.date-series[0].date))-1;let b=model.b,exp=$('asset').value==='btc'?b.toFixed(3):((Math.exp(b)-1)*100).toFixed(2)+'%/jr';$('kSpot').textContent=money(last.price);$('kTrend').textContent=money(nowTrend);$('kPct').textContent='P'+pct.toFixed(0);$('kCagr').textContent=(histCagr*100).toFixed(2)+'%';$('kR2').textContent=model.r2.toFixed(4);$('kExponent').textContent=exp;let method=$('method').value,p=Number($('percentile').value),year=Number($('start').value),need=required(year,p,method),own=Math.max(0,Number($('holdings').value)||0),first=earliest(p,method);$('kUnits').textContent=units(need);$('kCost').textContent=money(need*spot)+' '+'EUR';$('kYear').textContent=first??'Niet gevonden binnen 50 jaar';$('kOwn').textContent=units(own);$('kGap').textContent=units(need-own);$('kGapCost').textContent=Number.isFinite(need)&&need>own?'Bij te kopen tegen huidige koers: '+money((need-own)*spot)+' EUR':'';$('kFuture').textContent=money(priceAt(utcYear(year),p,method))+' €';lastCompute={year,p,method,need};renderWealth(wealthMode==="actual"?simulate(year,p,method,own,true):(Number.isFinite(need)?simulate(year,p,method,need,false):null));const implied=priceAt(utcYear(year),p,method)/spot;const yrs=(utcYear(year)-last.date)/yearMs;const annualized=implied>0&&yrs>0?((implied**(1/yrs)-1)*100).toFixed(1):'—';$('resultsNote').textContent='Modelkoers in '+year+': '+money(priceAt(utcYear(year),p,method))+' € (jaarlijks omgerekende stijging vanaf eind 2025: '+annualized+'%). Dit is een modelscenario, geen actuele koers of verwachting. '+'De percentielbanen volgen dezelfde historische log-residu-kwantielen over de volledige periode; ze zijn niet verankerd aan de laatste slotkoers. Dit zijn geen kansgaranties.';let rolling=[];for(let i=8;i<series.length;i+=1){let m=fit(series.slice(Math.max(0,i-9),i+1));if(Number.isFinite(m.b))rolling.push(m.b)}let med=quantile(rolling,.5),spread=quantile(rolling,.9)-quantile(rolling,.1);$('stability').textContent=rolling.length?`Exponentstabiliteit (rolling 10-jaars vensters): mediaan ${med.toFixed(3)}; P10–P90 spreiding ${spread.toFixed(3)}; ${rolling.length} vensters. Voor Bitcoin zijn korte vensters bijzonder gevoelig.`:'Onvoldoende gegevens voor rolling exponentstabiliteit.';draw()}
+$('modeActual').addEventListener('click',()=>{wealthMode='actual';$('modeActual').classList.add('selected');$('modeRequired').classList.remove('selected');recalc()});
+$('modeRequired').addEventListener('click',()=>{wealthMode='required';$('modeRequired').classList.add('selected');$('modeActual').classList.remove('selected');recalc()});
+function recalc(){if(!series.length)return;predCache={};try{compute();renderProjectedCagr(evolutionData(),$('asset').value==='btc')}catch(e){$('status').textContent='Rekenfout: '+e.message}}
+$('trendStart').addEventListener('change',()=>{try{applyTrendWindow()}catch(e){$('status').textContent='Trendvenster: '+e.message}});
+for(let id of ['asset','payment','frequency','start','duration','inflation','fee','holdings','contribution','percentile','taxRate','taxExempt','taxBasis','taxUsed'])$(id).addEventListener('input',()=>{if(id==='asset'){series=[];model=null;loadEmbedded();return}if(id==='percentile')$('pLabel').textContent='P'+$('percentile').value;recalc()});
+
+let allSeries=[];
+function setData(points,source){
+ let map=new Map();for(let v of points){if(!Number.isFinite(v.date)||!Number.isFinite(v.price)||v.price<=0)continue;map.set(new Date(v.date).toISOString().slice(0,7),v)}
+ allSeries=[...map.values()].sort((a,b)=>a.date-b.date);
+ const years=allSeries.map(x=>new Date(x.date).getUTCFullYear());
+ const sel=$('trendStart');const previous=sel.value;
+ sel.innerHTML=years.filter((y,i)=>allSeries.length-i>=8).map(y=>`<option value="${y}">${y}</option>`).join('');
+ sel.value=years.includes(Number(previous)) && years.indexOf(Number(previous))<=allSeries.length-8 ? previous : String(years[0]);
+ applyTrendWindow(source);
+}
+function applyTrendWindow(source=activeSource){
+ const from=Number($('trendStart').value);
+ series=allSeries.filter(v=>new Date(v.date).getUTCFullYear()>=from);
+ if(series.length<8)throw Error('Minder dan 8 jaarwaarden.');
+ model=fit(series);if(!Number.isFinite(model.b)||!Number.isFinite(model.r2))throw Error('Trendregressie mislukt.');
+ residuals=series.map(v=>Math.log(v.price)-Math.log(trend(v.date)));predCache={};activeSource=source;
+ const n=series.length;$('trendWindowNote').textContent=n<10?`Slechts ${n} jaarpunten: zeer fragiele regressie; voorspellende percentielen vaak niet beschikbaar.`:n<15?`${n} jaarpunten: verkennend bruikbaar, maar R² en exponent kunnen sterk schommelen. Vergelijk meerdere startjaren.`:`${n} jaarpunten: bruikbaarder voor trendanalyse, maar controleer stabiliteit en voorspellende prestaties. Jaarpunten zijn niet onafhankelijk.`;
+ $('status').className='note ok';$('status').textContent=`Bron: ${source}. ${series.length} jaarwaarnemingen van ${fmtDate(series[0].date)} tot ${fmtDate(series.at(-1).date)}. Laatste historische koers ${money(series.at(-1).price)}. Dit zijn historische jaarultimo-waarden, geen actuele koersen.`;
+ compute();renderTrendEvolution();
+}
+function loadEmbedded(){
+
+ const key=$('asset').value;
+ const pts=mergedHistory(key).map(([year,price])=>({date:Date.UTC(year,11,31),price}));
+ setData(pts,'Ingebouwd Excelbestand · jaarultimo · EUR');
+ // EUR is de vaste bronvaluta.
+ $('status').textContent+=' Jaarlijks waargenomen data: tussenliggende maanden zijn niet gemeten. Huidige marktprijs is niet ingebouwd; laatst beschikbare jaarultimo is 2025. Aandelen zijn total-return-indexniveaus, geen ETF-prijzen. Historische residu-percentielen zijn geen gekalibreerde voorspellingen.';
+}
+
+// Bewaar handmatige instellingen in dezelfde browser (geen externe opslag).
+async function fetchLive(){
+ const a=$('asset').value,seq=++liveRequest;
+ if(!['btc','gold'].includes(a)){ $('livePrice').textContent='Historische jaarultimo-koers (2025)';$('liveMeta').textContent='Voor deze index is geen automatisch vergelijkbare actuele koers beschikbaar. Historische EUR-reeks blijft actief.';$('useLive').checked=false;recalc();return;}
+ $('livePrice').textContent='Actuele koers laden…';$('liveMeta').textContent='De historische reeks blijft onveranderd.';
+ try{
+  const url=a==='btc'?'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur&include_last_updated_at=true':'https://api.gold-api.com/price/XAU/EUR';
+  const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),9000);
+  let res;try{res=await fetch(url,{signal:controller.signal,cache:'no-store'});}finally{clearTimeout(timeout)}
+  if(!res.ok)throw Error('HTTP '+res.status);
+  const d=await res.json();let price,stamp;
+  if(a==='btc'){price=Number(d.bitcoin?.eur);stamp=d.bitcoin?.last_updated_at?new Date(d.bitcoin.last_updated_at*1000):new Date();}
+  else {price=Number(d.price);stamp=d.updatedAt?new Date(d.updatedAt):new Date();}
+  if(!Number.isFinite(price)||price<=0||!Number.isFinite(stamp.getTime()))throw Error('Ongeldige koers of tijdstempel');
+  if(seq!==liveRequest||a!==$('asset').value)return;
+  liveQuotes[a]={price,stamp};$('livePrice').textContent=money(price)+' EUR '+(a==='gold'?'/ oz':'/ BTC');
+  const tr=trend(stamp.getTime()),deviation=Math.log(price/tr),pct=100*residuals.filter(v=>v<=deviation).length/residuals.length; $('liveMeta').textContent='Bron: '+(a==='btc'?'CoinGecko':'Gold API')+' · bijgewerkt '+stamp.toLocaleString('nl-BE')+' · indicatief actueel trendpercentiel P'+pct.toFixed(0)+' (tegen regressie op data t/m 2025).';
+  $('useLive').checked=true;recalc();
+ }catch(e){if(seq!==liveRequest)return;let cached=liveQuotes[a];$('livePrice').textContent=cached?money(cached.price)+' EUR (eerder opgehaald)':'Actuele koers niet beschikbaar';$('liveMeta').textContent='Kon de koers niet ophalen ('+e.message+'). Mogelijke oorzaak: internet, API-limiet of browserbeveiliging. Historische calculator blijft werken.';$('useLive').checked=!!cached;recalc();}
+
+}
+
+$('asset').addEventListener('change',()=>{
+ ++liveRequest;
+ $('useLive').checked=false;
+ $('livePrice').textContent='Automatisch laden…';
+ $('liveMeta').textContent='De historische regressie blijft ongewijzigd.';
+ queueMicrotask(()=>fetchLive());
+});
+const settingIds=['asset','payment','frequency','start','duration','inflation','fee','taxRate','taxExempt','taxBasis','taxUsed','holdings','contribution','percentile','trendStart'];
+try{let saved=JSON.parse(localStorage.getItem('gg-endowment-settings')||'{}');for(let id of settingIds)if(saved[id]!==undefined)$(id).value=saved[id];$('pLabel').textContent='P'+$('percentile').value}catch(e){}
+for(let id of settingIds)$(id).addEventListener('change',()=>{try{localStorage.setItem('gg-endowment-settings',JSON.stringify(Object.fromEntries(settingIds.map(k=>[k,$(k).value]))))}catch(e){}});
+
+
+// Jaarultimo-reeksen worden uitsluitend in de broncode bijgewerkt.
+function mergedHistory(key){return EMBEDDED_HISTORY[key];}
+function evolutionData(){
+ const start=Number($('trendStart').value),rows=allSeries.filter(v=>new Date(v.date).getUTCFullYear()>=start),out=[];
+ for(let n=8;n<=rows.length;n++){
+  const prefix=rows.slice(0,n),m=fit(prefix),last=prefix.at(-1),tr=trend(last.date,m);
+  if(!Number.isFinite(m.b)||!Number.isFinite(m.r2)||!(tr>0))continue;
+  const res=prefix.map(v=>Math.log(v.price)-Math.log(trend(v.date,m)));
+  const val=p=>100*(Math.exp(quantile(res,p))-1);
+  const nextDate=Date.UTC(new Date(last.date).getUTCFullYear()+1,11,31);
+  const nextTrend=trend(nextDate,m);
+  const expectedCagr=100*(nextTrend/tr-1);
+  out.push({year:new Date(last.date).getUTCFullYear(),n,spot:last.price,trend:tr,param:$('asset').value==='btc'?m.b:100*Math.expm1(m.b),r2:m.r2,expectedCagr,p10:val(.1),p50:val(.5),p90:val(.9)});
+ }
+ return out;
+}
+function renderTrendEvolution(){
+ if(!allSeries.length)return;
+ const data=evolutionData(),isBtc=$('asset').value==='btc';
+ $('paramDescription').textContent=isBtc?'Bitcoin: de geschatte power-lawexponent (niet een jaarlijks vast rendement).':'Exponentiële activa: de geschatte jaarlijkse trendgroei in procent.';
+ $('trendEvolutionNote').textContent=`${data.length} historische herberekeningen beschikbaar vanaf minimaal 8 jaarpunten. Het geselecteerde trendstartjaar is ${$('trendStart').value}. De laatste herberekening gebruikt ${allSeries.length} of minder jaarpunten (afhankelijk van startjaar). Vroege regressies en percentielen zijn fragiel; hoge R² bewijst geen voorspelkracht.`;
+
+ const rows=$('trendEvolutionRows');rows.innerHTML=data.length?data.map(v=>`<tr><td>${v.year}</td><td>${v.n}</td><td>${money(v.spot)}</td><td>${money(v.trend)}</td><td>${v.param.toFixed(2)}${isBtc?'':'%'}</td><td>${v.r2.toFixed(4)}</td><td>${v.expectedCagr.toFixed(2)}%</td></tr>`).join(''):'<tr><td colspan="7">Nog geen 8 datapunten in het geselecteerde trendvenster.</td></tr>';
+ function plot(id,keys,labels,colors,log=false){
+  const svg=$(id),w=750,h=235,l=66,r=20,t=15,b=35,iw=w-l-r,ih=h-t-b;
+  if(!data.length){svg.innerHTML='<text x="80" y="110">Te weinig gegevens</text>';return}
+  let vals=data.flatMap(v=>keys.map(k=>v[k])).filter(v=>Number.isFinite(v)&&(log?v>0:true));
+  let low=Math.min(...vals),high=Math.max(...vals);if(log){low=Math.log(low);high=Math.log(high)}
+  if(high-low<1e-9){low-=1;high+=1}const pad=(high-low)*.1;low-=pad;high+=pad;
+  const x=i=>l+(data.length===1?iw/2:i*iw/(data.length-1)),y=v=>t+ih-( (log?Math.log(Math.max(v,1e-15)):v)-low)/(high-low)*ih;
+  let out='';for(let j=0;j<=4;j++){let yy=t+ih*j/4,value=high-(high-low)*j/4;if(log)value=Math.exp(value);out+=`<line x1="${l}" x2="${w-r}" y1="${yy}" y2="${yy}" stroke="#e3eae3"/><text x="${l-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="#697b70">${value>=1000?Math.round(value).toLocaleString('nl-BE'):Number(value.toFixed(2)).toLocaleString('nl-BE')}</text>`}
+  for(let i=0;i<data.length;i++){if(i===0||i===data.length-1||i%Math.max(1,Math.ceil(data.length/7))===0)out+=`<text x="${x(i)}" y="${h-8}" font-size="11" text-anchor="middle" fill="#697b70">${data[i].year}</text>`}
+  keys.forEach((key,k)=>{out+=`<path fill="none" stroke="${colors[k]}" stroke-width="2.4" d="${data.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v[key]).toFixed(1)).join(' ')}"/>`});
+  // Invisible interaction plane and one shared hover panel for all charts.
+  out+=`<line id="cross-${id}" x1="0" x2="0" y1="${t}" y2="${t+ih}" stroke="#516c5c" stroke-dasharray="3 3" visibility="hidden"/><rect class="evoHit" x="${l}" y="${t}" width="${iw}" height="${ih}" fill="transparent" style="cursor:crosshair"/>`;
+  svg.innerHTML=out;
+  const hit=svg.querySelector('.evoHit'),cross=svg.querySelector('#cross-'+id),tip=chartTooltip(svg);
+  const show=e=>{const rect=svg.getBoundingClientRect(),sx=(e.clientX-rect.left)/rect.width*750,idx=Math.min(data.length-1,Math.max(0,Math.round((sx-l)/iw*(data.length-1)))),v=data[idx];cross.setAttribute('x1',x(idx));cross.setAttribute('x2',x(idx));cross.setAttribute('visibility','visible');tip.hidden=false;tip.innerHTML=`<b>${v.year}</b> · ${v.n} punten<br>Koers: ${money(v.spot)} EUR · Trend: ${money(v.trend)} EUR<br>Parameter: ${v.param.toFixed(2)}${isBtc?' (power law)':'%/jr'} · R²: ${v.r2.toFixed(4)}<br>Verwachte modelgroei volgend jaar: ${v.expectedCagr.toFixed(2)}%`;placeChartTooltip(e,svg,tip);};
+  hit.addEventListener('pointermove',show);hit.addEventListener('click',show);hit.addEventListener('pointerleave',()=>{cross.setAttribute('visibility','hidden');tip.hidden=true});
+ }
+ plot('trendParamChart',['param'],['Trendparameter'],['#17764c']);
+ plot('trendR2Chart',['r2'],['R²'],['#2768c9']);
+ plot('trendPriceChart',['spot','trend'],['Koers','Trend'],['#17764c','#dd9843'],true);
+ renderProjectedCagr(data,isBtc);
+}
+ function chartTooltip(svg){
+  const wrap=svg.parentElement;
+  let tip=wrap.querySelector('.trend-tooltip');
+  if(!tip){tip=document.createElement('div');tip.className='trend-tooltip';tip.hidden=true;wrap.appendChild(tip)}
+  return tip;
+ }
+ function placeChartTooltip(e,svg,tip){
+  const wrap=svg.parentElement,rect=wrap.getBoundingClientRect();
+  const x=e.clientX-rect.left,y=e.clientY-rect.top;
+  const tw=tip.offsetWidth||240,th=tip.offsetHeight||70;
+  const left=Math.max(8,Math.min(rect.width-tw-8,x+14));
+  const top=Math.max(8,Math.min(rect.height-th-8,y-th-14));
+  tip.style.left=left+'px';tip.style.top=top+'px';
+ }
+
+function renderProjectedCagr(historical,isBtc){
+ const svg=$('trendCagrChart'),tip=chartTooltip(svg);
+ if(!historical.length||!model){svg.innerHTML='<text x="80" y="110">Te weinig gegevens</text>';return}
+ const lastYear=historical.at(-1).year;
+ const startYear=Math.max(lastYear+1,Number($('start').value)||lastYear+1);
+ const duration=Math.max(1,Number($('duration').value)||1);
+ const endYear=Math.max(lastYear,Math.min(2200,startYear+duration-1));
+ const data=historical.map(v=>({year:v.year,rate:v.expectedCagr,historical:true,n:v.n}));
+ // De projectie gebruikt één en dezelfde regressie, geschat op alle huidige jaarultimo-punten.
+ // Geen nieuwe waarnemingen of regressieparameters worden verzonnen voor toekomstige jaren.
+ for(let year=lastYear+1;year<=endYear;year++){
+  const d0=Date.UTC(year,11,31),d1=Date.UTC(year+1,11,31);
+  const p0=trend(d0,model),p1=trend(d1,model);
+  data.push({year,rate:100*(p1/p0-1),historical:false});
+ }
+ const w=750,h=235,l=67,r=20,t=16,b=36,iw=w-l-r,ih=h-t-b;
+ const minYear=data[0].year,maxYear=data.at(-1).year;
+ const x=year=>l+(maxYear===minYear?iw/2:(year-minYear)*iw/(maxYear-minYear));
+ const rates=data.map(v=>v.rate).filter(Number.isFinite);
+ if(!rates.length){svg.innerHTML='<text x="80" y="110">Geen geldige modelgroei</text>';return}
+ let low=Math.min(...rates),high=Math.max(...rates);
+ if(high-low<0.001){low-=1;high+=1}else{const pad=(high-low)*0.12;low-=pad;high+=pad}
+ const y=rate=>t+ih-(rate-low)/(high-low)*ih;
+ let out='';
+ for(let j=0;j<=4;j++){
+  const yy=t+j*ih/4,v=high-(high-low)*j/4;
+  out+=`<line x1="${l}" x2="${w-r}" y1="${yy}" y2="${yy}" stroke="#e3eae3"/><text x="${l-8}" y="${yy+4}" text-anchor="end" font-size="11" fill="#697b70">${v.toLocaleString('nl-BE',{maximumFractionDigits:1})}%</text>`;
+ }
+ const span=maxYear-minYear;
+ const tickStep=Math.max(1,Math.ceil(span/7));
+ for(let yr=minYear;yr<=maxYear;yr+=tickStep)out+=`<text x="${x(yr)}" y="${h-8}" font-size="11" text-anchor="middle" fill="#697b70">${yr}</text>`;
+ if((maxYear-minYear)%tickStep!==0)out+=`<text x="${x(maxYear)}" y="${h-8}" font-size="11" text-anchor="end" fill="#697b70">${maxYear}</text>`;
+ const hist=data.filter(v=>v.historical),fut=data.filter(v=>!v.historical);
+ const path=arr=>arr.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+' '+y(v.rate).toFixed(2)).join(' ');
+ out+=`<path d="${path(hist)}" fill="none" stroke="#9b5b23" stroke-width="2.5"/>`;
+ if(fut.length){
+  out+=`<path d="${path([hist.at(-1),...fut])}" fill="none" stroke="#9b5b23" stroke-width="2.5" stroke-dasharray="7 5"/>`;
+  out+=`<line x1="${x(lastYear)}" x2="${x(lastYear)}" y1="${t}" y2="${t+ih}" stroke="#7a9683" stroke-dasharray="3 4"/><text x="${Math.min(x(lastYear)+6,w-150)}" y="${t+11}" font-size="10" fill="#687e70">Projectie vanaf ${lastYear}</text>`;
+ }
+ out+=`<line id="cross-trendCagrChart" x1="0" x2="0" y1="${t}" y2="${t+ih}" stroke="#516c5c" stroke-dasharray="3 3" visibility="hidden"/><rect class="evoHit" x="${l}" y="${t}" width="${iw}" height="${ih}" fill="transparent" style="cursor:crosshair"/>`;
+ svg.innerHTML=out;
+ const cross=svg.querySelector('#cross-trendCagrChart');
+ const show=e=>{
+  const rect=svg.getBoundingClientRect(),sx=(e.clientX-rect.left)/rect.width*w;
+  const year=Math.round(minYear+(Math.max(l,Math.min(w-r,sx))-l)/iw*(maxYear-minYear));
+  const v=data.find(q=>q.year===year)||data.reduce((a,b)=>Math.abs(a.year-year)<Math.abs(b.year-year)?a:b);
+  cross.setAttribute('x1',x(v.year));cross.setAttribute('x2',x(v.year));cross.setAttribute('visibility','visible');
+  tip.hidden=false;
+  tip.innerHTML=`<b>${v.year}</b> — ${v.historical?'Historische herberekening ('+v.n+' jaarpunten)':'Projectie met huidige regressie'}<br>Verwachte modelgroei ${v.year} → ${v.year+1}: <b>${v.rate.toLocaleString('nl-BE',{minimumFractionDigits:2,maximumFractionDigits:2})}%</b>`;placeChartTooltip(e,svg,tip);
+ };
+ const hit=svg.querySelector('.evoHit');hit.addEventListener('pointermove',show);hit.addEventListener('click',show);hit.addEventListener('pointerleave',()=>{cross.setAttribute('visibility','hidden');tip.hidden=true});
+}
+try{loadEmbedded();fetchLive()}catch(e){$('status').className='note warn';$('status').textContent='Probleem bij het laden: '+e.message;console.error(e)}
+</script><footer class="foot"><div class="shell"><div class="footer-grid"><div class="footer-identity"><a class="footer-brand" href="index.html">geldgedrag.be</a><p class="footer-slogan">Begrijp geld. Bepaal genoeg. Bouw vermogen op.</p><a class="footer-contact" href="mailto:joachim@geldgedrag.be">joachim@geldgedrag.be</a></div><nav class="footer-nav" aria-label="Footernavigatie"><div class="footer-group"><span class="footer-heading">Verkennen</span><a href="index.html">Home</a><a href="essay.html">Essay</a><a href="playbook.html">Playbook</a><a href="over.html">Over</a></div><div class="footer-group"><span class="footer-heading">Vermogensplanner</span><a href="endowment.html">Overzicht</a><a href="vermogensvormen.html">Vermogensvormen</a><a href="calculator.html">Calculator</a><a href="methodologie.html">Methodologie &amp; bronnen</a></div></nav></div><div class="footer-bottom">Onafhankelijk denk- en rekenproject · Geen persoonlijk financieel advies</div></div></footer></body></html>
