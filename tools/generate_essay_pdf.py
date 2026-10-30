@@ -25,7 +25,7 @@ from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import BaseDocTemplate, PageTemplate, Frame, Paragraph, Spacer, PageBreak, KeepTogether, Image, Table, TableStyle
 from reportlab.platypus.tableofcontents import TableOfContents
-ROOT=Path(__file__).resolve().parents[1]; DIST=ROOT/'docs'
+ROOT=Path(__file__).resolve().parents[1]; DIST=ROOT/('dist' if (ROOT/'dist').exists() else 'docs')
 OUT=Path(sys.argv[1]) if len(sys.argv)>1 else DIST/'essay-geldgedrag.pdf'
 OUT.parent.mkdir(parents=True,exist_ok=True)
 INK='#233e33'; MUTED='#667368'; ACCENT='#976342'; PAPER='#f8f6f0'; LINE='#d9ddd0'

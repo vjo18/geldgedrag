@@ -46,3 +46,17 @@ Je kunt deze updates ook hier in ChatGPT laten voorbereiden. Codespaces is daarv
 - De JavaScript-bestanden controleren op syntaxisfouten.
 
 De workflow gebruikt geen repositorygeheimen of persoonlijke toegangstokens. De standaard `GITHUB_TOKEN` krijgt alleen de benodigde Pages-publicatierechten. Publicatie van deze publieke repository kan via GitHub Pages zonder Codespaces-tegoed.
+
+## Definitief essay vanuit Word bijwerken
+
+De webtekst is op 30 oktober 2026 woordelijk overgenomen uit de goedgekeurde Wordversie. Opmerkingen en de inhoudsopgave van Word worden niet als artikeltekst gepubliceerd. De zes interactieve grafieken blijven onderdeel van de webeditie.
+
+Om een volgende definitieve Wordversie over te nemen, gebruik je Python met `lxml`, `reportlab`, `matplotlib` en `numpy`:
+
+```sh
+python tools/import_essay_docx.py definitief-essay.docx
+python tools/generate_essay_pdf.py
+python tools/check_site.py
+```
+
+De importer vervangt de artikeltekst en bronnen, behoudt de bestaande grafiekbesturing en controleert of alle tekstblokken uit Word terugkomen. Controleer de nieuwe webeditie en PDF vóór het samenvoegen. Bewaar het Worddocument zelf buiten de publieke repository wanneer het alleen als redactioneel werkbestand dient.
